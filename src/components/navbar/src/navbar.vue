@@ -40,13 +40,13 @@
                 validator(value) {
                     return /^(\.|\d+\.)?\d+(px|rem)$/.test(value);
                 },
-                default: '.4rem'
+                default: '2rem'
             },
             height: {
                 validator(value) {
                     return /^(\.|\d+\.)?\d+(px|rem)$/.test(value);
                 },
-                default: '.9rem'
+                default: '4.5rem'
             }
         },
         computed: {

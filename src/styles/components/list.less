@@ -29,7 +29,7 @@
   background-color: #FFF;
   .list-title {
     color: #505050;
-    font-size: .26rem;
+    font-size: .26rem*@suiremscale;
     text-align: justify;
     font-weight: 800;
   }
@@ -43,17 +43,17 @@
 }
 
 .list-price {
-  font-size: .3rem;
+  font-size: .3rem*@suiremscale;
   color: #EB5211;
   > em {
-    font-size: .22rem;
+    font-size: .22rem*@suiremscale;
   }
 }
 
 .list-del-price {
-  padding-left: .06rem;
-  font-size: .2rem;
-  margin-left: .02rem;
+  padding-left: .06rem*@suiremscale;
+  font-size: .2rem*@suiremscale;
+  margin-left: .02rem*@suiremscale;
   position: relative;
   color: #8C8C8C;
   &:after {
@@ -71,10 +71,10 @@
     padding: 0 2px;
     margin-top: 4px;
     .list-mes {
-      padding: .1rem;
+      padding: .1rem*@suiremscale;
       .list-title {
         .text-overflow();
-        height: .36rem;
+        height: .36rem*@suiremscale;
       }
     }
   }
@@ -92,10 +92,10 @@
       padding-left: 2px;
     }
     .list-mes {
-      padding: .1rem;
+      padding: .1rem*@suiremscale;
       .list-title {
         .text-overflow();
-        height: .36rem;
+        height: .36rem*@suiremscale;
       }
     }
   }
@@ -105,7 +105,7 @@
   .list-item {
     width: 50%;
     float: left;
-    padding: .2rem;
+    padding: .2rem*@suiremscale;
     position: relative;
     z-index: 0;
     background-color: #FFF;
@@ -116,10 +116,10 @@
       .right-line(@line-color);
     }
     .list-mes {
-      padding-top: .1rem;
+      padding-top: .1rem*@suiremscale;
       .list-title {
         .text-overflow();
-        height: .36rem;
+        height: .36rem*@suiremscale;
       }
     }
     &:active {
@@ -140,17 +140,17 @@
       .bottom-line(@line-color);
     }
     .list-img {
-      width: 2rem;
-      padding: 1rem 0;
+      width: 2rem*@suiremscale;
+      padding: 1rem*@suiremscale 0;
     }
     .list-mes {
       flex: 1;
       padding-left: 7px;
       .list-title {
-        .line-clamp(3, .38rem);
+        .line-clamp(3, .38rem*@suiremscale);
       }
       .list-other {
-        padding-top: .1rem;
+        padding-top: .1rem*@suiremscale;
       }
     }
   }
@@ -162,14 +162,14 @@
     display: block;
     position: relative;
     z-index: 1;
-    padding: .2rem .2rem 0 .2rem;
+    padding: .2rem*@suiremscale .2rem*@suiremscale 0 .2rem*@suiremscale;
     &:after {
       .bottom-line(@line-color);
     }
     .list-mes {
-      padding: .2rem 0 .15rem;
+      padding: .2rem*@suiremscale 0 .15rem*@suiremscale;
       .list-other {
-        padding-top: .06rem;
+        padding-top: .06rem*@suiremscale;
       }
     }
   }
@@ -208,12 +208,12 @@
 }
 
 .list-loading {
-  margin-top: .1rem;
+  margin-top: .1rem*@suiremscale;
   text-align: center;
-  font-size: .26rem;
+  font-size: .26rem*@suiremscale;
   color: #999;
-  height: .66rem;
-  line-height: .66rem;
+  height: .66rem*@suiremscale;
+  line-height: .66rem*@suiremscale;
   img {
     height: inherit;
     display: inline-block;
@@ -221,9 +221,9 @@
 }
 
 .list-donetip {
-  font-size: .24rem;
+  font-size: .24rem*@suiremscale;
   text-align: center;
-  padding: .25rem 0;
+  padding: .25rem*@suiremscale 0;
   color: #777;
 }
 
@@ -286,24 +286,24 @@
   justify-content: center;
   align-items: center;
   > div {
-    width: 2.3rem;
-    height: 2.3rem;
+    width: 2.3rem*@suiremscale;
+    height: 2.3rem*@suiremscale;
     background-color: rgba(0, 0, 0, .8);
     &:before {
       content: '\e60d';
       font-family: @iconfont-inlay;
-      font-size: .88rem;
+      font-size: .88rem*@suiremscale;
       text-align: center;
       color: #FFF;
       display: block;
-      padding-top: .36rem;
+      padding-top: .36rem*@suiremscale;
     }
     > span {
       text-align: center;
       color: #FFF;
-      font-size: .28rem;
+      font-size: .28rem*@suiremscale;
       display: block;
-      padding-top: .2rem;
+      padding-top: .2rem*@suiremscale;
     }
   }
 }

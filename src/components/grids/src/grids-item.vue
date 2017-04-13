@@ -26,7 +26,7 @@
     }
 </script>
 
-<style scoped lang="less">
+<style lang="less">
 @import "../../../styles/common/variables";
 @import "../../../styles/common/mixins";
 

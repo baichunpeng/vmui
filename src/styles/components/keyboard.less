@@ -21,7 +21,7 @@
 
 .keyboard-content {
   background-color: #FFF;
-  margin-top: .3rem;
+  margin-top: .3rem*@suiremscale;
   position: relative;
   &:before {
     .top-line(@line-color);
@@ -30,24 +30,24 @@
 
 .keyboard-title {
   overflow: hidden;
-  padding: .2rem 0 .12rem;
+  padding: .2rem*@suiremscale 0 .12rem*@suiremscale;
   color: #222;
   margin-bottom: 1px; /* for old android */
-  font-size: .24rem;
+  font-size: .24rem*@suiremscale;
   text-align: center;
   background-color: #FFF;
   &:before {
     font-family: @iconfont-inlay;
     content: '\e60a';
-    font-size: .26rem;
+    font-size: .26rem*@suiremscale;
     color: #FF2424;
     line-height: 1;
-    margin-right: .06rem;
+    margin-right: .06rem*@suiremscale;
   }
 }
 
 .keyboard-numbers {
-  font-size: .48rem;
+  font-size: .48rem*@suiremscale;
   background-color: #FFF;
   > li {
     width: 100%;
@@ -56,7 +56,7 @@
       width: 1%; /* for old android */
       flex: 1;
       color: #222;
-      height: 1rem;
+      height: 1rem*@suiremscale;
       position: relative;
       display: flex;
       justify-content: center;
@@ -73,14 +73,14 @@
       > a:last-child,
       > a:nth-last-child(3) {
         background-color: #F7F7F7;
-        font-size: .3rem;
+        font-size: .3rem*@suiremscale;
         color: #686868;
       }
       > a:last-child {
         &:after {
           font-family: @iconfont-inlay;
           content: '\e609';
-          font-size: .6rem;
+          font-size: .6rem*@suiremscale;
         }
       }
     }
@@ -88,12 +88,12 @@
 }
 
 .keyboard-head {
-  height: .8rem;
+  height: .8rem*@suiremscale;
   display: flex;
   justify-content: center;
   align-items: center;
   color: #1F2324;
-  font-size: .3rem;
+  font-size: .3rem*@suiremscale;
   position: relative;
   &:after {
     .bottom-line(@line-color);
@@ -101,7 +101,7 @@
 }
 
 .keyboard-password {
-  margin: 0 .8rem;
+  margin: 0 .8rem*@suiremscale;
   display: flex;
   position: relative;
   background-color: #FFF;
@@ -123,7 +123,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 1rem;
+    height: 1rem*@suiremscale;
     &:not(:last-child):after {
       content: '';
       width: 1px;
@@ -144,11 +144,11 @@
 }
 
 .keyboard-error {
-  padding: 2px .8rem;
+  padding: 2px .8rem*@suiremscale;
   color: #F00;
   overflow: hidden;
-  height: .5rem;
-  line-height: .5rem;
-  font-size: .24rem;
+  height: .5rem*@suiremscale;
+  line-height: .5rem*@suiremscale;
+  font-size: .24rem*@suiremscale;
   text-align: left;
 }

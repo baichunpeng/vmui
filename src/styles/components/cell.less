@@ -5,7 +5,7 @@
   background-color: #FFF;
   position: relative;
   z-index: 5;
-  margin-bottom: .35rem;
+  margin-bottom: .35rem*@suiremscale;
   &:after {
     .bottom-line(@line-high-color);
   }
@@ -57,7 +57,7 @@
     & + .cell-radio-icon:after,
     & + .cell-checkbox-icon:after {
       font-family: @iconfont-inlay;
-      font-size: .44rem;
+      font-size: .44rem*@suiremscale;
     }
     & + .cell-radio-icon:after {
       content: '\e600';
@@ -107,22 +107,22 @@
     display: block;
     color: @cell-select-color;
     font-size: @cell-select-fontsize;
-    margin-left: -.08rem; /* 去除select默认缩进 */
+    margin-left: -.08rem*@suiremscale; /* 去除select默认缩进 */
   }
 }
 
 .cell-icon {
   display: block;
-  margin-right: .1rem;
+  margin-right: .1rem*@suiremscale;
   img {
-    height: 0.4rem;
+    height: 0.4rem*@suiremscale;
   }
 }
 
 .cell-arrow {
   &:after {
-    margin-left: .05rem;
-    margin-right: -.08rem;
+    margin-left: .05rem*@suiremscale;
+    margin-right: -.08rem*@suiremscale;
     display: block;
     font-family: @iconfont-inlay;
     font-size: @cell-arrow-fontsize;
@@ -132,7 +132,7 @@
 }
 
 .cell-title {
-  padding: 0 @body-padding-vertical .1rem;
+  padding: 0 @body-padding-vertical .1rem*@suiremscale;
   font-size: @cell-title-fontsize;
   text-align: left;
   color: @cell-title-color;

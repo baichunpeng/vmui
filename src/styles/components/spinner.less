@@ -8,9 +8,9 @@
   overflow: hidden;
   > a {
     float: left;
-    width: .6rem;
-    height: .6rem;
-    line-height: .62rem;
+    width: .6rem*@suiremscale;
+    height: .6rem*@suiremscale;
+    line-height: .62rem*@suiremscale;
     text-align: center;
     font-weight: bold;
     color: #666;
@@ -19,7 +19,7 @@
     &:after {
       font-family: @iconfont-inlay;
       color: #777;
-      font-size: .18rem;
+      font-size: .18rem*@suiremscale;
     }
     &:first-child:after {
       content: '\E60B';
@@ -31,13 +31,13 @@
   > input {
     letter-spacing: 0;
     float: left;
-    width: .85rem;
-    height: .6rem;
+    width: .85rem*@suiremscale;
+    height: .6rem*@suiremscale;
     line-height: 2.7;
     text-align: center;
     color: #666;
     border: none;
-    font-size: .26rem;
+    font-size: .26rem*@suiremscale;
     background-color: #FFF;
   }
 }

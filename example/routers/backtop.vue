@@ -3,7 +3,7 @@
 
         <yd-grids-group class="demo-small-pitch">
             <yd-grids-item v-for="item in list">
-                <yd-icon slot="icon" :name="item" color="#FF685D" size=".6rem"></yd-icon>
+                <yd-icon slot="icon" :name="item" color="#FF685D" size="3rem"></yd-icon>
                 <span slot="text">{{item}}</span>
             </yd-grids-item>
         </yd-grids-group>

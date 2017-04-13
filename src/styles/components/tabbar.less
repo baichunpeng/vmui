@@ -7,7 +7,7 @@
   z-index: @base-zindex * 100;
   display: flex;
   align-items: center;
-  padding: .104rem 0 .07rem;
+  padding: .104rem*@suiremscale 0 .07rem*@suiremscale;
   background-color: @tabbar-bg;
   &:after {
     .top-line(@tabbar-border-color);
@@ -38,10 +38,10 @@
 
 .tabbar-badge {
   position: absolute;
-  top: -.02rem;
+  top: -.02rem*@suiremscale;
   left: 100%;
   z-index: 999;
-  margin-left: -.15rem;
+  margin-left: -.15rem*@suiremscale;
 }
 
 .tabbar-dot {
@@ -51,10 +51,10 @@
   background-color: #EF4F4F;
   border-radius: 50%;
   position: absolute;
-  top: .02rem;
+  top: .02rem*@suiremscale;
   left: 100%;
   z-index: 999;
-  margin-left: -.11rem;
+  margin-left: -.11rem*@suiremscale;
 }
 
 .tabbar-icon {

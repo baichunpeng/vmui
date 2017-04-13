@@ -46,7 +46,7 @@
   width: 100%;
   z-index: 2;
   left: 0;
-  bottom: .1rem;
+  bottom: .1rem*@suiremscale;
   pointer-events: none;
   display: flex;
   align-items: flex-end;
@@ -59,11 +59,11 @@
     flex-direction: column;
     bottom: 0;
     left: auto;
-    right: .1rem;
+    right: .1rem*@suiremscale;
     justify-content: center;
   }
   > .slider-pagination-item {
-    margin: .05rem;
+    margin: .05rem*@suiremscale;
     width: 6px;
     height: 6px;
     display: inline-block;

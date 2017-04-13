@@ -31,7 +31,7 @@
                 validator(value) {
                     return /^(\.|\d+\.)?\d+(px|rem)$/.test(value);
                 },
-                default: '.5rem'
+                default: '2rem'
             },
             color: {
                 validator(value) {
@@ -63,7 +63,7 @@
                 validator(value) {
                     return /^(\.|\d+\.)?\d+(px|rem)$/.test(value);
                 },
-                default: '.06rem'
+                default: '.3rem'
             }
         },
         methods: {
