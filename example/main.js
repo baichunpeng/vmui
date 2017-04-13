@@ -2,10 +2,10 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Resource from 'vue-resource';
 // 开发版本
-// import VMUI from '../src/ydui.js';
+import VMUI from '../src/vmui.js';
 // 产出版本
-import VMUI from '../dist/vmui.js';
-import '../dist/vmui.rem.css';
+// import VMUI from '../dist/vmui.js';
+// import '../dist/vmui.rem.css';
 
 import Index from './routers/index.vue';
 import Button from './routers/button.vue';

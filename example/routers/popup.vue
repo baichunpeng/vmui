@@ -8,7 +8,7 @@
             <yd-button size="large" type="danger" @click.native="show4 = true">右侧弹出</yd-button>
         </yd-button-group>
 
-        <yd-popup v-model="show1" position="center" width="90%">
+        <vm-popup v-model="show1" position="center" width="90%">
             <p>
                 我为什么喜欢在京东买东西，因为今天买明天就可以送到。我为什么每个商品的评价都一样，因为在京东买的东西太多太多了，
                 导致积累了很多未评价的订单，所以我统一用段话作为评价内容。京东购物这么久，有买到很好的产品，也有买到比较坑的产品，
@@ -22,19 +22,19 @@
             <p style="text-align: center;">
                 <yd-button @click.native="show1 = false">Close Center Popup</yd-button>
             </p>
-        </yd-popup>
+        </vm-popup>
 
-        <yd-popup v-model="show2" position="bottom" height="60%">
+        <vm-popup v-model="show2" position="bottom" height="60%">
             <yd-button type="warning" style="margin: 30px;" @click.native="show2 = false">Close Bottom Popup</yd-button>
-        </yd-popup>
+        </vm-popup>
 
-        <yd-popup v-model="show3" position="left" width="60%">
+        <vm-popup v-model="show3" position="left" width="60%">
             <yd-button type="danger" style="margin: 30px;" @click.native="show3 = false">Close Left Popup</yd-button>
-        </yd-popup>
+        </vm-popup>
 
-        <yd-popup v-model="show4" position="right">
+        <vm-popup v-model="show4" position="right">
             <yd-button type="danger" style="margin: 30px;" @click.native="show4 = false">Close Right Popup</yd-button>
-        </yd-popup>
+        </vm-popup>
 
     </yd-layout>
 </template>
