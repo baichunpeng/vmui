@@ -1,10 +1,10 @@
 {
   "name": "vmui",
   "description": "A mobile components Library with Vue2.js.",
-  "version": "0.0.4",
-  "author": "ydcss.com",
-  "main": "dist/ydui.js",
-  "style": "dist/ydui.css",
+  "version": "0.0.5",
+  "author": "zhangling.site",
+  "main": "dist/vmui.js",
+  "style": "dist/vmui.css",
   "keywords": [
     "vmui",
     "ui",

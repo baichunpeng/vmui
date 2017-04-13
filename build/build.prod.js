@@ -6,22 +6,22 @@ gulp.task('css:base', function () {
     gulp.src('../src/styles/base.less')
         .pipe(require('gulp-less')())
         .pipe(cleanCss())
-        .pipe(rename('ydui.base.css'))
+        .pipe(rename('vmui.base.css'))
         .pipe(gulp.dest('../dist'));
 });
 
-gulp.task('css:ydui', function () {
-    gulp.src('../dist/ydui.rem.css')
+gulp.task('css:vmui', function () {
+    gulp.src('../dist/vmui.rem.css')
         .pipe(require('ydcss-rem2px')(50))
         .pipe(cleanCss())
-        .pipe(rename('ydui.px.css'))
+        .pipe(rename('vmui.px.css'))
         .pipe(gulp.dest('../dist'));
 });
 
 gulp.task('flexible', function () {
-    gulp.src('../src/ydui.flexible.js')
+    gulp.src('../src/vmui.flexible.js')
         .pipe(require('gulp-uglify')())
         .pipe(gulp.dest('../dist'));
 });
 
-gulp.task('default', ['css:base', 'css:ydui', 'flexible']);
+gulp.task('default', ['css:base', 'css:vmui', 'flexible']);

@@ -1,8 +1,11 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Resource from 'vue-resource';
-
-import YDUI from '../src/ydui.js';
+// 开发版本
+// import VMUI from '../src/ydui.js';
+// 产出版本
+import VMUI from '../dist/vmui.js';
+import '../dist/vmui.rem.css';
 
 import Index from './routers/index.vue';
 import Button from './routers/button.vue';
@@ -38,7 +41,7 @@ import App from './app.vue';
 
 Vue.use(VueRouter);
 Vue.use(Resource);
-Vue.use(YDUI);
+Vue.use(VMUI);
 
 document.addEventListener('DOMContentLoaded', function () {
     typeof FastClick == 'function' && FastClick.attach(document.body);

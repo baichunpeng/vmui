@@ -10,14 +10,14 @@ module.exports = merge(baseWebpackConfig, {
         publicPath: '/dist/',
         filename: "[name].js",
         chunkFilename: "[name].js",
-        library: 'ydui',
+        library: 'vmui',
         libraryTarget: 'umd'
     },
     externals: {
         vue: 'Vue'
     },
     plugins: [
-        new webpack.BannerPlugin(pkg.name + ' v' + pkg.version + ' by YDCSS (c) ' + new Date().getFullYear() + ' Licensed ' + pkg.license),
+        new webpack.BannerPlugin(pkg.name + ' v' + pkg.version + ' by Zhangling (c) ' + new Date().getFullYear()),
         new webpack.optimize.UglifyJsPlugin({compress: {warnings: false}}),
         new webpack.optimize.OccurenceOrderPlugin()
     ]

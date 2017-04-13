@@ -2,7 +2,7 @@
 
 const postcss = require('postcss');
 
-module.exports = postcss.plugin('vue-ydui-rem2px', function (size) {
+module.exports = postcss.plugin('vmui-rem2px', function (size) {
     return function (css, result) {
         const oldCssText = css.toString();
         let newCssText = '';

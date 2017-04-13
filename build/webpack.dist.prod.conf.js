@@ -4,7 +4,7 @@ const distCommonWebpackConfig = require('./webpack.dist.common.conf');
 
 module.exports = merge(distCommonWebpackConfig, {
     entry: {
-        ydui: './src/ydui.js'
+        vmui: './src/vmui.js'
     },
     vue: {
         loaders: {
@@ -12,6 +12,6 @@ module.exports = merge(distCommonWebpackConfig, {
         }
     },
     plugins: [
-        new ExtractTextPlugin('ydui.rem.css')
+        new ExtractTextPlugin('vmui.rem.css')
     ]
 });
