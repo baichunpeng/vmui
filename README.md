@@ -4,10 +4,9 @@
         <img width="200" src="https://vuefe.cn/images/logo.png">
     </a>
     <br>
+    <h1>vmui：基于Vue2.x的移动端组件库</h1>
 </p>
 <br/>
-
-### vmui：基于Vue2.x的移动端组件库。
 
 #### Home: <a href="http://vmui.zhangling.site"> http://vmui.zhangling.site</a>
 
