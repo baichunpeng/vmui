@@ -17,11 +17,12 @@
         data() {
             return {
                 list: [
+                    {icon: 'demo-icons-grids', name: 'Grids', link: '/grids'},
+                    {icon: 'demo-icons-icons', name: 'Icons', link: '/icons'},
                     {icon: 'demo-icons-button', name: 'Button', link: '/button'},
+                    {icon: 'demo-icons-popup', name: 'Popup', link: '/popup'},
                     {icon: 'demo-icons-dialog', name: 'Dialog', link: '/dialog'},
                     {icon: 'demo-icons-cell', name: 'Cell', link: '/cell'},
-                    {icon: 'demo-icons-icons', name: 'Icons', link: '/icons'},
-                    {icon: 'demo-icons-grids', name: 'Grids', link: '/grids'},
                     {icon: 'demo-icons-list', name: 'List', link: '/list'},
                     {icon: 'demo-icons-badge', name: 'Badge', link: '/badge'},
                     {icon: 'demo-icons-tabbar', name: 'AsideBar', link: '/asidebar'},
@@ -36,7 +37,6 @@
                     {icon: 'demo-icons-countup', name: 'CountUp', link: '/countup'},
                     {icon: 'demo-icons-rate', name: 'Rate', link: '/rate'},
                     {icon: 'demo-icons-countdown', name: 'CountDown', link: '/countdown'},
-                    {icon: 'demo-icons-popup', name: 'Popup', link: '/popup'},
                 ]
             }
         }
