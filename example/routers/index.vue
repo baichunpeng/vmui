@@ -1,7 +1,7 @@
 <template>
     <yd-layout>
         <h1 class="demo-logo"><img src="http://static.ydcss.com/ydui/img/logo.png"></h1>
-        <h2 class="demo-detail-title">VMUI<br>基于Vue2.x的移动端UI</h2>
+        <h2 class="demo-detail-title">VMUI<br>基于Vue2.x的移动端UI组件库</h2>
 
         <yd-grids-group rows="4">
             <yd-grids-item v-for="item in list" :link="item.link">
