@@ -4,7 +4,7 @@
         <img width="200" src="https://vuefe.cn/images/logo.png">
     </a>
     <br>
-    <h2 align="center">vmui：基于Vue2.x的移动端组件库</h2>
+    <h1 align="center">Vmui：基于Vue2.x的移动端组件库</h1>
 </p>
 <br/>
 
