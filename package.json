@@ -1,14 +1,13 @@
 {
-  "name": "vue-ydui",
+  "name": "vmui",
   "description": "A mobile components Library with Vue2.js.",
-  "version": "0.4.6",
+  "version": "0.0.4",
   "author": "ydcss.com",
   "main": "dist/ydui.js",
   "style": "dist/ydui.css",
   "keywords": [
     "vmui",
     "ui",
-    "ydui",
     "vue",
     "vue.js",
     "vue2.js",
@@ -23,10 +22,10 @@
   "files": [
     "dist"
   ],
-  "homepage": "http://vue.ydui.org",
+  "homepage": "http://vmui.zhangling.site",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ydcss/vue-ydui.git"
+    "url": "http://git.meiwan.me/zhangl/vmui.git"
   },
   "scripts": {
     "dev": "webpack-dev-server --content-base example/ --port 4321 --inline --hot --host 0.0.0.0 --config build/webpack.dev.conf.js",
