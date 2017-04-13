@@ -1,6 +1,6 @@
 /**
  * YDUI 可伸缩布局方案
- * rem计算方式：设计图尺寸px / 100 = 实际rem  例: 100px = 1rem
+ * rem计算方式：设计图尺寸px / 20 = 实际rem  例: 100px = 5rem
  */
 !function (window) {
 
@@ -15,7 +15,7 @@
         var clientWidth = docEl.getBoundingClientRect().width;
 
         /* 8.55：小于320px不再缩小，11.2：大于420px不再放大 */
-        docEl.style.fontSize = Math.max(Math.min(20 * (clientWidth / docWidth), 11.2), 8.55) * 5 + 'px';
+        docEl.style.fontSize = Math.max(Math.min(20 * (clientWidth / docWidth), 11.2), 8.55) + 'px';
 
         return refreshRem;
     })();

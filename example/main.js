@@ -7,6 +7,8 @@ import VMUI from '../src/vmui.js';
 // import VMUI from '../dist/vmui.js';
 // import '../dist/vmui.rem.css';
 
+import '../src/vmui.flexible.js';
+
 import Index from './routers/index.vue';
 import Button from './routers/button.vue';
 import Dialog from './routers/dialog.vue';

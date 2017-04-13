@@ -1,21 +1,24 @@
 //微软雅黑字体
 @FONT-YAHEI: \5fae\8f6f\96c5\9ed1;
 
+// scale rem to adapt sui
+@suiremscale: 5;
+
 .demo-logo {
   text-align: center;
   img {
     display: inline-block;
-    height: 1.8rem;
-    padding: .5rem 0 .4rem;
+    height: 1.8rem*@suiremscale;
+    padding: .5rem*@suiremscale 0 .4rem*@suiremscale;
   }
 }
 
 .demo-detail-title {
   color: #888;
-  font-size: .28rem;
-  margin-bottom: .5rem;
+  font-size: 0.28rem*@suiremscale;
+  margin-bottom: 0.5rem*@suiremscale;
   font-weight: normal;
-  line-height: 0.42rem;
+  line-height: 0.42rem*@suiremscale;
   text-align: center;
 }
 
@@ -31,8 +34,8 @@
       height: 100%;
     }
     img {
-      width: .6rem;
-      height: .6rem;
+      width: .6rem*@suiremscale;
+      height: .6rem*@suiremscale;
       display: inline-block;
     }
   }
@@ -40,15 +43,15 @@
 
 .demo-tip {
   color: #B1B1B1;
-  font-size: .24rem;
-  padding: .2rem .24rem .4rem;
+  font-size: .24rem*@suiremscale;
+  padding: .2rem*@suiremscale .24rem*@suiremscale .4rem*@suiremscale;
   line-height: 18px;
   font-family: @FONT-YAHEI;
   position: relative;
   &:after {
     content: '';
     position: absolute;
-    bottom: .2rem;
+    bottom: .2rem*@suiremscale;
     left: 0;
     width: 100%;
     border-bottom: 1px dashed #B2B2B2;
@@ -66,10 +69,10 @@
 .demo-upload {
   overflow: hidden;
   li {
-    width: 1rem;
-    height: 1rem;
+    width: 1rem*@suiremscale;
+    height: 1rem*@suiremscale;
     float: left;
-    margin-right: 0.2rem;
+    margin-right: 0.2rem*@suiremscale;
     &:last-child {
       margin-right: 0;
     }
@@ -77,15 +80,15 @@
 }
 
 .demo-upload-big {
-  width: 2rem;
-  height: 2rem;
-  margin-top: 0.4rem;
+  width: 2rem*@suiremscale;
+  height: 2rem*@suiremscale;
+  margin-top: 0.4rem*@suiremscale;
 }
 
 .demo-upload-rectangle {
-  width: 4rem;
-  height: 2rem;
-  margin-top: 0.4rem;
+  width: 4rem*@suiremscale;
+  height: 2rem*@suiremscale;
+  margin-top: 0.4rem*@suiremscale;
 }
 
 .demo-components {
@@ -99,55 +102,55 @@
   li {
     float: left;
     img {
-      width: 1rem;
-      height: 1rem;
-      margin-right: .2rem;
+      width: 1rem*@suiremscale;
+      height: 1rem*@suiremscale;
+      margin-right: .2rem*@suiremscale;
     }
   }
 }
 
 .demo-pitch {
-  margin-top: .5rem;
+  margin-top: .5rem*@suiremscale;
 }
 
 .demo-small-pitch {
-  margin-top: .35rem;
+  margin-top: .35rem*@suiremscale;
 }
 
 .demo-progressbar {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 0 .24rem;
+  padding: 0 .24rem*@suiremscale;
 }
 
 .demo-spinner {
   background-color: #FFF;
-  padding: .24rem;
+  padding: .24rem*@suiremscale;
 }
 
 .demo-spinner-tip {
-  font-size: .3rem;
+  font-size: .3rem*@suiremscale;
   display: inline-block;
   vertical-align: top;
   color: #999;
-  margin-left: .2rem;
+  margin-left: .2rem*@suiremscale;
 }
 
 .demo-spinner-title {
-  font-size: .26rem;
+  font-size: .26rem*@suiremscale;
   color: #888;
   display: block;
-  margin-bottom: .1rem;
+  margin-bottom: .1rem*@suiremscale;
 }
 
 .demo-badege {
-  padding: 0 .24rem .5rem .24rem;
+  padding: 0 .24rem*@suiremscale .5rem*@suiremscale .24rem*@suiremscale;
   background-color: #FFF;
   .demo-badege-title {
-    font-size: .26rem;
-    padding-top: .5rem;
-    padding-bottom: .15rem;
+    font-size: .26rem*@suiremscale;
+    padding-top: .5rem*@suiremscale;
+    padding-bottom: .15rem*@suiremscale;
     color: #777;
     position: relative;
     &:after {
@@ -165,13 +168,13 @@
     }
   }
   .badge {
-    margin-right: .1rem;
+    margin-right: .1rem*@suiremscale;
   }
 }
 
 .demo-icons {
   [class^="icon-"]:before, [class*=" icon-"]:before {
-    font-size: .6rem;
+    font-size: .6rem*@suiremscale;
     color: #FF685D;
   }
 }
@@ -181,8 +184,8 @@
 }
 
 .demo-progress-cricle {
-  width: 2rem;
-  height: 2rem;
+  width: 2rem*@suiremscale;
+  height: 2rem*@suiremscale;
 }
 
 .nav-center .nav-title {
@@ -198,7 +201,7 @@
 
 [class^="demo-icons-"]:before, [class*=" demo-icons-"]:before {
   font-family: @demo-icons;
-  font-size: .54rem;
+  font-size: .54rem*@suiremscale;
 }
 
 .demo-icons-weixin:before {
@@ -220,24 +223,24 @@
 .demo-icons-phone:before {
   content: '\e60e';
   color: #A6A5A5;
-  font-size: .42rem;
+  font-size: .42rem*@suiremscale;
 }
 
 .demo-icons-tel:before {
   content: '\e616';
   color: #A6A5A5;
-  font-size: .42rem;
+  font-size: .42rem*@suiremscale;
 }
 
 .demo-icons-like:before {
   content: '\e60d';
   color: #A6A5A5;
-  font-size: .42rem;
+  font-size: .42rem*@suiremscale;
 }
 
 .demo-icons-order:before {
   content: '\e60f';
-  font-size: .42rem;
+  font-size: .42rem*@suiremscale;
   color: #A6A5A5;
 }
 
@@ -355,7 +358,7 @@
 
 [class^="demo-icons-category"]:before, [class*=" demo-icons-category"]:before {
   font-family: @demo-category-icons;
-  font-size: .48rem;
+  font-size: .48rem*@suiremscale;
   color: #5B5D5C;
 }
 
@@ -392,7 +395,7 @@
 }
 
 .demo-countdown {
-  font-size: .24rem;
+  font-size: .24rem*@suiremscale;
   span span {
     font-size: 20px;
   }
@@ -401,7 +404,7 @@
     background-color: #CCC;
     margin-right: 2px;
     padding: 2px;
-    font-size: .34rem;
+    font-size: .34rem*@suiremscale;
   }
   i {
     font-size: 12px;
