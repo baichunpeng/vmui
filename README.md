@@ -12,7 +12,7 @@
 
 #### Docs: <a href="http://vmui.zhangling.site/docs"> http://vmui.zhangling.site/docs</a>
 
-#### Blog: <a href="http://blog.zhangling.site"> http://www.ydcss.com</a>
+#### Blog: <a href="http://blog.zhangling.site"> http://blog.zhangling.site</a>
 
 #### Demo：请用扫码查看
 <img width="180" height="180" src="vmui.zhangling.site/img/qrcode.jpg" />
