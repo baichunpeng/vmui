@@ -1,13 +1,13 @@
 <p align="center">
     <br>
     <a href="//vmui.zhangling.site">
-        <img width="200" src="http://static.ydcss.com/ydui/img/logo.png">
+        <img width="200" src="http://vmui.zhangling.site/img/logo.png">
     </a>
     <br>
 </p>
 <br/>
 
-#### 基于Vue2.x的移动端组件库。 -vmui
+#### vmui：基于Vue2.x的移动端组件库。
 
 Home: <a href="http://vmui.zhangling.site"> http://vmui.zhangling.site</a>
 
@@ -15,7 +15,7 @@ Docs: <a href="http://vmui.zhangling.site/docs"> http://vmui.zhangling.site/docs
 
 Blog: <a href="http://Blog.zhangling.site"> http://www.ydcss.com</a>
 
-#### 请用扫码查看
+#### Demo：请用扫码查看
 <img width="180" height="180" src="vmui.zhangling.site/img/qrcode.jpg" />
 
 <!-- #### 参考、使用的项目
