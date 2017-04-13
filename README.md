@@ -1,7 +1,7 @@
 <p align="center">
     <br>
     <a href="//vmui.zhangling.site">
-        <img width="200" src="http://vmui.zhangling.site/img/logo.png">
+        <img width="200" src="https://vuefe.cn/images/logo.png">
     </a>
     <br>
 </p>
