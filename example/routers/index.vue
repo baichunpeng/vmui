@@ -21,6 +21,7 @@
                     {icon: 'demo-icons-icons', name: 'Icons', link: '/icons'},
                     {icon: 'demo-icons-button', name: 'Button', link: '/button'},
                     {icon: 'demo-icons-popup', name: 'Popup', link: '/popup'},
+                    {icon: 'demo-icons-backtop', name: 'BackTop', link: '/backtop'},
                     {icon: 'demo-icons-dialog', name: 'Dialog', link: '/dialog'},
                     {icon: 'demo-icons-cell', name: 'Cell', link: '/cell'},
                     {icon: 'demo-icons-list', name: 'List', link: '/list'},

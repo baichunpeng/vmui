@@ -28,6 +28,7 @@ import {Rate} from './components/rate';
 import {TextArea} from './components/textarea';
 import {Popup} from './components/popup';
 import {CountUp} from './components/countup';
+import {BackTop} from './components/backtop';
 
 window.document.addEventListener('touchstart', function (event) {
     /* Do Nothing */
@@ -72,6 +73,7 @@ const install = function (Vue) {
     Vue.component(TextArea.name, TextArea);
     Vue.component(Popup.name, Popup);
     Vue.component(CountUp.name, CountUp);
+    Vue.component(BackTop.name, BackTop);
 
     Vue.prototype.$dialog = {
         confirm: Confirm,
