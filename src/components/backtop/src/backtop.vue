@@ -86,9 +86,9 @@ export default {
 	position: fixed;
 	right: 0;
 	bottom: 10%;
-	width: 3.6rem;
-	height: 3.6rem;
-	right: 2.8rem;
+	width: 1.8rem;
+	height: 1.8rem;
+	right: 1.4rem;
 	img {
 		width: 100%;
 		height: 100%;

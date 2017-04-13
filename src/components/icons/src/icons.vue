@@ -19,7 +19,7 @@
                 validator(value) {
                     return /^(\.|\d+\.)?\d+(px|rem)$/.test(value);
                 },
-                default: '3rem'
+                default: '1.5rem'
             }
         },
         computed: {
