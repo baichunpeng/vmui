@@ -1,5 +1,5 @@
 <template>
-	<section class="g-flexview">
+	<section class="vm-flexview">
 		<slot name="navbar" v-if="showNavbar">
 			<yd-navbar :title="title" v-if="!!title">
 				<router-link :to="link || '/'" slot="left">
@@ -8,7 +8,7 @@
 			</yd-navbar>
 		</slot>
 
-		<section class="g-scrollview" ref="scrollView">
+		<section class="vm-scrollview" ref="scrollView">
 			<slot></slot>
 		</section>
 
@@ -51,7 +51,7 @@
 	}
 }
 
-.g-flexview {
+.vm-flexview {
 	height: 100%;
 	display: flex;
 	flex-direction: column;
@@ -60,7 +60,7 @@
 	min-width: @min-width;
 }
 
-.g-scrollview {
+.vm-scrollview {
 	width: 100%;
 	height: 100%;
 	flex: 1;
@@ -77,11 +77,11 @@
 	}
 }
 
-.ios .g-scrollview {
+.ios .vm-scrollview {
  	margin-top: 1px;
 }
 
-.hairline .g-scrollview {
+.hairline .vm-scrollview {
  	margin-top: 0.5px;
 }
 </style>
