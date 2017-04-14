@@ -22,8 +22,8 @@
 }
 
 .scrolltab-item {
-  padding: 0 .3rem;
-  height: 1rem;
+  padding: 0 .3rem*@suiremscale;
+  height: 1rem*@suiremscale;
   display: flex;
   align-items: center;
   position: relative;
@@ -49,24 +49,24 @@
 }
 
 .scrolltab-icon {
-  margin-right: .2rem;
-  font-size: .32rem;
+  margin-right: .2rem*@suiremscale;
+  font-size: .32rem*@suiremscale;
   display: flex;
   align-items: center;
   justify-content: center;
   > img {
-    height: .4rem;
+    height: .4rem*@suiremscale;
     display: inline-block;
   }
 }
 
 .scrolltab-title {
-  font-size: .3rem;
+  font-size: .3rem*@suiremscale;
   color: #666;
   overflow-x: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  max-width: 1.6rem;
+  max-width: 1.6rem*@suiremscale;
 }
 
 .scrolltab-content {
@@ -75,18 +75,18 @@
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   flex: 1;
-  padding: 0 .24rem .24rem .24rem;
+  padding: 0 .24rem*@suiremscale .24rem*@suiremscale .24rem*@suiremscale;
   position: relative;
 }
 
 .scrolltab-content-title {
-  font-size: .3rem;
+  font-size: .3rem*@suiremscale;
   font-weight: normal;
   color: #555;
   display: block;
-  padding-bottom: .1rem;
-  padding-top: .32rem;
-  margin-bottom: .2rem;
+  padding-bottom: .1rem*@suiremscale;
+  padding-top: .32rem*@suiremscale;
+  margin-bottom: .2rem*@suiremscale;
   position: relative;
   z-index: 1;
   &:after {
