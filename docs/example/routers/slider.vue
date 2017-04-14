@@ -1,5 +1,5 @@
 <template>
-    <yd-layout title="Slider">
+    <vm-layout title="Slider">
         <div class="demo-small-pitch">
 
             <yd-slider autoplay="3000">
@@ -21,5 +21,5 @@
             </yd-slider>
 
         </div>
-    </yd-layout>
+    </vm-layout>
 </template>

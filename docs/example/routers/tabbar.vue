@@ -1,5 +1,5 @@
 <template>
-    <yd-layout>
+    <vm-layout>
         <yd-navbar slot="navbar" title="TabBar">
             <router-link to="/asidebar" slot="left">
                 <yd-navbar-back-icon></yd-navbar-back-icon>
@@ -53,5 +53,5 @@
             </yd-tabbar-item>
         </yd-tabbar>
 
-    </yd-layout>
+    </vm-layout>
 </template>

@@ -1,5 +1,5 @@
 <template>
-    <yd-layout title="Dialog">
+    <vm-layout title="Dialog">
 
         <yd-button-group>
 
@@ -21,7 +21,7 @@
 
         </yd-button-group>
 
-    </yd-layout>
+    </vm-layout>
 </template>
 
 <script type="text/babel">

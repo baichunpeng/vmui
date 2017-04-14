@@ -1,5 +1,5 @@
 <template>
-    <yd-layout title="SendCode">
+    <vm-layout title="SendCode">
         <yd-cell-group class="demo-small-pitch">
             <yd-cell-item>
                 <i slot="icon" class="demo-icons-phone"></i>
@@ -23,7 +23,7 @@
                 type="primary"
             ></yd-sendcode>
         </yd-button-group>
-    </yd-layout>
+    </vm-layout>
 </template>
 
 <script type="text/babel">

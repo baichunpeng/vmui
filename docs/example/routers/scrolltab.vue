@@ -1,5 +1,5 @@
 <template>
-    <yd-layout>
+    <vm-layout>
         <yd-navbar slot="navbar" title="ScrollTab">
             <router-link to="/tabs" slot="left">
                 <yd-navbar-back-icon></yd-navbar-back-icon>
@@ -40,5 +40,5 @@
             </yd-scrolltab-panel>
         </yd-scrolltab>
 
-    </yd-layout>
+    </vm-layout>
 </template>

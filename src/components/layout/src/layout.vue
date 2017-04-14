@@ -1,35 +1,87 @@
 <template>
-    <section class="g-flexview">
-        <slot name="navbar" v-if="showNavbar">
-            <yd-navbar :title="title" v-if="!!title">
-                <router-link :to="link || '/'" slot="left">
-                    <yd-navbar-back-icon></yd-navbar-back-icon>
-                </router-link>
-            </yd-navbar>
-        </slot>
+	<section class="g-flexview">
+		<slot name="navbar" v-if="showNavbar">
+			<yd-navbar :title="title" v-if="!!title">
+				<router-link :to="link || '/'" slot="left">
+					<yd-navbar-back-icon></yd-navbar-back-icon>
+				</router-link>
+			</yd-navbar>
+		</slot>
 
-        <section class="g-scrollview" ref="scrollView">
-            <slot></slot>
-        </section>
+		<section class="g-scrollview" ref="scrollView">
+			<slot></slot>
+		</section>
 
-        <slot name="tabbar"></slot>
-    </section>
+		<slot name="tabbar"></slot>
+	</section>
 </template>
 
 <script type="text/babel">
-    export default {
-        name: 'yd-layout',
-        props: {
-            link: String,
-            title: String,
-            showNavbar: {
-                type: Boolean,
-                default: true
-            }
-        }
-    }
+	export default {
+		name: 'vm-layout',
+		props: {
+			link: String,
+			title: String,
+			showNavbar: {
+				type: Boolean,
+				default: true
+			}
+		}
+	}
 </script>
 
 <style lang="less">
-    @import "../../../styles/components/layout.less";
+@import "../../../styles/variables";
+
+.g-view {
+	margin: 0 auto;
+	max-width: @max-width;
+	min-width: @min-width;
+	&:before {
+		content: '';
+		display: block;
+		width: 100%;
+		height: @navbar-height;
+	}
+	&:after {
+		content: '';
+		display: block;
+		width: 100%;
+		height: @body-padding-bottom * 3;
+	}
+}
+
+.g-flexview {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+	max-width: @max-width;
+	min-width: @min-width;
+}
+
+.g-scrollview {
+	width: 100%;
+	height: 100%;
+	flex: 1;
+	overflow-y: auto;
+	overflow-x: hidden;
+	-webkit-overflow-scrolling: touch;
+	position: relative;
+	margin-bottom: -1px;
+	&:after {
+		content: '';
+		display: block;
+		width: 100%;
+		height: @body-padding-bottom;
+	}
+}
+
+.ios .g-scrollview {
+ 	margin-top: 1px;
+}
+
+.hairline .g-scrollview {
+ 	margin-top: 0.5px;
+}
 </style>

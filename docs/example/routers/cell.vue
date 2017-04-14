@@ -1,6 +1,6 @@
 <template>
 
-    <yd-layout title="Cell">
+    <vm-layout title="Cell">
 
         <yd-cell-group class="demo-small-pitch">
             <yd-cell-item>
@@ -127,7 +127,7 @@
             </yd-cell-item>
         </yd-cell-group>
 
-    </yd-layout>
+    </vm-layout>
 
 </template>
 

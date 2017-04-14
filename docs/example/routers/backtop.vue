@@ -1,5 +1,5 @@
 <template>
-    <yd-layout title="Icons">
+    <vm-layout title="Icons">
 
         <vm-grids-group class="demo-small-pitch">
             <vm-grids-item v-for="item in list">
@@ -9,7 +9,7 @@
         </vm-grids-group>
         <vm-backtop content=".g-scrollview"></vm-backtop>
 
-    </yd-layout>
+    </vm-layout>
 </template>
 
 <script type="text/babel">

@@ -1,5 +1,5 @@
 <template>
-    <yd-layout>
+    <vm-layout>
         <yd-navbar slot="navbar" :title="title">
             <router-link to="/list" slot="left">
                 <yd-navbar-back-icon></yd-navbar-back-icon>
@@ -20,7 +20,7 @@
             </yd-list-item>
         </yd-list>
 
-    </yd-layout>
+    </vm-layout>
 </template>
 
 <script type="text/babel">

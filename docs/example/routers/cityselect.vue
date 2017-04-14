@@ -1,5 +1,5 @@
 <template>
-    <yd-layout title="CitySelect">
+    <vm-layout title="CitySelect">
 
         <yd-cell-group title="默认调用" class="demo-small-pitch">
             <yd-cell-item arrow>
@@ -19,7 +19,7 @@
 
         <yd-cityselect v-model="show2" :done="result2" provance="新疆" city="乌鲁木齐市" area="天山区"></yd-cityselect>
 
-    </yd-layout>
+    </vm-layout>
 </template>
 
 <script type="text/babel">

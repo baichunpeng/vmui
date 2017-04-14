@@ -1,5 +1,5 @@
 <template>
-    <yd-layout title="Icons">
+    <vm-layout title="Icons">
 
         <vm-grids-group class="demo-small-pitch">
             <vm-grids-item v-for="item in list">
@@ -8,7 +8,7 @@
             </vm-grids-item>
         </vm-grids-group>
 
-    </yd-layout>
+    </vm-layout>
 </template>
 
 <script type="text/babel">

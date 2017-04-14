@@ -1,5 +1,5 @@
 <template>
-    <yd-layout title="Spinner">
+    <vm-layout title="Spinner">
         <aside class="demo-tip">
             <p>Spinner 支持长按快速加减，不支持小数加减；</p>
         </aside>
@@ -40,7 +40,7 @@
             <span class="demo-spinner-tip">[model: spinner6 = <strong>{{spinner6}}</strong>]</span>
         </div>
 
-    </yd-layout>
+    </vm-layout>
 </template>
 
 <script type="text/babel">

@@ -1,5 +1,5 @@
 <template>
-    <yd-layout title="Badge">
+    <vm-layout title="Badge">
         <aside class="demo-tip">
             <p>badge包含默认圆形样式和方形样式</p>
             <p>五中颜色：default/primary/danger/warning/hollow</p>
@@ -44,5 +44,5 @@
 
         </div>
 
-    </yd-layout>
+    </vm-layout>
 </template>

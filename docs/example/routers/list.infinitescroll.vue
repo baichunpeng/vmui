@@ -1,5 +1,5 @@
 <template>
-    <yd-layout>
+    <vm-layout>
 
         <yd-navbar slot="navbar" title="InfiniteScroll">
             <router-link to="/list" slot="left">
@@ -31,7 +31,7 @@
 
         </yd-infinitescroll>
 
-    </yd-layout>
+    </vm-layout>
 </template>
 
 <script type="text/babel">

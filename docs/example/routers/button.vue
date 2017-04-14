@@ -1,5 +1,5 @@
 <template>
-    <yd-layout title="Button">
+    <vm-layout title="Button">
 
         <yd-button-group class="demo-pitch">
 
@@ -17,5 +17,5 @@
 
         </yd-button-group>
 
-    </yd-layout>
+    </vm-layout>
 </template>

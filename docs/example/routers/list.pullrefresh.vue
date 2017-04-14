@@ -1,5 +1,5 @@
 <template>
-    <yd-layout>
+    <vm-layout>
         <yd-navbar slot="navbar" title="PullRefresh">
             <router-link to="/list" slot="left">
                 <yd-navbar-back-icon></yd-navbar-back-icon>
@@ -23,7 +23,7 @@
             </yd-list>
 
         </yd-pullrefresh>
-    </yd-layout>
+    </vm-layout>
 </template>
 
 <script type="text/babel">

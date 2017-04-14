@@ -1,5 +1,5 @@
 <template>
-    <yd-layout title="Popup">
+    <vm-layout title="Popup">
 
         <yd-button-group>
             <yd-button size="large" type="primary" @click.native="show1 = true">中间弹出</yd-button>
@@ -29,7 +29,7 @@
             <yd-button type="danger" style="margin: 30px;" @click.native="show4 = false">Close Right Popup</yd-button>
         </vm-popup>
 
-    </yd-layout>
+    </vm-layout>
 </template>
 
 <script type="text/babel">

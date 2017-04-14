@@ -1,5 +1,5 @@
 <template>
-    <yd-layout>
+    <vm-layout>
         <h1 class="demo-logo"><img src="http://static.ydcss.com/ydui/img/logo.png"></h1>
         <h2 class="demo-detail-title">VMUI<br>基于Vue2.x的移动端UI组件库</h2>
 
@@ -9,7 +9,7 @@
                 <span slot="text">{{item.name}}</span>
             </vm-grids-item>
         </vm-grids-group>
-    </yd-layout>
+    </vm-layout>
 </template>
 
 <script type="text/babel">

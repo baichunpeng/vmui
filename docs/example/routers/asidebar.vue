@@ -1,5 +1,5 @@
 <template>
-    <yd-layout title="AsideBar">
+    <vm-layout title="AsideBar">
 
         <yd-cell-group>
             <yd-cell-item arrow type="link" href="/navbar">
@@ -10,5 +10,5 @@
             </yd-cell-item>
         </yd-cell-group>
 
-    </yd-layout>
+    </vm-layout>
 </template>

@@ -1,5 +1,5 @@
 <template>
-    <yd-layout title="ActionSheet">
+    <vm-layout title="ActionSheet">
 
         <yd-button-group>
             <yd-button @click.native="show1 = true" size="large">带取消</yd-button>
@@ -10,7 +10,7 @@
 
         <yd-actionsheet :items="myItems2" v-model="show2"></yd-actionsheet>
 
-    </yd-layout>
+    </vm-layout>
 </template>
 
 <script type="text/babel">

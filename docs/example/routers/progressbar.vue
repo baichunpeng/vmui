@@ -1,5 +1,5 @@
 <template>
-    <yd-layout title="ProgressBar">
+    <vm-layout title="ProgressBar">
         <div class="demo-progressbar demo-pitch">
             <div class="demo-progress-cricle">
                 <!-- 代码部分start -->
@@ -42,7 +42,7 @@
         <yd-button-group>
             <yd-button size="large" type="hollow" @click.native="progress2 = 0.8">手动设置右圈为80%</yd-button>
         </yd-button-group>
-    </yd-layout>
+    </vm-layout>
 </template>
 
 <script type="text/babel">

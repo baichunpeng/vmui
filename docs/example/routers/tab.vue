@@ -1,5 +1,5 @@
 <template>
-    <yd-layout>
+    <vm-layout>
         <yd-navbar slot="navbar" title="Tab">
             <router-link to="/tabs" slot="left">
                 <yd-navbar-back-icon></yd-navbar-back-icon>
@@ -20,5 +20,5 @@
             <yd-tab-panel label="选项四">444444</yd-tab-panel>
         </yd-tab>
 
-    </yd-layout>
+    </vm-layout>
 </template>

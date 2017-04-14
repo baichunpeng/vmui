@@ -1,5 +1,5 @@
 <template>
-    <yd-layout title="CountUp">
+    <vm-layout title="CountUp">
 
         <yd-cell-group class="demo-small-pitch">
 
@@ -82,7 +82,7 @@
             </yd-cell-item>
 
         </yd-cell-group>
-    </yd-layout>
+    </vm-layout>
 </template>
 
 <script type="text/babel">

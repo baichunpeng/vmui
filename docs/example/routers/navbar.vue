@@ -1,5 +1,5 @@
 <template>
-    <yd-layout>
+    <vm-layout>
 
         <yd-navbar slot="navbar" title="NavBar">
             <router-link to="/asidebar" slot="left">
@@ -47,5 +47,5 @@
             </router-link>
         </yd-navbar>
 
-    </yd-layout>
+    </vm-layout>
 </template>

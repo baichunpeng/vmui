@@ -1,5 +1,5 @@
 <template>
-    <yd-layout title="KeyBoard">
+    <vm-layout title="KeyBoard">
 
         <yd-button-group>
             <yd-button size="large" type="primary" @click.native="show1 = true">打开</yd-button>
@@ -9,7 +9,7 @@
         <yd-keyboard v-model="show1" :input-done="done1"></yd-keyboard>
 
         <yd-keyboard v-model="show2" :input-done="done2" disorder></yd-keyboard>
-    </yd-layout>
+    </vm-layout>
 </template>
 
 <script type="text/babel">

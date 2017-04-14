@@ -1,5 +1,5 @@
 <template>
-    <yd-layout title="CountDown">
+    <vm-layout title="CountDown">
 
         <yd-cell-group title="普通调用" class="demo-small-pitch">
             <yd-cell-item>
@@ -33,5 +33,5 @@
             </yd-cell-item>
         </yd-cell-group>
 
-    </yd-layout>
+    </vm-layout>
 </template>

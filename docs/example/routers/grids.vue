@@ -1,5 +1,5 @@
 <template>
-    <yd-layout title="Grids">
+    <vm-layout title="Grids">
 
         <vm-grids-group :rows="2" title="等分2列(带图标)">
             <vm-grids-item>
@@ -30,5 +30,5 @@
             </vm-grids-item>
         </vm-grids-group>
 
-    </yd-layout>
+    </vm-layout>
 </template>

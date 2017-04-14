@@ -1,5 +1,5 @@
 <template>
-    <yd-layout title="Rate">
+    <vm-layout title="Rate">
         <yd-cell-group title="普通使用" class="demo-small-pitch">
             <yd-cell-item>
                 <yd-rate slot="left" v-model="rate1"></yd-rate>
@@ -37,7 +37,7 @@
                 <span slot="right">HTML提示模板</span>
             </yd-cell-item>
         </yd-cell-group>
-    </yd-layout>
+    </vm-layout>
 </template>
 
 <script type="text/babel">
