@@ -30,7 +30,7 @@
 @import "../../../styles/common/variables";
 @import "../../../styles/common/mixins";
 
-.m-grids() {
+.vm-grids() {
   overflow: hidden;
   position: relative;
   background-color: @grids-bg;
@@ -39,8 +39,8 @@
   }
 }
 
-.m-grids-2 {
-  .m-grids();
+.vm-grids-2 {
+  .vm-grids();
   .grids-item {
     width: 50%;
     &:not(:nth-child(2n)):before {
@@ -49,8 +49,8 @@
   }
 }
 
-.m-grids-3 {
-  .m-grids();
+.vm-grids-3 {
+  .vm-grids();
   .grids-item {
     width: 33.333333%;
     &:not(:nth-child(3n)):before {
@@ -59,8 +59,8 @@
   }
 }
 
-.m-grids-4 {
-  .m-grids();
+.vm-grids-4 {
+  .vm-grids();
   .grids-item {
     width: 25%;
     &:not(:nth-child(4n)):before {
@@ -69,8 +69,8 @@
   }
 }
 
-.m-grids-5 {
-  .m-grids();
+.vm-grids-5 {
+  .vm-grids();
   .grids-item {
     width: 20%;
     &:not(:nth-child(5n)):before {
@@ -112,7 +112,7 @@
   padding: 0 .2rem*@suiremscale;
 }
 
-.m-gridstitle {
+.vm-gridstitle {
   padding: .15rem*@suiremscale + .2rem*@suiremscale @body-padding-vertical .1rem*@suiremscale;
   font-size: @cell-title-fontsize;
   text-align: left;
