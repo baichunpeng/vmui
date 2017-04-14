@@ -9,7 +9,7 @@
 
 <script type="text/babel">
     export default{
-        name: 'yd-grids-group',
+        name: 'vm-grids-group',
         props: {
             rows: {
                 validator(value) {

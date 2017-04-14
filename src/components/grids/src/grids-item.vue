@@ -11,7 +11,7 @@
 
 <script type="text/babel">
     export default {
-        name: 'yd-grids-item',
+        name: 'vm-grids-item',
         props: {
             link: String
         },

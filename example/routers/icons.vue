@@ -1,12 +1,12 @@
 <template>
     <yd-layout title="Icons">
 
-        <yd-grids-group class="demo-small-pitch">
-            <yd-grids-item v-for="item in list">
+        <vm-grids-group class="demo-small-pitch">
+            <vm-grids-item v-for="item in list">
                 <yd-icon slot="icon" :name="item" color="#FF685D" size="1.5rem"></yd-icon>
                 <span slot="text">{{item}}</span>
-            </yd-grids-item>
-        </yd-grids-group>
+            </vm-grids-item>
+        </vm-grids-group>
 
     </yd-layout>
 </template>
