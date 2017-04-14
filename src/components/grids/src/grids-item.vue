@@ -27,8 +27,7 @@
 </script>
 
 <style lang="less">
-@import "../../../styles/common/variables";
-@import "../../../styles/common/mixins";
+@import "../../../styles/vm";
 
 .vm-grids() {
   overflow: hidden;
