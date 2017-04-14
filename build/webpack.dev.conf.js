@@ -5,7 +5,7 @@ const baseWebpackConfig = require('./base.conf');
 
 module.exports = merge(baseWebpackConfig, {
     entry: {
-        main: './example/main.js',
+        main: './docs/example/main.js',
         vendors: ['vue', 'vue-router']
     },
     output: {

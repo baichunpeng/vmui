@@ -2,8 +2,8 @@ var gulp = require('gulp');
 var cleanCss = require('gulp-clean-css');
 var rename = require('gulp-rename');
 
-gulp.task('css:base', function () {
-    gulp.src('../src/styles/base.less')
+gulp.task('css:vm', function () {
+    gulp.src('../src/styles/vm.less')
         .pipe(require('gulp-less')())
         .pipe(cleanCss())
         .pipe(rename('vmui.base.css'))
@@ -24,4 +24,4 @@ gulp.task('flexible', function () {
         .pipe(gulp.dest('../dist'));
 });
 
-gulp.task('default', ['css:base', 'css:vmui', 'flexible']);
+gulp.task('default', ['css:vm', 'css:vmui', 'flexible']);
