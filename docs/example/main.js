@@ -91,12 +91,14 @@ const app = new Vue({
 }).$mount('#app');
 
 // fix ios wechat webview scroll bug
-function stopDrop() {
+(() => {
     var lastY;//最后一次y坐标点
-    document.body.addEventListener('touchstart', function(event) {
+
+    document.body.addEventListener('touchstart', event => {
         lastY = event.changedTouches[0].clientY;//点击屏幕时记录最后一次Y度坐标。
     }, false);
-    document.body.addEventListener('touchmove', function(event) {
+
+    document.body.addEventListener('touchmove', event => {
         var y = event.changedTouches[0].clientY;
         var st = document.querySelector('.vm-scrollview').scrollTop;    // 已滚动高度
         var sh = document.querySelector('.vm-scrollview').scrollHeight  // 滚动区总高度
@@ -108,5 +110,4 @@ function stopDrop() {
         lastY = y;
 
     }, false);
-}
-stopDrop()
+})()
