@@ -56,9 +56,9 @@ export default {
         value(val) {
             if (this.isIOS) {
                 if (val) {
-                    addClass(this.scrollView, 'g-fix-ios-overflow-scrolling-bug');
+                    addClass(this.scrollView, 'vm-fix-ios-overflow-scrolling-bug');
                 } else {
-                    removeClass(this.scrollView, 'g-fix-ios-overflow-scrolling-bug');
+                    removeClass(this.scrollView, 'vm-fix-ios-overflow-scrolling-bug');
                 }
             }
 
@@ -80,7 +80,7 @@ export default {
             }
         },
         close() {
-            this.isIOS && removeClass(this.scrollView, 'g-fix-ios-overflow-scrolling-bug');
+            this.isIOS && removeClass(this.scrollView, 'vm-fix-ios-overflow-scrolling-bug');
 
             this.$emit('input', false);
         }
