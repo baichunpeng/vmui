@@ -1,10 +1,10 @@
 <template>
     <vm-layout title="KeyBoard">
 
-        <yd-button-group>
-            <yd-button size="large" type="primary" @click.native="show1 = true">打开</yd-button>
-            <yd-button size="large" type="primary" @click.native="show2 = true">打开 - 打乱键盘顺序</yd-button>
-        </yd-button-group>
+        <vm-button-group>
+            <vm-button size="large" type="primary" @click.native="show1 = true">打开</vm-button>
+            <vm-button size="large" type="primary" @click.native="show2 = true">打开 - 打乱键盘顺序</vm-button>
+        </vm-button-group>
 
         <yd-keyboard v-model="show1" :input-done="done1"></yd-keyboard>
 

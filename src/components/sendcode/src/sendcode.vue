@@ -1,12 +1,12 @@
 <template>
-    <yd-button :size="size"
+    <vm-button :size="size"
                :type="type"
                :disabled="start"
                :class="start ? 'btn-disabled' : ''"
                :style="{backgroundColor: bgcolor, color: color}"
     >
         {{tmpStr}}
-    </yd-button>
+    </vm-button>
 </template>
 
 <script type="text/babel">

@@ -12,7 +12,7 @@
             </yd-cell-item>
         </yd-cell-group>
 
-        <yd-button-group>
+        <vm-button-group>
             <yd-sendcode
                 v-model="start2"
                 @click.native="sendCode2"
@@ -22,7 +22,7 @@
                 size="large"
                 type="primary"
             ></yd-sendcode>
-        </yd-button-group>
+        </vm-button-group>
     </vm-layout>
 </template>
 

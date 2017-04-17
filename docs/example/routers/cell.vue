@@ -22,7 +22,7 @@
             <yd-cell-item>
                 <i slot="icon" class="demo-icons-phone"></i>
                 <input slot="right" type="number" pattern="[0-9]*" placeholder="请输入手机号码" autocomplete="off">
-                <yd-button slot="right" type="warning">获取短信验证码</yd-button>
+                <vm-button slot="right" type="warning">获取短信验证码</vm-button>
             </yd-cell-item>
 
             <yd-cell-item href="#" type="link">

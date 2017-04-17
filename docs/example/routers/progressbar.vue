@@ -39,9 +39,9 @@
             </div>
         </div>
 
-        <yd-button-group>
-            <yd-button size="large" type="hollow" @click.native="progress2 = 0.8">手动设置右圈为80%</yd-button>
-        </yd-button-group>
+        <vm-button-group>
+            <vm-button size="large" type="hollow" @click.native="progress2 = 0.8">手动设置右圈为80%</vm-button>
+        </vm-button-group>
     </vm-layout>
 </template>
 

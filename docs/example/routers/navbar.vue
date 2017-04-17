@@ -31,9 +31,9 @@
         </vm-navbar>
 
         <vm-navbar title="长标题原来长这样的啊" class="demo-small-pitch">
-            <yd-button type="danger" slot="left" @click.native="toastNone">
+            <vm-button type="danger" slot="left" @click.native="toastNone">
                 点我点我!
-            </yd-button>
+            </vm-button>
             <router-link to="/" slot="right">
                 <i class="demo-icons-discover"></i>
             </router-link>

@@ -68,7 +68,7 @@
                         separator=","
                         decimal="."
                 ></yd-countup>
-                <span slot="right"><yd-button @click.native="initnum = 100" type="warning">改变结束值至100</yd-button></span>
+                <span slot="right"><vm-button @click.native="initnum = 100" type="warning">改变结束值至100</vm-button></span>
             </yd-cell-item>
 
             <yd-cell-item>
@@ -78,7 +78,7 @@
                         suffix="%"
                         :start="start"
                 ></yd-countup>
-                <span slot="right"><yd-button @click.native="start = true">开始</yd-button></span>
+                <span slot="right"><vm-button @click.native="start = true">开始</vm-button></span>
             </yd-cell-item>
 
         </yd-cell-group>

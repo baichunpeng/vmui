@@ -1,10 +1,10 @@
 <template>
     <vm-layout title="ActionSheet">
 
-        <yd-button-group>
-            <yd-button @click.native="show1 = true" size="large">带取消</yd-button>
-            <yd-button @click.native="show2 = true" size="large" type="warning">不带取消</yd-button>
-        </yd-button-group>
+        <vm-button-group>
+            <vm-button @click.native="show1 = true" size="large">带取消</vm-button>
+            <vm-button @click.native="show2 = true" size="large" type="warning">不带取消</vm-button>
+        </vm-button-group>
 
         <yd-actionsheet :items="myItems1" v-model="show1" cancel="取消"></yd-actionsheet>
 

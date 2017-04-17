@@ -1,25 +1,25 @@
 <template>
     <vm-layout title="Dialog">
 
-        <yd-button-group>
+        <vm-button-group>
 
-            <yd-button @click.native="openConfrim" size="large">Confirm</yd-button>
+            <vm-button @click.native="openConfrim" size="large">Confirm</vm-button>
 
-            <yd-button @click.native="openCustomConfrim" size="large">Confirm->Custom</yd-button>
+            <vm-button @click.native="openCustomConfrim" size="large">Confirm->Custom</vm-button>
 
-            <yd-button @click.native="openAlert" size="large" type="hollow">Alert</yd-button>
+            <vm-button @click.native="openAlert" size="large" type="hollow">Alert</vm-button>
 
-            <yd-button @click.native="toastSuccess" size="large" type="danger">Toast->Success</yd-button>
+            <vm-button @click.native="toastSuccess" size="large" type="danger">Toast->Success</vm-button>
 
-            <yd-button @click.native="toastError" size="large" type="danger">Toast->Error</yd-button>
+            <vm-button @click.native="toastError" size="large" type="danger">Toast->Error</vm-button>
 
-            <yd-button @click.native="toastNone" size="large" type="danger">Toast->None</yd-button>
+            <vm-button @click.native="toastNone" size="large" type="danger">Toast->None</vm-button>
 
-            <yd-button @click.native="openLoading" size="large" type="hollow">Loading</yd-button>
+            <vm-button @click.native="openLoading" size="large" type="hollow">Loading</vm-button>
 
-            <yd-button @click.native="openNotify" size="large" type="hollow">Notify</yd-button>
+            <vm-button @click.native="openNotify" size="large" type="hollow">Notify</vm-button>
 
-        </yd-button-group>
+        </vm-button-group>
 
     </vm-layout>
 </template>

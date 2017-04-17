@@ -1,9 +1,9 @@
 <template>
-    <div class="m-button"><slot></slot></div>
+    <div class="vm-button"><slot></slot></div>
 </template>
 
 <script type="text/babel">
     export default {
-        name: 'yd-button-group'
+        name: 'vm-button-group'
     }
 </script>
