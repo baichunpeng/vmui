@@ -1,57 +1,57 @@
 <template>
     <vm-layout>
         <vm-navbar slot="navbar" title="TabBar">
-            <router-link to="/asidebar" slot="left">
+            <router-link to="/" slot="left">
                 <yd-navbar-back-icon></yd-navbar-back-icon>
             </router-link>
         </vm-navbar>
 
-        <yd-tabbar class="demo-small-pitch">
-            <yd-tabbar-item title="微信" link="/asidebar">
+        <vm-tabbar class="demo-small-pitch">
+            <vm-tabbar-item title="微信" link="/">
                 <i slot="icon" class="demo-icons-weixin"></i>
-            </yd-tabbar-item>
-            <yd-tabbar-item title="通讯录" link="/asidebar">
+            </vm-tabbar-item>
+            <vm-tabbar-item title="通讯录" link="/">
                 <i slot="icon" class="demo-icons-contact"></i>
-            </yd-tabbar-item>
-            <yd-tabbar-item title="发现" link="/asidebar">
+            </vm-tabbar-item>
+            <vm-tabbar-item title="发现" link="/">
                 <i slot="icon" class="demo-icons-discover"></i>
-            </yd-tabbar-item>
-        </yd-tabbar>
+            </vm-tabbar-item>
+        </vm-tabbar>
 
-        <yd-tabbar class="demo-small-pitch">
-            <yd-tabbar-item title="微信" link="/asidebar" active>
+        <vm-tabbar class="demo-small-pitch">
+            <vm-tabbar-item title="微信" link="/" active>
                 <i slot="icon" class="demo-icons-weixin"></i>
                 <yd-badge slot="badge" type="danger">2</yd-badge>
-            </yd-tabbar-item>
-            <yd-tabbar-item title="通讯录" link="/asidebar">
+            </vm-tabbar-item>
+            <vm-tabbar-item title="通讯录" link="/">
                 <i slot="icon" class="demo-icons-contact"></i>
-            </yd-tabbar-item>
-            <yd-tabbar-item title="发现" link="/asidebar" dot>
+            </vm-tabbar-item>
+            <vm-tabbar-item title="发现" link="/" dot>
                 <i slot="icon" class="demo-icons-discover"></i>
-            </yd-tabbar-item>
-            <yd-tabbar-item title="图片" link="/asidebar">
+            </vm-tabbar-item>
+            <vm-tabbar-item title="图片" link="/">
                 <img slot="icon" src="http://static.ydcss.com/ydui/img/logo.png"/>
-            </yd-tabbar-item>
-        </yd-tabbar>
+            </vm-tabbar-item>
+        </vm-tabbar>
 
-        <yd-tabbar slot="tabbar">
-            <yd-tabbar-item title="微信" link="/asidebar" active>
+        <vm-tabbar slot="tabbar">
+            <vm-tabbar-item title="微信" link="/" active>
                 <i slot="icon" class="demo-icons-weixin"></i>
                 <yd-badge slot="badge" type="danger">2</yd-badge>
-            </yd-tabbar-item>
-            <yd-tabbar-item title="通讯录" link="/asidebar">
+            </vm-tabbar-item>
+            <vm-tabbar-item title="通讯录" link="/">
                 <i slot="icon" class="demo-icons-contact"></i>
-            </yd-tabbar-item>
-            <yd-tabbar-item title="发现" link="/asidebar" dot>
+            </vm-tabbar-item>
+            <vm-tabbar-item title="发现" link="/" dot>
                 <i slot="icon" class="demo-icons-discover"></i>
-            </yd-tabbar-item>
-            <yd-tabbar-item title="我" link="/asidebar">
+            </vm-tabbar-item>
+            <vm-tabbar-item title="我" link="/">
                 <i slot="icon" class="demo-icons-me"></i>
-            </yd-tabbar-item>
-            <yd-tabbar-item title="图片" link="/asidebar">
+            </vm-tabbar-item>
+            <vm-tabbar-item title="图片" link="/">
                 <img slot="icon" src="http://static.ydcss.com/ydui/img/logo.png" />
-            </yd-tabbar-item>
-        </yd-tabbar>
+            </vm-tabbar-item>
+        </vm-tabbar>
 
     </vm-layout>
 </template>

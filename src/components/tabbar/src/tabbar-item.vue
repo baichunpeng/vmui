@@ -11,24 +11,27 @@
     </router-link>
 </template>
 
-<script type="text/babel">
-    import {isColor} from '../../../utils/assist';
+<script>
+import {isColor} from '../../../utils/assist';
 
-    export default {
-        name: 'yd-tabbar-item',
-        props: {
-            link: String,
-            title: String,
-            active: Boolean,
-            dot: Boolean
+export default {
+    name: 'vm-tabbar-item',
+
+    props: {
+        link: String,
+        title: String,
+        active: Boolean,
+        dot: Boolean
+    },
+
+    computed: {
+        classes() {
+            return this.active ? 'tabbar-active' : '';
         },
-        computed: {
-            classes() {
-                return this.active ? 'tabbar-active' : '';
-            },
-            styles() {
-                return {color: this.active ? this.activeColor : this.$parent.color};
-            }
+
+        styles() {
+            return {color: this.active ? this.activeColor : this.$parent.color};
         }
     }
+}
 </script>
