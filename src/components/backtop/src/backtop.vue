@@ -10,21 +10,26 @@ export default {
 
 	data() {
 		return {
-			clientHeight: document.body.clientHeight,	// 网页可见区域高度
-			scroll: '',	// 顶部滚动距离
-			scrollContent: document.body,	// 滚动区域
+			scroll: '',		// 顶部滚动距离
 			status: 'down',	// 箭头朝向
 			isShow: false	// 是否显示
 		}
 	},
 
 	props: {
-		content: String,  // 滚动父元素 class or id, 默认 body
+		content: {    // 滚动区域(class or id, 默认 body)
+            type: String,
+            default: 'body'
+        }
 	},
 
+	computed: {
+        scrollContent() {
+            return document.querySelector(this.content)
+        }
+    },
+
 	mounted() {
-		// 合并滚动区
-		if (this.content) this.scrollContent = document.querySelector(this.content)
 		// 注册dom被添加事件
 		document.addEventListener('DOMSubtreeModified', this.checkShow, false)
 		// 注册滚动事件
@@ -42,12 +47,12 @@ export default {
 		handleScroll() {
 			this.scroll = this.scrollContent.scrollTop
 
-			// 切换箭头状态：若滚动区高度 > 1.5倍可视区高度，滚动半屏后切换；否则，滚动>0就切换
+			// 切换箭头状态：若滚动区高度 > 1.5倍可视区高度，滚动半屏后切换；否则，滚动 > 0就切换
 			let scale = 0
 			if (this.scrollContent.scrollHeight > 1.5 * this.scrollContent.clientHeight) {
 				scale = 0.5
 			}
-			this.status = this.scroll > scale * this.clientHeight ? 'up' : 'down'
+			this.status = this.scroll > scale * this.scrollContent.clientHeight ? 'up' : 'down'
 		},
 
 		// 滚动事件
@@ -81,7 +86,7 @@ export default {
 }
 </script>
 
-<style scoped lang="less">
+<style lang="less">
 .vm-backop {
 	position: fixed;
 	right: 0;
@@ -89,6 +94,7 @@ export default {
 	width: 1.8rem;
 	height: 1.8rem;
 	right: 1.4rem;
+	z-index: 10000;
 	img {
 		width: 100%;
 		height: 100%;
