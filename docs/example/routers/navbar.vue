@@ -46,17 +46,17 @@
 </template>
 
 <script>
-    export default {
-        name: 'example-navbar',
+export default {
+    name: 'example-navbar',
 
-        methods: {
-            toastNone () {
-                this.$dialog.toast({
-                    mes: '我是左边按钮绑定的事件~',
-                    timeout: 1500
-                });
-            }
+    methods: {
+        toastNone () {
+            this.$dialog.toast({
+                mes: '我是左边按钮绑定的事件~',
+                timeout: 1500
+            });
         }
     }
+}
 </script>
 

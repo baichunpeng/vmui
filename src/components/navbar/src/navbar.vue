@@ -24,47 +24,47 @@
 </template>
 
 <script>
-	import {isColor} from '../../../utils/assist';
+import {isColor} from '../../../utils/assist';
 
-	export default {
-		name: 'vm-navbar',
-		props: {
-			title: String,
-			fixed: Boolean,
-			bgcolor: {
-				validator(value) {
-					if(!value) return true;
-					return isColor(value);
-				},
-				default: '#FFF'
+export default {
+	name: 'vm-navbar',
+	props: {
+		title: String,
+		fixed: Boolean,
+		bgcolor: {
+			validator(value) {
+				if(!value) return true;
+				return isColor(value);
 			},
-			color: {
-				validator(value) {
-					if(!value) return true;
-					return isColor(value);
-				},
-				default: '#5C5C5C'
-			},
-			fontsize: {
-				validator(value) {
-					return /^(\.|\d+\.)?\d+(px|rem)$/.test(value);
-				},
-				default: '1rem'
-			},
-			height: {
-				validator(value) {
-					return /^(\.|\d+\.)?\d+(px|rem)$/.test(value);
-				},
-				default: '2.25rem'
-			}
+			default: '#FFF'
 		},
+		color: {
+			validator(value) {
+				if(!value) return true;
+				return isColor(value);
+			},
+			default: '#5C5C5C'
+		},
+		fontsize: {
+			validator(value) {
+				return /^(\.|\d+\.)?\d+(px|rem)$/.test(value);
+			},
+			default: '1rem'
+		},
+		height: {
+			validator(value) {
+				return /^(\.|\d+\.)?\d+(px|rem)$/.test(value);
+			},
+			default: '2.25rem'
+		}
+	},
 
-		computed: {
-			classes() {
-				return this.fixed ? 'navbar-fixed' : '';
-			}
+	computed: {
+		classes() {
+			return this.fixed ? 'navbar-fixed' : '';
 		}
 	}
+}
 </script>
 
 <style lang="less">
