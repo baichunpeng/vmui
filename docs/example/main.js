@@ -20,7 +20,6 @@ import ListTheme from './routers/list.theme.vue';
 import ListInfinitescroll from './routers/list.infinitescroll.vue';
 import ListPullRefresh from './routers/list.pullrefresh.vue';
 import Badge from './routers/badge.vue';
-import AsideBar from './routers/asidebar.vue';
 import TabBar from './routers/tabbar.vue';
 import NavBar from './routers/navbar.vue';
 import Tabs from './routers/tabs.vue';
@@ -63,7 +62,8 @@ const router = new VueRouter({
 		{path: '/list.infinitescroll', component: ListInfinitescroll},
 		{path: '/list.pullrefresh', component: ListPullRefresh},
 		{path: '/badge', component: Badge},
-		{path: '/asidebar', component: AsideBar},
+		{path: '/navbar', component: NavBar},
+		{path: '/tabbar', component: TabBar},
 		{path: '/tabbar', component: TabBar},
 		{path: '/navbar', component: NavBar},
 		{path: '/tabs', component: Tabs},
