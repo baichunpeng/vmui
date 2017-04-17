@@ -21,7 +21,7 @@
         <vm-tabbar class="demo-small-pitch">
             <vm-tabbar-item title="微信" link="/" active>
                 <i slot="icon" class="demo-icons-weixin"></i>
-                <yd-badge slot="badge" type="danger">2</yd-badge>
+                <vm-badge slot="badge" type="danger">2</vm-badge>
             </vm-tabbar-item>
             <vm-tabbar-item title="通讯录" link="/">
                 <i slot="icon" class="demo-icons-contact"></i>
@@ -37,7 +37,7 @@
         <vm-tabbar slot="tabbar">
             <vm-tabbar-item title="微信" link="/" active>
                 <i slot="icon" class="demo-icons-weixin"></i>
-                <yd-badge slot="badge" type="danger">2</yd-badge>
+                <vm-badge slot="badge" type="danger">2</vm-badge>
             </vm-tabbar-item>
             <vm-tabbar-item title="通讯录" link="/">
                 <i slot="icon" class="demo-icons-contact"></i>

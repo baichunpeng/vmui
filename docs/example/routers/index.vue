@@ -27,10 +27,10 @@
                 }, {
                     name: '布局',
                     list: [
+                        {icon: 'demo-icons-grids', name: 'Layout', link: '/layout'},
                         {icon: 'demo-icons-grids', name: 'Grids', link: '/grids'},
                         {icon: 'demo-icons-tabbar', name: 'Navbar', link: '/navbar'},
                         {icon: 'demo-icons-tabbar', name: 'Tabbar', link: '/tabbar'},
-                        {icon: 'demo-icons-grids', name: 'Layout', link: '/layout'},
                     ]
                 }, {
                     name: '样式组件',
