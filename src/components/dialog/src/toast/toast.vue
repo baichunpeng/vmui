@@ -1,8 +1,8 @@
 <template>
-    <div class="mask-white-dialog">
-        <div class="m-toast" :class="iconsClass == '' ? 'toast-none-icon' : ''">
+    <div class="vm-mask-white-dialog">
+        <div class="vm-toast" :class="iconsClass == '' ? 'vm-toast-none-icon' : ''">
             <div v-if="iconsClass" :class="iconsClass"></div>
-            <p class="toast-content" v-html="mes"></p>
+            <p class="vm-toast-content" v-html="mes"></p>
         </div>
     </div>
 </template>
@@ -19,7 +19,7 @@
             iconsClass() {
                 let _icon = '';
                 if (this.icon == 'success' || this.icon == 'error') {
-                    _icon = 'toast-' + this.icon + '-icon';
+                    _icon = 'vm-toast-' + this.icon + '-icon';
                 }
                 return _icon;
             }
