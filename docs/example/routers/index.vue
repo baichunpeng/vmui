@@ -39,9 +39,9 @@
                         {icon: 'demo-icons-badge', name: 'Badge', link: '/badge'},
                         {icon: 'demo-icons-cell', name: 'Cell', link: '/cell'},
                         {icon: 'demo-icons-list', name: 'List', link: '/list'},
-                        {icon: 'demo-icons-keyboard', name: 'KeyBoard', link: '/keyboard'},
-                        {icon: 'demo-icons-progressbar', name: 'ProgressBar', link: '/progressbar'},
-                        {icon: 'demo-icons-sendcode', name: 'SendCode', link: '/sendcode'},
+                        // {icon: 'demo-icons-keyboard', name: 'KeyBoard', link: '/keyboard'},
+                        // {icon: 'demo-icons-progressbar', name: 'ProgressBar', link: '/progressbar'},
+                        // {icon: 'demo-icons-sendcode', name: 'SendCode', link: '/sendcode'},
                     ]
                 }, {
                     name: 'js组件',
@@ -54,9 +54,9 @@
                         {icon: 'demo-icons-cityselect', name: 'CitySelect', link: '/cityselect'},
                         {icon: 'demo-icons-spinner', name: 'Spinner', link: '/spinner'},
                         {icon: 'demo-icons-actionsheet', name: 'BackTop', link: '/backtop'},
-                        {icon: 'demo-icons-countdown', name: 'CountDown', link: '/countdown'},
-                        {icon: 'demo-icons-countup', name: 'CountUp', link: '/countup'},
-                        {icon: 'demo-icons-rate', name: 'Rate', link: '/rate'},
+                        // {icon: 'demo-icons-countdown', name: 'CountDown', link: '/countdown'},
+                        // {icon: 'demo-icons-countup', name: 'CountUp', link: '/countup'},
+                        // {icon: 'demo-icons-rate', name: 'Rate', link: '/rate'},
                     ]
                 }]
             }
