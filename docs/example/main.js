@@ -38,6 +38,7 @@ import Rate from './routers/rate.vue';
 import Popup from './routers/popup.vue';
 import CountUp from './routers/countup.vue';
 import BackTop from './routers/backtop.vue';
+import Layout from './routers/layout.vue';
 
 import App from './app.vue';
 
@@ -82,6 +83,7 @@ const router = new VueRouter({
 		{path: '/popup', component: Popup},
 		{path: '/countup', component: CountUp},
 		{path: '/backtop', component: BackTop},
+		{path: '/layout', component: Layout},
 	]
 });
 
