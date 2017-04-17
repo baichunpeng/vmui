@@ -23,16 +23,16 @@
     </div>
 </template>
 
-<script type="text/babel">
-    export default {
-        props: {
-            title: String,
-            mes: String,
-            opts: {
-                type: [Array, Function],
-                default: () => {
-                }
+<script>
+export default {
+    props: {
+        title: String,
+        mes: String,
+        opts: {
+            type: [Array, Function],
+            default: () => {
             }
         }
     }
+}
 </script>

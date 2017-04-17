@@ -7,10 +7,10 @@
     </div>
 </template>
 
-<script type="text/babel">
-    export default {
-        props: {
-            title: String
-        }
+<script>
+export default {
+    props: {
+        title: String
     }
+}
 </script>

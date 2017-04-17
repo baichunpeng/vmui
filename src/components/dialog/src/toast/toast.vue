@@ -7,22 +7,22 @@
     </div>
 </template>
 
-<script type="text/babel">
-    export default {
-        props: {
-            mes: String,
-            icon: String,
-            timeout: Number,
-            callback: Function
-        },
-        computed: {
-            iconsClass() {
-                let _icon = '';
-                if (this.icon == 'success' || this.icon == 'error') {
-                    _icon = 'vm-toast-' + this.icon + '-icon';
-                }
-                return _icon;
+<script>
+export default {
+    props: {
+        mes: String,
+        icon: String,
+        timeout: Number,
+        callback: Function
+    },
+    computed: {
+        iconsClass() {
+            let _icon = '';
+            if (this.icon == 'success' || this.icon == 'error') {
+                _icon = 'vm-toast-' + this.icon + '-icon';
             }
+            return _icon;
         }
     }
+}
 </script>
