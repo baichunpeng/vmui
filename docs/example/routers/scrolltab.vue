@@ -1,10 +1,10 @@
 <template>
     <vm-layout>
-        <yd-navbar slot="navbar" title="ScrollTab">
+        <vm-navbar slot="navbar" title="ScrollTab">
             <router-link to="/tabs" slot="left">
                 <yd-navbar-back-icon></yd-navbar-back-icon>
             </router-link>
-        </yd-navbar>
+        </vm-navbar>
 
         <yd-scrolltab>
             <yd-scrolltab-panel label="空调" icon="demo-icons-category1">

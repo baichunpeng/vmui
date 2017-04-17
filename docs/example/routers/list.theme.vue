@@ -1,10 +1,10 @@
 <template>
     <vm-layout>
-        <yd-navbar slot="navbar" :title="title">
+        <vm-navbar slot="navbar" :title="title">
             <router-link to="/list" slot="left">
                 <yd-navbar-back-icon></yd-navbar-back-icon>
             </router-link>
-        </yd-navbar>
+        </vm-navbar>
 
         <yd-list :theme="theme">
             <yd-list-item v-for="item in list">

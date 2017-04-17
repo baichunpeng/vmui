@@ -1,10 +1,10 @@
 <template>
     <vm-layout>
-        <yd-navbar slot="navbar" title="Tab">
+        <vm-navbar slot="navbar" title="Tab">
             <router-link to="/tabs" slot="left">
                 <yd-navbar-back-icon></yd-navbar-back-icon>
             </router-link>
-        </yd-navbar>
+        </vm-navbar>
 
         <yd-tab class="demo-small-pitch">
             <yd-tab-panel label="选项一">土地是以它的肥沃和收获而被估价的；才能也是土地，不过它生产的不是粮食，而是真理。如果只能滋生瞑想和幻想的话，即使再大的才能也只是砂地或盐池，那上面连小草也长不出来的。</yd-tab-panel>

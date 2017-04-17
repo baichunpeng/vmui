@@ -1,10 +1,10 @@
 <template>
     <vm-layout>
-        <yd-navbar slot="navbar" title="PullRefresh">
+        <vm-navbar slot="navbar" title="PullRefresh">
             <router-link to="/list" slot="left">
                 <yd-navbar-back-icon></yd-navbar-back-icon>
             </router-link>
-        </yd-navbar>
+        </vm-navbar>
 
         <yd-pullrefresh :on-infinite="loadList">
 

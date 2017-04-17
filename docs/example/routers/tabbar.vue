@@ -1,10 +1,10 @@
 <template>
     <vm-layout>
-        <yd-navbar slot="navbar" title="TabBar">
+        <vm-navbar slot="navbar" title="TabBar">
             <router-link to="/asidebar" slot="left">
                 <yd-navbar-back-icon></yd-navbar-back-icon>
             </router-link>
-        </yd-navbar>
+        </vm-navbar>
 
         <yd-tabbar class="demo-small-pitch">
             <yd-tabbar-item title="微信" link="/asidebar">

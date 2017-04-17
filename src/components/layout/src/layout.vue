@@ -1,11 +1,11 @@
 <template>
 	<section class="vm-flexview">
 		<slot name="navbar" v-if="showNavbar">
-			<yd-navbar :title="title" v-if="!!title">
+			<vm-navbar :title="title" v-if="!!title">
 				<router-link :to="link || '/'" slot="left">
 					<yd-navbar-back-icon></yd-navbar-back-icon>
 				</router-link>
-			</yd-navbar>
+			</vm-navbar>
 		</slot>
 
 		<section class="vm-scrollview" ref="scrollView">

@@ -1,11 +1,11 @@
 <template>
     <vm-layout>
 
-        <yd-navbar slot="navbar" title="InfiniteScroll">
+        <vm-navbar slot="navbar" title="InfiniteScroll">
             <router-link to="/list" slot="left">
                 <yd-navbar-back-icon></yd-navbar-back-icon>
             </router-link>
-        </yd-navbar>
+        </vm-navbar>
 
         <yd-infinitescroll :on-infinite="loadList">
 

@@ -1,15 +1,14 @@
 <template>
     <vm-layout>
+        <vm-navbar title="NavBar1" class="demo-small-pitch"></vm-navbar>
 
-        <yd-navbar slot="navbar" title="NavBar">
+        <vm-navbar slot="navbar" title="NavBar">
             <router-link to="/" slot="left">
                 <yd-navbar-back-icon></yd-navbar-back-icon>
             </router-link>
-        </yd-navbar>
+        </vm-navbar>
 
-        <yd-navbar title="NavBar1" class="demo-small-pitch"></yd-navbar>
-
-        <yd-navbar title="NavBar2" class="demo-small-pitch">
+        <vm-navbar title="NavBar2" class="demo-small-pitch">
             <router-link to="/" slot="left">
                 <yd-navbar-back-icon></yd-navbar-back-icon>
             </router-link>
@@ -17,35 +16,47 @@
             <router-link to="/" slot="right">
                 <yd-navbar-next-icon></yd-navbar-next-icon>
             </router-link>
-        </yd-navbar>
+        </vm-navbar>
 
-        <yd-navbar class="demo-small-pitch">
+        <vm-navbar class="demo-small-pitch">
             <router-link to="/" slot="left">
                 <yd-navbar-back-icon>返回</yd-navbar-back-icon>
             </router-link>
 
             <img slot="center" src="http://static.ydcss.com/www/img/logo.png" alt="">
 
-            <router-link to="/" slot="right">
+            <router-link to="/tabbar" slot="right">
                 <yd-navbar-next-icon>前进</yd-navbar-next-icon>
             </router-link>
-        </yd-navbar>
+        </vm-navbar>
 
-        <yd-navbar title="什么鬼，这个标题怎么那么长啊" class="demo-small-pitch">
-            <router-link to="/" slot="left">
+        <vm-navbar title="长标题原来长这样的啊" class="demo-small-pitch">
+            <yd-button type="danger" slot="left" @click.native="toastNone">
+                点我点我!
+            </yd-button>
+            <router-link to="/" slot="right">
                 <i class="demo-icons-discover"></i>
             </router-link>
-
             <router-link to="/" slot="right">
                 <i class="demo-icons-me"></i>
             </router-link>
-            <router-link to="/" slot="right">
-                <i class="demo-icons-me"></i>
-            </router-link>
-            <router-link to="/" slot="right">
-                <i class="demo-icons-me"></i>
-            </router-link>
-        </yd-navbar>
+        </vm-navbar>
 
     </vm-layout>
 </template>
+
+<script>
+    export default {
+        name: 'example-navbar',
+
+        methods: {
+            toastNone () {
+                this.$dialog.toast({
+                    mes: '我是左边按钮绑定的事件~',
+                    timeout: 1500
+                });
+            }
+        }
+    }
+</script>
+
