@@ -3,7 +3,7 @@
 
         <vm-grids-group class="demo-small-pitch">
             <vm-grids-item v-for="item in list">
-                <yd-icon slot="icon" :name="item" color="#FF685D" size="1.5rem"></yd-icon>
+                <vm-icon slot="icon" :name="item" color="#FF685D" size="1.5rem"></vm-icon>
                 <span slot="text">{{item}}</span>
             </vm-grids-item>
         </vm-grids-group>
