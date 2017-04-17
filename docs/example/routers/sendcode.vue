@@ -1,7 +1,7 @@
 <template>
     <vm-layout title="SendCode">
-        <yd-cell-group class="demo-small-pitch">
-            <yd-cell-item>
+        <vm-cell-group class="demo-small-pitch">
+            <vm-cell-item>
                 <i slot="icon" class="demo-icons-phone"></i>
                 <input type="text" slot="right" placeholder="请输入手机号码">
 
@@ -9,8 +9,8 @@
                 <yd-sendcode slot="right" v-model="start1" @click.native="sendCode" type="warning"></yd-sendcode>
                 <!-- ↑↑关键代码是这里↑↑ -->
 
-            </yd-cell-item>
-        </yd-cell-group>
+            </vm-cell-item>
+        </vm-cell-group>
 
         <vm-button-group>
             <yd-sendcode

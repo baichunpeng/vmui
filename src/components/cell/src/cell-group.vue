@@ -1,15 +1,15 @@
 <template>
-    <div class="m-cell">
-        <div class="cell-title" v-if="title">{{title}}</div>
+    <div class="vm-cell">
+        <div class="vm-cell-title" v-if="title">{{title}}</div>
         <slot></slot>
     </div>
 </template>
 
-<script type="text/babel">
-    export default{
-        name: 'yd-cell-group',
-        props: {
-            title: String
-        }
+<script>
+export default{
+    name: 'vm-cell-group',
+    props: {
+        title: String
     }
+}
 </script>

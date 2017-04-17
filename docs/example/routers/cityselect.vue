@@ -1,19 +1,19 @@
 <template>
     <vm-layout title="CitySelect">
 
-        <yd-cell-group title="默认调用" class="demo-small-pitch">
-            <yd-cell-item arrow>
+        <vm-cell-group title="默认调用" class="demo-small-pitch">
+            <vm-cell-item arrow>
                 <span slot="left">所在地区：</span>
                 <input slot="right" type="text" @click.stop="show1 = true" v-model="model1" readonly class="cell-input" placeholder="请选择收货地址">
-            </yd-cell-item>
-        </yd-cell-group>
+            </vm-cell-item>
+        </vm-cell-group>
 
-        <yd-cell-group title="设置默认值">
-            <yd-cell-item arrow>
+        <vm-cell-group title="设置默认值">
+            <vm-cell-item arrow>
                 <span slot="left">所在地区：</span>
                 <input slot="right" type="text" @click.stop="show2 = true" v-model="model2" readonly class="cell-input" placeholder="请选择收货地址">
-            </yd-cell-item>
-        </yd-cell-group>
+            </vm-cell-item>
+        </vm-cell-group>
 
         <yd-cityselect v-model="show1" :done="result1"></yd-cityselect>
 

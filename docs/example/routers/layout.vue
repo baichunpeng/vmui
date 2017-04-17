@@ -6,11 +6,11 @@
             </router-link>
         </vm-navbar>
  -->
-        <yd-cell-group title="scrollView" class="demo-small-pitch">
-            <yd-cell-item v-for="(item, index) in new Array(20)">
+        <vm-cell-group title="scrollView" class="demo-small-pitch">
+            <vm-cell-item v-for="(item, index) in new Array(20)">
                 <span slot="left">item{{index + 1}}</span>
-            </yd-cell-item>
-        </yd-cell-group>
+            </vm-cell-item>
+        </vm-cell-group>
 
         <vm-tabbar slot="tabbar">
             <vm-tabbar-item title="微信" link="/" active>
