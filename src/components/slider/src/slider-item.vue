@@ -1,11 +1,11 @@
 <template>
-    <div class="slider-item">
+    <div class="vm-slider-item">
         <slot></slot>
     </div>
 </template>
 
-<script type="text/babel">
-    export default {
-        name: 'yd-slider-item'
-    }
+<script>
+export default {
+    name: 'vm-slider-item'
+}
 </script>
