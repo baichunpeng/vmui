@@ -47,67 +47,71 @@ Vue.use(Resource);
 Vue.use(VMUI);
 
 document.addEventListener('DOMContentLoaded', function () {
-    typeof FastClick == 'function' && FastClick.attach(document.body);
+	typeof FastClick == 'function' && FastClick.attach(document.body);
 }, false);
 
 const router = new VueRouter({
-    routes: [
-        {path: '/', component: Index},
-        {path: '/button', component: Button},
-        {path: '/dialog', component: Dialog},
-        {path: '/cell', component: Cell},
-        {path: '/grids', component: Grids},
-        {path: '/icons', component: Icons},
-        {path: '/list', component: List},
-        {path: '/list.theme/:id', component: ListTheme},
-        {path: '/list.infinitescroll', component: ListInfinitescroll},
-        {path: '/list.pullrefresh', component: ListPullRefresh},
-        {path: '/badge', component: Badge},
-        {path: '/asidebar', component: AsideBar},
-        {path: '/tabbar', component: TabBar},
-        {path: '/navbar', component: NavBar},
-        {path: '/tabs', component: Tabs},
-        {path: '/tab', component: Tab},
-        {path: '/scrolltab', component: ScrollTab},
-        {path: '/actionsheet', component: ActionSheet},
-        {path: '/sendcode', component: SendCode},
-        {path: '/progressbar', component: ProgressBar},
-        {path: '/keyboard', component: KeyBoard},
-        {path: '/slider', component: Slider},
-        {path: '/spinner', component: Spinner},
-        {path: '/cityselect', component: CitySelect},
-        {path: '/lazyimg', component: LazyImg},
-        {path: '/countdown', component: CountDown},
-        {path: '/rate', component: Rate},
-        {path: '/popup', component: Popup},
-        {path: '/countup', component: CountUp},
-        {path: '/backtop', component: BackTop},
-    ]
+	routes: [
+		{path: '/', component: Index},
+		{path: '/button', component: Button},
+		{path: '/dialog', component: Dialog},
+		{path: '/cell', component: Cell},
+		{path: '/grids', component: Grids},
+		{path: '/icons', component: Icons},
+		{path: '/list', component: List},
+		{path: '/list.theme/:id', component: ListTheme},
+		{path: '/list.infinitescroll', component: ListInfinitescroll},
+		{path: '/list.pullrefresh', component: ListPullRefresh},
+		{path: '/badge', component: Badge},
+		{path: '/asidebar', component: AsideBar},
+		{path: '/tabbar', component: TabBar},
+		{path: '/navbar', component: NavBar},
+		{path: '/tabs', component: Tabs},
+		{path: '/tab', component: Tab},
+		{path: '/scrolltab', component: ScrollTab},
+		{path: '/actionsheet', component: ActionSheet},
+		{path: '/sendcode', component: SendCode},
+		{path: '/progressbar', component: ProgressBar},
+		{path: '/keyboard', component: KeyBoard},
+		{path: '/slider', component: Slider},
+		{path: '/spinner', component: Spinner},
+		{path: '/cityselect', component: CitySelect},
+		{path: '/lazyimg', component: LazyImg},
+		{path: '/countdown', component: CountDown},
+		{path: '/rate', component: Rate},
+		{path: '/popup', component: Popup},
+		{path: '/countup', component: CountUp},
+		{path: '/backtop', component: BackTop},
+	]
 });
 
 const app = new Vue({
-    router: router,
-    render: v => v(App)
+	router: router,
+	render: v => v(App)
 }).$mount('#app');
 
 // fix ios wechat webview scroll bug
 (() => {
-    var lastY;//最后一次y坐标点
+	let lastY	//最后一次y坐标点
 
-    document.body.addEventListener('touchstart', event => {
-        lastY = event.changedTouches[0].clientY;//点击屏幕时记录最后一次Y度坐标。
-    }, false);
+	document.body.addEventListener('touchstart', event => {
+		// 点击屏幕时记录最后一次Y度坐标
+		lastY = event.changedTouches[0].clientY
+	}, false)
 
-    document.body.addEventListener('touchmove', event => {
-        var y = event.changedTouches[0].clientY;
-        var st = document.querySelector('.vm-scrollview').scrollTop;    // 已滚动高度
-        var sh = document.querySelector('.vm-scrollview').scrollHeight  // 滚动区总高度
-        var ch = document.querySelector('.vm-scrollview').clientHeight  // 滚动区可见高度
-        if ((y >= lastY && st <= 10) || (y <= lastY && sh-st-ch <= 10)) {//如果滚动条高度小于0，可以理解为到顶了，且是下拉情况下，阻止touchmove事件。
-            lastY = y;
-            event.preventDefault();
-        }
-        lastY = y;
+	document.body.addEventListener('touchmove', event => {
+		let y = event.changedTouches[0].clientY,
+			$scrollview = document.querySelector('.vm-scrollview')
 
-    }, false);
+		let st = $scrollview.scrollTop		// 已滚动高度
+		let sh = $scrollview.scrollHeight  	// 滚动区总高度
+		let ch = $scrollview.clientHeight  	// 滚动区可见高度
+
+		// 如果到顶/到底了，且是下拉/上拉情况下，阻止touchmove事件
+		if ((y >= lastY && st <= 10) || (y <= lastY && sh-st-ch <= 10)) {
+			lastY = y
+			event.preventDefault()
+		}
+		lastY = y
+	}, false)
 })()
