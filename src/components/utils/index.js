@@ -162,5 +162,17 @@ export default {
                 });
             }
         })
+    },
+
+    // ajax get 快捷方法
+    get (args = {}) {
+        args.type = 'GET'
+        return this.fetch(args)
+    },
+
+    // ajax post 快捷方法
+    post (args = {}) {
+        args.type = 'POST'
+        return this.fetch(args)
     }
 }
