@@ -80,7 +80,7 @@ methods:
 <script>
 import {addClass, removeClass, getScrollview} from '../../../utils/assist';
 import U from '../../Utils';
-    import Citys from './vmui.citys';
+import Citys from './vmui.citys';
 
 
 export default {
@@ -448,6 +448,9 @@ export default {
         span {
             flex: 1;
             display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
         &.cityselect-item-active {
             color: #F23030;
