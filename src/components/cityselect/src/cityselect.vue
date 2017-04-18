@@ -23,50 +23,50 @@ methods:
  -->
 
 <template>
-    <div class="vmui">
-        <div class="mask-cityselect" v-show="show" @click.stop="close"></div>
-        <div class="m-cityselect" :class="show ? 'cityselect-active' : ''">
-            <div class="cityselect-header">
-                <p class="cityselect-title">所在地区</p>
-                <div v-show="ready" class="cityselect-nav">
+    <div>
+        <div class="vm-mask-cityselect" v-show="show" @click.stop="close"></div>
+        <div class="vm-content-cityselect" :class="show ? 'vm-cityselect-active' : ''">
+            <div class="vm-cityselect-header">
+                <p class="vm-cityselect-title">所在地区</p>
+                <div v-show="ready" class="vm-cityselect-nav">
                     <a href="javascript:;"
                        v-show="!!nav.txt1"
                        @click.stop="backoffView(0)"
-                       :class="nav.index == 0 ? 'cityselect-nav-active' : ''">{{nav.txt1}}</a>
+                       :class="nav.index == 0 ? 'vm-cityselect-nav-active' : ''">{{nav.txt1}}</a>
                     <a href="javascript:;"
                        v-show="!!nav.txt2"
                        @click.stop="backoffView(1)"
-                       :class="nav.index == 1 ? 'cityselect-nav-active' : ''">{{nav.txt2}}</a>
+                       :class="nav.index == 1 ? 'vm-cityselect-nav-active' : ''">{{nav.txt2}}</a>
                     <a href="javascript:;"
                        v-show="!!nav.txt3"
                        @click.stop="forwardView(true)"
-                       :class="nav.index == 2 ? 'cityselect-nav-active' : ''">{{nav.txt3}}</a>
+                       :class="nav.index == 2 ? 'vm-cityselect-nav-active' : ''">{{nav.txt3}}</a>
                 </div>
             </div>
-            <div v-show="!ready" class="cityselect-loading">加载中</div>
-            <ul v-show="ready" class="cityselect-content" :class="activeClasses">
-                <li class="cityselect-item" ref="provinceBox">
-                    <div class="cityselect-item-box">
+            <div v-show="!ready" class="vm-cityselect-loading">加载中</div>
+            <ul v-show="ready" class="vm-cityselect-content" :class="activeClasses">
+                <li class="vm-cityselect-item" ref="provinceBox">
+                    <div class="vm-cityselect-item-box">
                         <a href="javascript:;"
-                           :class="item.name == activeprovince ? 'cityselect-item-active' : ''"
+                           :class="item.name == activeprovince ? 'vm-cityselect-item-active' : ''"
                            v-for="item in citys"
                            @click.stop="chooseprovince(item)"
                         ><span>{{item.name}}</span></a>
                     </div>
                 </li>
-                <li class="cityselect-item" ref="cityBox">
-                    <div class="cityselect-item-box">
+                <li class="vm-cityselect-item" ref="cityBox">
+                    <div class="vm-cityselect-item-box">
                         <a href="javascript:;"
-                           :class="item.name == activeCity ? 'cityselect-item-active' : ''"
+                           :class="item.name == activeCity ? 'vm-cityselect-item-active' : ''"
                            v-for="item in cityArray"
                            @click.stop="chooseCity(item)"
                         ><span>{{item.name}}</span></a>
                     </div>
                 </li>
-                <li class="cityselect-item" ref="areaBox">
-                    <div class="cityselect-item-box">
+                <li class="vm-cityselect-item" ref="areaBox">
+                    <div class="vm-cityselect-item-box">
                         <a href="javascript:;"
-                           :class="item.name == activeArea ? 'cityselect-item-active' : ''"
+                           :class="item.name == activeArea ? 'vm-cityselect-item-active' : ''"
                            v-for="item in areaArray"
                            @click.stop="chooseArea(item)"
                         ><span>{{item.name}}</span></a>
@@ -127,7 +127,7 @@ export default {
     },
     watch: {
         value(val) {
-            val && this.isIOS && addClass(this.scrollView, 'g-fix-ios-overflow-scrolling-bug');
+            val && this.isIOS && addClass(this.scrollView, 'vm-fix-ios-overflow-scrolling-bug');
 
             this.show = val;
         },
@@ -291,18 +291,18 @@ export default {
 
         // 关闭
         close() {
-            this.isIOS && removeClass(this.scrollView, 'g-fix-ios-overflow-scrolling-bug');
+            this.isIOS && removeClass(this.scrollView, 'vm-fix-ios-overflow-scrolling-bug');
 
             this.$emit('input', false);
             this.show = false;
         },
         backoffView(index) {
             this.nav.index = index;
-            this.activeClasses = 'cityselect-move-animate cityselect-prev';
+            this.activeClasses = 'vm-cityselect-move-animate vm-cityselect-prev';
         },
         forwardView(animate) {
             this.nav.index = 2;
-            this.activeClasses = (animate ? 'cityselect-move-animate' : '') + ' cityselect-next';
+            this.activeClasses = (animate ? 'vm-cityselect-move-animate' : '') + ' vm-cityselect-next';
         }
     },
 
@@ -316,11 +316,11 @@ export default {
 @import "../../../styles/variables";
 @import "../../../styles/mixins";
 
-.mask-cityselect {
+.vm-mask-cityselect {
     .mask(rgba(0, 0, 0, .4), @base-zindex * 500);
 }
 
-.m-cityselect {
+.vm-content-cityselect {
     position: fixed;
     bottom: 0;
     left: 0;
@@ -330,12 +330,12 @@ export default {
     z-index: @base-zindex * 1000;
     transform: translate(0, 100%);
     transition: transform .3s;
-    &.cityselect-active {
+    &.vm-cityselect-active {
         transform: translate(0, 0);
     }
 }
 
-.cityselect-header {
+.vm-cityselect-header {
     position: absolute;
     top: 0;
     left: 0;
@@ -346,7 +346,7 @@ export default {
     }
 }
 
-.cityselect-title {
+.vm-cityselect-title {
     width: 100%;
     font-size: .3rem*@suiremscale;
     text-align: center;
@@ -358,7 +358,7 @@ export default {
     }
 }
 
-.cityselect-nav {
+.vm-cityselect-nav {
     width: 100%;
     padding-left: .2rem*@suiremscale;
     overflow: hidden;
@@ -376,7 +376,7 @@ export default {
         overflow: hidden;
         text-overflow: ellipsis;
         max-width: 40%;
-        &.cityselect-nav-active {
+        &.vm-cityselect-nav-active {
             color: #F23030;
             &:after {
                 content: '';
@@ -392,21 +392,21 @@ export default {
     }
 }
 
-.cityselect-content {
+.vm-cityselect-content {
     height: 100%;
     padding-top: 85px;
     width: 100%;
     display: flex;
-    &.cityselect-move-animate {
+    &.vm-cityselect-move-animate {
         transition: transform .3s;
     }
-    &.cityselect-next {
+    &.vm-cityselect-next {
         transform: translate(-50%, 0);
     }
-    &.cityselect-prev {
+    &.vm-cityselect-prev {
         transform: translate(0, 0);
     }
-    > .cityselect-item {
+    > .vm-cityselect-item {
         display: block;
         height: inherit;
         width: 50%; /* for old android */
@@ -423,7 +423,7 @@ export default {
     }
 }
 
-.cityselect-item-box {
+.vm-cityselect-item-box {
     width: 100%;
     height: inherit;
     display: block;
@@ -452,7 +452,7 @@ export default {
             overflow: hidden;
             text-overflow: ellipsis;
         }
-        &.cityselect-item-active {
+        &.vm-cityselect-item-active {
             color: #F23030;
             &:after {
                 display: block;
@@ -463,7 +463,7 @@ export default {
     }
 }
 
-.cityselect-loading {
+.vm-cityselect-loading {
     width: 100%;
     height: 100%;
     display: flex;
