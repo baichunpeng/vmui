@@ -1,27 +1,3 @@
-<!--
-tpl:
-    <input slot="right" type="text" @click.stop="show1 = true" v-model="model1" readonly placeholder="请选择收货地址">
-    <CitySelect v-model="show1" :done="result1" :provinceId="2" :cityId="25" :areaId="254"></CitySelect>
-
-js:
-    import CitySelect from '../../components/cityselect'
-
-    data:
-        show1: false,
-        model1: '',
-
-    components: {
-        CitySelect
-    },
-
-methods:
-    result1(ret) {
-        this.model1 = ret.province + ' ' + ret.provinceId + ' ' + ret.city + ' ' + ret.cityId + ' ' + ret.area+ ' ' + ret.areaId;
-    }
-
-注意：初始省/市/区 名称 和 id 不能同时设置
- -->
-
 <template>
     <div>
         <div class="vm-mask-cityselect" v-show="show" @click.stop="close"></div>
@@ -81,8 +57,7 @@ methods:
 import {addClass, removeClass, getScrollview} from '../../../utils/assist';
 import U from '../../Utils';
 import Citys from './vmui.citys';
-import {Toast} from '../../dialog';
-
+import Toast from '../../dialog/src/toast';
 
 export default {
     name: 'vm-cityselect',
