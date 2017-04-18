@@ -76,7 +76,6 @@ export default {
             data: null,
             type: 'GET',
             dataType: 'json',
-            showIndicator: true,
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json' // 'application/x-www-form-urlencoded'
