@@ -81,6 +81,7 @@ methods:
 import {addClass, removeClass, getScrollview} from '../../../utils/assist';
 import U from '../../Utils';
 import Citys from './vmui.citys';
+import {Toast} from '../../dialog';
 
 
 export default {
@@ -154,12 +155,12 @@ export default {
         fetchData (cb) {
             // 请求多级列表（默认地址）
             if (this.url) {
-                U.get(this.url)
-                    .then(res => {
-                        this.citys = res.data
-                        cb()
-                    })
-                    .catch(err => $.toast(err.errMsg))
+                U.get({url: this.url})
+                .then(res => {
+                    this.citys = res.data
+                    cb()
+                })
+                .catch(err => Toast({mes: err}))
             }
             // 调用本地
             else {
