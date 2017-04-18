@@ -87,16 +87,16 @@ export default {
     name: 'vm-cityselect',
     data() {
         return {
-            citys: [],
-            show: false,
-            nav: {
+            citys: [],  // 地址数组
+            show: false,    // 显示状态
+            nav: {  // nav
                 index: 0,
                 txt1: '请选择',
                 txt2: '',
                 txt3: ''
             },
-            activeprovince: '',         // 当前省
-            activeprovinceId: Number,   // 当前省 id
+            activeprovince: '',         // 选择的省
+            activeprovinceId: Number,   // 选择的省 id
             activeCity: '',
             activeCityId: Number,
             activeArea: '',
@@ -119,7 +119,7 @@ export default {
         cityId: Number,
         area: String,
         areaId: Number,
-        done: Function,
+        done: Function, // 选择结束回调
         value: {
             type: Boolean,
             default: false
