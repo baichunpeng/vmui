@@ -15,9 +15,9 @@
             </vm-cell-item>
         </vm-cell-group>
 
-        <yd-cityselect v-model="show1" :done="result1"></yd-cityselect>
+        <vm-cityselect v-model="show1" :done="result1"></vm-cityselect>
 
-        <yd-cityselect v-model="show2" :done="result2" provance="新疆" city="乌鲁木齐市" area="天山区"></yd-cityselect>
+        <vm-cityselect v-model="show2" :done="result2" province="新疆" city="石河子" area="城区"></vm-cityselect>
 
     </vm-layout>
 </template>
@@ -29,15 +29,15 @@
                 show1: false,
                 show2: false,
                 model1: '',
-                model2: '新疆 乌鲁木齐市 天山区'
+                model2: '新疆 石河子 城区'
             }
         },
         methods: {
             result1(ret) {
-                this.model1 = ret.provance + ' ' + ret.city + ' ' + ret.area;
+                this.model1 = ret.province + ' ' + ret.city + ' ' + ret.area;
             },
             result2(ret) {
-                this.model2 = ret.provance + ' ' + ret.city + ' ' + ret.area;
+                this.model2 = ret.province + ' ' + ret.city + ' ' + ret.area;
             }
         }
     }
