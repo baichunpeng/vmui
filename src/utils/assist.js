@@ -41,14 +41,16 @@ const getScrollview = function (el) {
 };
 
 // 是否滚动到可视区
-const checkInview = function (scrollView, el) {
+const checkInview = function (scrollView, el, scale) {
+    // 滚动区高度
     const contentHeight = scrollView == window ? document.body.offsetHeight : scrollView.offsetHeight;
+    // 滚动区距离顶部距离
     const contentTop = scrollView === window ? 0 : scrollView.getBoundingClientRect().top;
-
+    // 元素距离滚动区顶部距离
     const post = el.getBoundingClientRect().top - contentTop;
     const posb = post + el.offsetHeight;
 
-    return (post >= 0 && post < contentHeight) || (posb > 0 && posb <= contentHeight);
+    return (post >= 0 && post < contentHeight * (scale || 1)) || (posb > 0 && posb <= contentHeight * (scale || 1));
 };
 
 // 是否包含某个 class

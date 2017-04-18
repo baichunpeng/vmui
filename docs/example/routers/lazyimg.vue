@@ -2,7 +2,7 @@
     <vm-layout title="LazyImg">
         <div v-for="item in srcLists">
             <div style="height: 3rem;background-color: #fff;"></div>
-            <vm-lazyimg :src="item" style="width: 100%;" alt="哈哈掉链子了吧"></vm-lazyimg>
+            <vm-lazyimg :src="item" alt="哈哈掉链子了吧"></vm-lazyimg>
         </div>
     </vm-layout>
 </template>
