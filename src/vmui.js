@@ -1,5 +1,6 @@
 import './styles/base.less';
 
+import Utils from './components/utils';
 import {Confirm, Alert, Toast, Notify, Loading} from './components/dialog';
 import {Layout} from './components/layout';
 import {Button, ButtonGroup} from './components/button';
@@ -75,6 +76,7 @@ const install = function (Vue) {
     Vue.component(CountUp.name, CountUp);
     Vue.component(BackTop.name, BackTop);
 
+    Vue.prototype.$ = Utils;
     Vue.prototype.$dialog = {
         confirm: Confirm,
         alert: Alert,
