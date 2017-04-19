@@ -290,6 +290,7 @@ export default {
 <style lang="less">
 @import "../../../styles/variables";
 @import "../../../styles/mixins";
+@import "../../../styles/iconfont";
 
 .vm-mask-cityselect {
     .mask(rgba(0, 0, 0, .4), @base-zindex * 500);
