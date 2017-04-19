@@ -78,7 +78,8 @@ export default {
             dataType: 'json',
             headers: {
                 'Accept': 'application/json',
-                'Content-Type': 'application/json' // 'application/x-www-form-urlencoded'
+                'Content-Type': 'application/json', // 'application/x-www-form-urlencoded'
+                'X-Requested-With': 'XMLHttpRequest'
             },
             async: true, // 异步/同步
             timeout: 0, // 请求时限
