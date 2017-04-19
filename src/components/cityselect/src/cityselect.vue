@@ -57,7 +57,6 @@
 import {addClass, removeClass, getScrollview} from '../../../utils/assist';
 import U from '../../Utils';
 import Citys from './vmui.citys';
-import Toast from '../../dialog/src/toast';
 
 export default {
     name: 'vm-cityselect',
@@ -135,7 +134,7 @@ export default {
                     this.citys = res.data
                     cb()
                 })
-                .catch(err => Toast({mes: err}))
+                .catch(err => console.log(err))
             }
             // 调用本地
             else {
