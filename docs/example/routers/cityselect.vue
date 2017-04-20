@@ -21,7 +21,7 @@
         ></vm-cityselect>
 
         <vm-cityselect
-            url="http://192.168.4.221:8080/api/city/combine/list"
+            url="http://yqj.meiwan.me/api/city/combine/list"
             v-model="show2"
             :done="result2"
             province="新疆"
