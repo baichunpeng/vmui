@@ -238,9 +238,9 @@ export default {
         background: url(@icon-loading) no-repeat;
         background-size: 28px 28px;
         animation: rotate-loading .45s linear forwards infinite;
-        margin-right: 10px;
     }
     .vm-loading-txt {
+        margin-left: 10px;
         font-size: 15px;
         color: #FFF;
         max-width: 140px;
