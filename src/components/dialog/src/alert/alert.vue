@@ -31,7 +31,7 @@ export default {
 }
 
 .vm-mask-white-dialog {
-    .mask(rgba(0, 0, 0, 0), @base-zindex * 1500);
+    .mask(rgba(0, 0, 0, 0), @base-zindex * 1600);
 }
 
 @keyframes zoomIn {
