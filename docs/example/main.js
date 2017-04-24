@@ -40,6 +40,7 @@ import CountUp from './routers/countup.vue';
 import BackTop from './routers/backtop.vue';
 import Layout from './routers/layout.vue';
 import Utils from './routers/utils.vue';
+import Share from './routers/share.vue';
 
 import App from './app.vue';
 
@@ -86,6 +87,7 @@ const router = new VueRouter({
 		{path: '/backtop', component: BackTop},
 		{path: '/layout', component: Layout},
 		{path: '/utils', component: Utils},
+		{path: '/share', component: Share},
 	]
 });
 

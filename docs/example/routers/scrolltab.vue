@@ -2,7 +2,7 @@
     <vm-layout>
         <vm-navbar slot="navbar" title="ScrollTab">
             <router-link to="/tabs" slot="left">
-                <yd-navbar-back-icon></yd-navbar-back-icon>
+                <vm-navbar-back-icon></vm-navbar-back-icon>
             </router-link>
         </vm-navbar>
 

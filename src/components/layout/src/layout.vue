@@ -3,7 +3,7 @@
 		<slot name="navbar" v-if="showNavbar">
 			<vm-navbar :title="title" v-if="!!title">
 				<router-link :to="link || '/'" slot="left">
-					<yd-navbar-back-icon></yd-navbar-back-icon>
+					<vm-navbar-back-icon></vm-navbar-back-icon>
 				</router-link>
 			</vm-navbar>
 		</slot>
