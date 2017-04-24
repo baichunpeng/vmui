@@ -46,7 +46,7 @@
 </template>
 
 <script>
-// import $ from 'zepto'
+// import ucqqApi from './ucqqapi'
 // import WxConfig from './WxConfig'
 
 export default {
