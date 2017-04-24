@@ -6,7 +6,7 @@
     import {isColor} from '../../../utils/assist';
 
     export default {
-        name: 'yd-navbar-next-icon',
+        name: 'vm-navbar-next-icon',
         props: {
             color: {
                 validator(value) {

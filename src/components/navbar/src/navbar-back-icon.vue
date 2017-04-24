@@ -6,7 +6,7 @@
     import {isColor} from '../../../utils/assist';
 
     export default {
-        name: 'yd-navbar-back-icon',
+        name: 'vm-navbar-back-icon',
         props: {
             color: {
                 validator(value) {

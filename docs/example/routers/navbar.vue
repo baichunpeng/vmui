@@ -4,29 +4,29 @@
 
         <vm-navbar slot="navbar" title="NavBar">
             <router-link to="/" slot="left">
-                <yd-navbar-back-icon></yd-navbar-back-icon>
+                <vm-navbar-back-icon></vm-navbar-back-icon>
             </router-link>
         </vm-navbar>
 
         <vm-navbar title="NavBar2" class="demo-small-pitch">
             <router-link to="/" slot="left">
-                <yd-navbar-back-icon></yd-navbar-back-icon>
+                <vm-navbar-back-icon></vm-navbar-back-icon>
             </router-link>
 
             <router-link to="/" slot="right">
-                <yd-navbar-next-icon></yd-navbar-next-icon>
+                <vm-navbar-next-icon></vm-navbar-next-icon>
             </router-link>
         </vm-navbar>
 
         <vm-navbar class="demo-small-pitch">
             <router-link to="/" slot="left">
-                <yd-navbar-back-icon>返回</yd-navbar-back-icon>
+                <vm-navbar-back-icon>返回</vm-navbar-back-icon>
             </router-link>
 
             <img slot="center" src="http://static.ydcss.com/www/img/logo.png" alt="">
 
             <router-link to="/tabbar" slot="right">
-                <yd-navbar-next-icon>前进</yd-navbar-next-icon>
+                <vm-navbar-next-icon>前进</vm-navbar-next-icon>
             </router-link>
         </vm-navbar>
 
