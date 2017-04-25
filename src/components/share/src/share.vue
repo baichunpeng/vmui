@@ -18,7 +18,7 @@
 
 		<!-- popup: wechat share -->
 		<img
-			src="./wechatPopup.png" alt=""
+			:src="require('./wechatPopup.png')" alt=""
 			class="vm-content-share-Wechat"
 			v-show="show && isWechat"
 			@click.stop="close"
