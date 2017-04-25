@@ -15,158 +15,146 @@
 			cancel="() => {alert()}"
 			inline-template
 		>
-			<button class="share" @click="prop">点击按钮分享</button>
+			<button class="share" @click="popup">点击按钮分享</button>
 		</Share>
  -->
 
 <template>
-	<div
-		class="vm-share"
-		@click="prop"
-	>
-		<button
-			type="button"
-			class="vm-share-button"
-			v-html="text"
-			v-if="text"
-		>分享</button>
+	<div>
+		<!-- mask -->
+		<div
+			class="vm-mask-share"
+			v-show="show"
+			@click.stop="close"
+		></div>
 
-		<slot></slot>
+		<!-- popup: wechat share -->
+		<img
+			src="./wechatPopup.png" alt=""
+			class="vm-content-share-Wechat"
+			v-show="show && isWechat"
+			@click.stop="close"
+		>
 
-		<!-- 浏览器分享 -->
-		<Popup v-model="showBrowserPopup" position="bottom" height="auto">
-			<a :href="'http://connect.qq.com/widget/shareqq/index.html?title=' + title + '&url=' + url + '&summary=' + desc + '&desc=' + title + '&pics=' + imgUrl" target="_blank">
-				<img src="./icon-qq.png" alt="">
-				<span>QQ</span>
+		<!-- popup: broswer share -->
+		<div
+			:class="['vm-content-share-browser', {'vm-content-share-active': show && !isWechat && !isqqBrowser && !isucBrowser}]"
+		>
+			<a
+				v-for="(item, index) in broswerShareItems"
+			 	:href="item.url" target="_blank">
+				<img :src="item.icon" alt="">
+				<span>{{item.title}}</span>
 			</a>
-			<a :href="'http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?title=' + title + '&url=' + url + '&summary=' + desc + '&desc=' + title + '&pics=' + imgUrl" target="_blank">
-				<img src="./icon-qzone.png" alt="">
-				<span>QQ空间</span>
-			</a>
-			<a :href="'http://service.weibo.com/share/share.php?url=' + url + '&appkey=&language=zh_cn&title=' + title + '&source=&sourceUrl=&message=&uids=&pic=' + imgUrl+ '&searchPic=true&content='" target="_blank">
-				<img src="./icon-sina.png" alt="">
-				<span>新浪微博</span>
-			</a>
-			<a :href="'sms:;?body=' + title + (desc ? '%0A' + desc : '') + (url ? '%0A猛戳' + url + '前往' : '')" target="_blank">
-				<img src="./icon-sms.png" alt="">
-				<span>短信</span>
-			</a>
-			<a :href="'mailto:?cc=&bcc=&subject=' + title + '&body=' + desc + (url ? '<br>猛戳' + url + '前往' : '') + (imgUrl ? '<br><img src=' + imgUrl + '' : '')" target="_blank">
-				<img src="./icon-mail.png" alt="">
-				<span>电子邮件</span>
-			</a>
-        </Popup>
+		</div>
 	</div>
 </template>
 
 <script>
 // import ucqqApi from './ucqqapi'
-// import WxConfig from './WxConfig'
-import {Popup} from '../../popup'
+import {addClass, removeClass, getScrollview} from '../../../utils/assist';
+import wechatConfig from './wechatConfig'
+import U from '../../utils'
 
 export default {
 	name: 'vm-share',
-
-	props: {
-		'text': String,			// 分享 html
-		'title': String,    	// 分享标题
-		'desc': {
-			type: String,
-			default: ''
-		},     	// 分享内容
-		'url': String,      	// 链接地址
-		'imgUrl': String,   	// 图片地址
-		'success': Function,	// 分享成功的回调
-		'cancel': Function 		// 取消分享的回调
-	},
 
 	data () {
 		return {
 			isWechat: navigator.userAgent.toLowerCase().indexOf('micromessenger/') > -1,	// 宿主环境是否是微信
 			isqqBrowser: navigator.userAgent.indexOf('MQQBrowser/') > -1,	// 宿主环境是否是QQ浏览器
 			isucBrowser: navigator.userAgent.indexOf('UCBrowser/') > -1,	// 宿主环境是否是UC浏览器
-			getAllProps: false,  // 获取全部入参
-			showBrowserPopup: false
+			// getAllProps: false,  // 获取全部入参
+			show: false,	// 弹窗显隐
 
 		}
 	},
 
-	components: {
-		Popup
+	props: {
+		ready: {			// 是否准备就绪
+            type: Boolean,
+            default: true
+        },
+		title: String,    	// 分享标题
+		desc: {				// 分享内容
+			type: String,
+			default: ''
+		},
+		url: {				// 链接地址
+            type: String,
+            default: location.href
+        },
+		imgUrl: String,   	// 图片地址
+		success: Function,	// 分享成功的回调
+		cancel: Function, 	// 取消分享的回调
+		wxConfig: Object,	// 请求微信签名的接口和 data
+		value: {			// v-model
+            type: Boolean,
+            default: false
+        }
 	},
 
 	watch: {
-		title: function (val, oldVal) {
-			this.checkProps()
-		},
+        value(val) {
+            val && this.isIOS && addClass(this.scrollView, 'vm-fix-ios-overflow-scrolling-bug');
 
-		desc: function (val, oldVal) {
-			this.checkProps()
-		},
+            this.show = val;
+        },
+        ready(val) {
+            val && setTimeout(this.init, 0);
+        }
+    },
 
-		url: function (val, oldVal) {
-			this.checkProps()
-		},
-
-		imgUrl: function (val, oldVal) {
-			this.checkProps()
-		}
+	computed: {
+		// 浏览器分享选项配置
+	    broswerShareItems: function () {
+	    	return [{	// 浏览器分享子项
+				title: 'QQ',
+				icon: require('./icon-qq.png'),
+				url: 'http://connect.qq.com/widget/shareqq/index.html?title=' + this.title + '&url=' + this.url + '&summary=' + this.desc + '&desc=' + this.title + '&pics=' + this.imgUrl,
+			}, {
+				title: 'QQ空间',
+				icon: require('./icon-qzone.png'),
+				url: 'http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?title=' + this.title + '&url=' + this.url + '&summary=' + this.desc + '&desc=' + this.title + '&pics=' + this.imgUrl,
+			}, {
+				title: '新浪微博',
+				icon: require('./icon-sina.png'),
+				url: 'http://service.weibo.com/share/share.php?url=' + this.url + '&appkey=&language=zh_cn&title=' + this.title + '&source=&sourceUrl=&message=&uids=&pic=' + this.imgUrl + '&searchPic=true&content=',
+			}, {
+				title: '短信',
+				icon: require('./icon-sms.png'),
+				url: 'sms:;?body=' + this.title + (this.desc ? '%0A' + this.desc : '') + (this.url ? '%0A猛戳' + this.url + '前往' : ''),
+			}, {
+				title: '电子邮件',
+				icon: require('./icon-mail.png'),
+				url: 'mailto:?cc=&bcc=&subject=' + this.title + '&body=' + this.desc + (this.url ? '<br>猛戳' + this.url + '前往' : '') + (this.imgUrl ? '<br><img src=' + this.imgUrl + '' : ''),
+			}]
+	    }
 	},
 
 	methods: {
-		test () {alert()},
+		// 初始化
+        init() {
+            if (!this.ready) return
+
+            if (this.isWechat) this.wxShare()
+
+            // fix ios scroll bug
+            this.scrollView = getScrollview(this.$el);
+            this.isIOS = !!(window.navigator && window.navigator.userAgent || '').match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+        },
+
 		// 分享提示弹层
-		prop () {
-			// 微信
-			if (this.isWechat) {
-console.log('微信分享')
+// 		popup () {
+// 			// 微信/浏览器分享，需要弹出popup
+// 			if (this.isWechat || !(this.isqqBrowser || this.isucBrowser))
+// 				this.show = true
 
-				// $.modal && $.modal({
-				//     'text': `<img src="${require('./Share-guide.png')}">`,
-				//     'extraClass': 'shareModal'
-				// })
-
-				// window.weui && weui.dialog({
-				//     content: `<img src="${require('./Share-guide.png')}">`,
-				//     className: 'shareModal',
-				// });
-			}
-			// UC QQ 浏览器 原生
-			else if (this.isqqBrowser || this.isucBrowser) {
-console.log('UC QQ 浏览器 原生')
-alert(`QQ:${this.isqqBrowser} UC:${this.isucBrowser}`)
-			}
-			// 浏览器网页分享
-			else {
-console.log('浏览器网页分享')
-				this.showBrowserPopup = true
-
-
-			}
-
-			// 手机QQ分享
-		},
-
-		// 检测参数
-		checkProps () {
-			// 微信
-			if (this.isWechat) {
-				this.getAllProps ||
-				this.title &&
-				this.desc &&
-				this.imgUrl &&
-				(this.getAllProps = true) &&
-				this.wxShare()
-			}
-			// UC QQ 浏览器 原生
-			else if (false) {
-
-			}
-			// 浏览器网页分享
-			else {
-
-			}
-		},
+// 			// UC QQ 浏览器 原生
+// 			else if (this.isqqBrowser || this.isucBrowser) {
+// alert(`QQ:${this.isqqBrowser} UC:${this.isucBrowser}`)
+// 			}
+// 		},
 
 		// 微信分享
 		wxShare () {
@@ -174,30 +162,29 @@ console.log('浏览器网页分享')
 			if (!this.isWechat) return
 
 			// 配置微信接口回调
-			WxConfig(wx => {
+			wechatConfig(this.wxConfig, wx => {
 				let wxdataTimeline = {
 					title: this.title,
-					link: this.url || location.href,
+					link: this.url,
 					imgUrl: this.imgUrl,
 					success: () => {
 						if (this.success) {
 							typeof this.success == 'function' && this.success()
 							typeof this.success == 'string' &&  eval(this.success)
 						}
-						$.closeModal()
+						this.show = false
 					},
 					cancel: () => {
 						if (this.cancel) {
 							typeof this.cancel == 'function' && this.cancel()
 							typeof this.cancel == 'string' &&  eval(this.cancel)
 						}
-						$.closeModal()
+						this.show = false
 					}
 				}
 
-				let wxdata = $.extend({
-					'desc': this.desc
-				}, wxdataTimeline)
+				let wxdata = {desc: this.desc}
+				U.extend(wxdata, wxdataTimeline)
 
 				// 显示右上角菜单
 				wx.showOptionMenu()
@@ -214,45 +201,70 @@ console.log('浏览器网页分享')
 			})
 		},
 
-		// 浏览器分享（QQ好友 空间 新浪微博 短信 电子邮件）
-		broswerShare () {
-
-		},
-
 		// 调用原生分享（UC、QQ浏览器）
 		nativeShare () {
 
-		}
+		},
+
+		// 关闭
+        close() {
+            this.isIOS && removeClass(this.scrollView, 'vm-fix-ios-overflow-scrolling-bug');
+
+            this.$emit('input', false);
+            this.show = false;
+        },
+
+        destroyed() {
+	        this.close();
+	    }
 	}
 }
 </script>
 
 <style lang="less">
-// .shareModal
-//     left: auto
-//     right: 0
-//     top: 2rem
-//     .modal-inner
-//         background: transparent
-//         img
-//             width: 100%
-.vm-share {
-	.vm-popup {
-		display: flex;
-		display: -webkit-flex;
-		a {
-			width: 20%;
-			height: 0;
-			padding-bottom: 20%;
-			text-align: center;
-			font-size: 12px;
-			color: #6d6d6d;
-			img {
-				width: 40%;
-				margin: 10px auto 0;
-			}
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+
+// mask
+.vm-mask-share {
+    .mask(rgba(0, 0, 0, .4), @base-zindex * 500);
+}
+
+// broswer popup
+.vm-content-share-browser {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: @base-zindex * 1000;
+    transform: translate(0, 100%);
+    transition: transform .3s;
+    &.vm-content-share-active {
+        transform: translate(0, 0);
+    }
+	display: flex;
+	display: -webkit-flex;
+	a {
+		width: 20%;
+		height: 0;
+		padding-bottom: 20%;
+		text-align: center;
+		font-size: 12px;
+		color: #6d6d6d;
+		img {
+			width: 40%;
+			margin: 10px auto 0;
 		}
 	}
 }
 
+// wechat popup
+.vm-content-share-Wechat {
+	z-index: 600;
+	position: fixed;
+	width: 70%;
+	top: 0;
+	right: 0;
+}
 </style>
