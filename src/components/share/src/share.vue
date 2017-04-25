@@ -39,10 +39,10 @@
 </template>
 
 <script>
-// import ucqqApi from './ucqqapi'
 import {addClass, removeClass, getScrollview} from '../../../utils/assist';
-import wechatConfig from './wechatConfig'
 import U from '../../utils'
+import wechatConfig from './wechatConfig'
+import qqucNativeShare from './qqucNativeShare'
 
 export default {
 	name: 'vm-share',
@@ -128,6 +128,7 @@ export default {
             if (!this.ready) return
 
             if (this.isWechat) this.wxShare()
+            if (this.isqqBrowser || this.isucBrowser) this.nativeShare()
 
             // fix ios scroll bug
             this.scrollView = getScrollview(this.$el)
@@ -182,7 +183,16 @@ export default {
 
 		// 调用原生分享（UC、QQ浏览器）
 		nativeShare () {
+			var config = {
+                'url': decodeURIComponent(this.url),
+                'title': decodeURIComponent(this.title),
+                'desc': decodeURIComponent(this.desc),
+                'img': decodeURIComponent(this.img),
+                'img_title': decodeURIComponent(this.title),
+                'from': decodeURIComponent(this.title)
+            };
 
+            new qqucNativeShare('nativeShare',config);
 		},
 
 		// 关闭
