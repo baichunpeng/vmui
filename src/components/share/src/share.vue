@@ -18,7 +18,7 @@
 
 		<!-- popup: wechat share -->
 		<img
-			:src="require('./wechatPopup.png')" alt=""
+			src="./wechatPopup.png" alt=""
 			class="vm-content-share-Wechat"
 			v-show="show && isWechat"
 			@click.stop="close"
@@ -243,7 +243,7 @@ export default {
 	z-index: 600;
 	position: fixed;
 	width: 70%;
-	top: 0;
-	right: 0;
+	top: 10px;
+	right: 10px;
 }
 </style>
