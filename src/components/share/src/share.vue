@@ -23,7 +23,6 @@
 	<div
 		class="vm-share"
 		@click="prop"
-
 	>
 		<button
 			type="button"
@@ -35,19 +34,35 @@
 		<slot></slot>
 
 		<!-- 浏览器分享 -->
-		<div>
-			<a :href="'http://connect.qq.com/widget/shareqq/index.html?title=' + title + '&url=' + url + '&summary=' + desc + '&desc=' + title + '&pics=' + imgUrl" target="_blank">QQ</a>
-			<a :href="'http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?title=' + title + '&url=' + url + '&summary=' + desc + '&desc=' + title + '&pics=' + imgUrl" target="_blank">QQ空间</a>
-			<a :href="'http://service.weibo.com/share/share.php?url=' + url + '&appkey=&language=zh_cn&title=' + title + '&source=&sourceUrl=&message=&uids=&pic=' + imgUrl+ '&searchPic=true&content='" target="_blank">新浪微博</a>
-			<a :href="'sms:;?body=' + title + (desc ? '%0A' + desc : '') + (url ? '%0A猛戳' + url + '前往' : '')" target="_blank">短信</a>
-			<a :href="'mailto:?cc=&bcc=&subject=' + title + '&body=' + desc + (url ? '<br>猛戳' + url + '前往' : '') + (imgUrl ? '<br><img src=' + imgUrl + '' : '')" target="_blank">电子邮件</a>
-		</div>
+		<Popup v-model="showBrowserPopup" position="bottom" height="auto">
+			<a :href="'http://connect.qq.com/widget/shareqq/index.html?title=' + title + '&url=' + url + '&summary=' + desc + '&desc=' + title + '&pics=' + imgUrl" target="_blank">
+				<img src="./icon-qq.png" alt="">
+				<span>QQ</span>
+			</a>
+			<a :href="'http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?title=' + title + '&url=' + url + '&summary=' + desc + '&desc=' + title + '&pics=' + imgUrl" target="_blank">
+				<img src="./icon-qzone.png" alt="">
+				<span>QQ空间</span>
+			</a>
+			<a :href="'http://service.weibo.com/share/share.php?url=' + url + '&appkey=&language=zh_cn&title=' + title + '&source=&sourceUrl=&message=&uids=&pic=' + imgUrl+ '&searchPic=true&content='" target="_blank">
+				<img src="./icon-sina.png" alt="">
+				<span>新浪微博</span>
+			</a>
+			<a :href="'sms:;?body=' + title + (desc ? '%0A' + desc : '') + (url ? '%0A猛戳' + url + '前往' : '')" target="_blank">
+				<img src="./icon-sms.png" alt="">
+				<span>短信</span>
+			</a>
+			<a :href="'mailto:?cc=&bcc=&subject=' + title + '&body=' + desc + (url ? '<br>猛戳' + url + '前往' : '') + (imgUrl ? '<br><img src=' + imgUrl + '' : '')" target="_blank">
+				<img src="./icon-mail.png" alt="">
+				<span>电子邮件</span>
+			</a>
+        </Popup>
 	</div>
 </template>
 
 <script>
 // import ucqqApi from './ucqqapi'
 // import WxConfig from './WxConfig'
+import {Popup} from '../../popup'
 
 export default {
 	name: 'vm-share',
@@ -67,9 +82,17 @@ export default {
 
 	data () {
 		return {
-			isWeixin: navigator.userAgent.toLowerCase().indexOf('micromessenger/') > -1,
-			getAllProps: false  // 获取全部入参
+			isWechat: navigator.userAgent.toLowerCase().indexOf('micromessenger/') > -1,	// 宿主环境是否是微信
+			isqqBrowser: navigator.userAgent.indexOf('MQQBrowser/') > -1,	// 宿主环境是否是QQ浏览器
+			isucBrowser: navigator.userAgent.indexOf('UCBrowser/') > -1,	// 宿主环境是否是UC浏览器
+			getAllProps: false,  // 获取全部入参
+			showBrowserPopup: false
+
 		}
+	},
+
+	components: {
+		Popup
 	},
 
 	watch: {
@@ -91,10 +114,11 @@ export default {
 	},
 
 	methods: {
+		test () {alert()},
 		// 分享提示弹层
 		prop () {
 			// 微信
-			if (this.isWeixin) {
+			if (this.isWechat) {
 console.log('微信分享')
 
 				// $.modal && $.modal({
@@ -108,12 +132,14 @@ console.log('微信分享')
 				// });
 			}
 			// UC QQ 浏览器 原生
-			else if (false) {
+			else if (this.isqqBrowser || this.isucBrowser) {
 console.log('UC QQ 浏览器 原生')
+alert(`QQ:${this.isqqBrowser} UC:${this.isucBrowser}`)
 			}
 			// 浏览器网页分享
 			else {
 console.log('浏览器网页分享')
+				this.showBrowserPopup = true
 
 
 			}
@@ -124,7 +150,7 @@ console.log('浏览器网页分享')
 		// 检测参数
 		checkProps () {
 			// 微信
-			if (this.isWeixin) {
+			if (this.isWechat) {
 				this.getAllProps ||
 				this.title &&
 				this.desc &&
@@ -145,7 +171,7 @@ console.log('浏览器网页分享')
 		// 微信分享
 		wxShare () {
 			// 非微信返回
-			if (!this.isWeixin) return
+			if (!this.isWechat) return
 
 			// 配置微信接口回调
 			WxConfig(wx => {
@@ -210,4 +236,23 @@ console.log('浏览器网页分享')
 //         background: transparent
 //         img
 //             width: 100%
+.vm-share {
+	.vm-popup {
+		display: flex;
+		display: -webkit-flex;
+		a {
+			width: 20%;
+			height: 0;
+			padding-bottom: 20%;
+			text-align: center;
+			font-size: 12px;
+			color: #6d6d6d;
+			img {
+				width: 40%;
+				margin: 10px auto 0;
+			}
+		}
+	}
+}
+
 </style>
