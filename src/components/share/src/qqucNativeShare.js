@@ -1,11 +1,7 @@
 /**
- * 目前该分享插件仅支持手机UC浏览器和QQ浏览器
+ * 原生分享：目前仅支持手机UC浏览器和QQ浏览器
  */
-/**
- * Created by Jeffery Wang.
- * Create Time: 2015-06-16 19:52
- * Author Link: http://blog.wangjunfeng.com
- */
+
 var nativeShare = function (elementNode, config) {
     if (!document.getElementById(elementNode)) {
         return false;
@@ -27,6 +23,7 @@ var nativeShare = function (elementNode, config) {
         qq: ""
     };
     var isWeixin = false;
+    var platform_os;
 
     config = config || {};
     this.elementNode = elementNode;
@@ -115,7 +112,7 @@ var nativeShare = function (elementNode, config) {
     };
 
     this.getPlantform = function () {
-        ua = navigator.userAgent;
+        var ua = navigator.userAgent;
         if ((ua.indexOf("iPhone") > -1 || ua.indexOf("iPod") > -1)) {
             return "iPhone"
         }

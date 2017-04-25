@@ -35,6 +35,9 @@
 				<span>{{item.title}}</span>
 			</a>
 		</div>
+
+		<!-- UC/QQ -->
+        <div id="nativeShare"></div>
 	</div>
 </template>
 
@@ -181,18 +184,18 @@ export default {
 			})
 		},
 
-		// 调用原生分享（UC、QQ浏览器）
+		// UC、QQ浏览器 原生分享
 		nativeShare () {
-			var config = {
+			let config = {
                 'url': decodeURIComponent(this.url),
                 'title': decodeURIComponent(this.title),
                 'desc': decodeURIComponent(this.desc),
                 'img': decodeURIComponent(this.img),
                 'img_title': decodeURIComponent(this.title),
                 'from': decodeURIComponent(this.title)
-            };
+            }
 
-            new qqucNativeShare('nativeShare',config);
+            new qqucNativeShare('nativeShare', config)
 		},
 
 		// 关闭
