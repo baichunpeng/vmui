@@ -3,20 +3,8 @@
 		微信分享（分享和禁止分享）
 		调用原生分享（UC、QQ浏览器）
 		浏览器分享（QQ好友 空间 新浪微博 短信 电子邮件）
-		手机QQ分享（QQ好友 空间 微信好友 朋友圈）
 
-	用法：
-		<Share
-			title="xx"
-			desc="xx"
-			url="xx"
-			imgUrl="xx"
-			success="() => {alert()}"
-			cancel="() => {alert()}"
-			inline-template
-		>
-			<button class="share" @click="popup">点击按钮分享</button>
-		</Share>
+	用法：见 example
  -->
 
 <template>
@@ -61,12 +49,11 @@ export default {
 
 	data () {
 		return {
+			isIOS: !!(window.navigator && window.navigator.userAgent || '').match(/\(i[^;]+;( U;)? CPU.+Mac OS X/),
 			isWechat: navigator.userAgent.toLowerCase().indexOf('micromessenger/') > -1,	// 宿主环境是否是微信
 			isqqBrowser: navigator.userAgent.indexOf('MQQBrowser/') > -1,	// 宿主环境是否是QQ浏览器
 			isucBrowser: navigator.userAgent.indexOf('UCBrowser/') > -1,	// 宿主环境是否是UC浏览器
-			// getAllProps: false,  // 获取全部入参
 			show: false,	// 弹窗显隐
-
 		}
 	},
 
@@ -108,7 +95,7 @@ export default {
 	computed: {
 		// 浏览器分享选项配置
 	    broswerShareItems: function () {
-	    	return [{	// 浏览器分享子项
+	    	return [{
 				title: 'QQ',
 				icon: require('./icon-qq.png'),
 				url: 'http://connect.qq.com/widget/shareqq/index.html?title=' + this.title + '&url=' + this.url + '&summary=' + this.desc + '&desc=' + this.title + '&pics=' + this.imgUrl,
@@ -132,6 +119,10 @@ export default {
 	    }
 	},
 
+	mounted() {
+        this.init()
+    },
+
 	methods: {
 		// 初始化
         init() {
@@ -140,21 +131,8 @@ export default {
             if (this.isWechat) this.wxShare()
 
             // fix ios scroll bug
-            this.scrollView = getScrollview(this.$el);
-            this.isIOS = !!(window.navigator && window.navigator.userAgent || '').match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+            this.scrollView = getScrollview(this.$el)
         },
-
-		// 分享提示弹层
-// 		popup () {
-// 			// 微信/浏览器分享，需要弹出popup
-// 			if (this.isWechat || !(this.isqqBrowser || this.isucBrowser))
-// 				this.show = true
-
-// 			// UC QQ 浏览器 原生
-// 			else if (this.isqqBrowser || this.isucBrowser) {
-// alert(`QQ:${this.isqqBrowser} UC:${this.isucBrowser}`)
-// 			}
-// 		},
 
 		// 微信分享
 		wxShare () {
@@ -208,14 +186,14 @@ export default {
 
 		// 关闭
         close() {
-            this.isIOS && removeClass(this.scrollView, 'vm-fix-ios-overflow-scrolling-bug');
+            this.isIOS && removeClass(this.scrollView, 'vm-fix-ios-overflow-scrolling-bug')
 
-            this.$emit('input', false);
-            this.show = false;
+            this.$emit('input', false)
+            this.show = false
         },
 
         destroyed() {
-	        this.close();
+	        this.close()
 	    }
 	}
 }

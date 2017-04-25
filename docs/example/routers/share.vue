@@ -17,7 +17,8 @@
             :desc="detail"
             url="http://wap.meiwan.me"
             imgUrl="http://img.beautysite.cn/goods/201509/560500889d7a8.jpg"
-            :wxConfig="{url: '/api/weixin/jsapi'}"
+            :wxConfig="{url: 'http://192.168.4.221:8080/api/weixin/jsapi'}"
+            :ready="ready"
         >
         </vm-share>
     </vm-layout>
@@ -32,6 +33,7 @@ export default {
         return {
             detail: '',
             show1: false,
+            ready: false,
             isWechat: navigator.userAgent.toLowerCase().indexOf('micromessenger/') > -1,    // 宿主环境是否是微信
             isqqBrowser: navigator.userAgent.indexOf('MQQBrowser/') > -1,   // 宿主环境是否是QQ浏览器
             isucBrowser: navigator.userAgent.indexOf('UCBrowser/') > -1    // 宿主环境是否是UC浏览器
@@ -39,10 +41,9 @@ export default {
     },
 
     mounted () {
-        console.log(this.detail)
-
         setTimeout(() => {
             this.detail = '详情详情详情'
+            this.ready = true
         }, 6000)
     }
 }
