@@ -1,6 +1,6 @@
 <template>
     <vm-layout>
-        <h1 class="demo-logo"><img src="http://static.ydcss.com/ydui/img/logo.png"></h1>
+        <h1 class="demo-logo"><img src="../assets/logo.png"></h1>
         <h2 class="demo-detail-title">VMUI<br>基于Vue2.x的移动端UI组件库</h2>
 
         <div v-for="items in lists">
