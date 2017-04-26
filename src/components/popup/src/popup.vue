@@ -23,7 +23,7 @@ export default {
 	props: {
 		position: { // 位置
 			validator(value) {
-				return ['bottom', 'center', 'left', 'right'].indexOf(value) > -1;
+				return ['bottom', 'center', 'left', 'right', 'top'].indexOf(value) > -1;
 			},
 			default: 'center'
 		},
@@ -31,7 +31,7 @@ export default {
 			type: String,
 			default: '50%'
 		},
-		height: {   // 高度(仅在 position = bottom)
+		height: {   // 高度(仅在 position = top/bottom)
 			type: String,
 			default: '50%'
 		},
@@ -62,7 +62,7 @@ export default {
 		styles() {
 			if (this.position == 'left' || this.position == 'right') {
 				return {width: this.width};
-			} else if (this.position == 'bottom') {
+			} else if (this.position == 'top' || this.position == 'bottom') {
 				return {width: '100%', height: this.height};
 			} else {
 				return {width: this.width};
@@ -105,6 +105,11 @@ export default {
 		right: 0;
 		top: 0;
 		height: 100%;
+	}
+	&.popup-top {
+		transform: translate(0, -100%);
+		right: 0;
+		top: 0;
 	}
 	&.popup-bottom {
 		transform: translate(0, 100%);

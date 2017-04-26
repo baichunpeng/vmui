@@ -3,6 +3,7 @@
 
         <vm-button-group>
             <vm-button size="large" type="primary" @click.native="show1 = true">中间弹出</vm-button>
+            <vm-button size="large" type="warning" @click.native="show5 = true">上部弹出</vm-button>
             <vm-button size="large" type="warning" @click.native="show2 = true">下部弹出</vm-button>
             <vm-button size="large" type="danger" @click.native="show3 = true">左侧弹出</vm-button>
             <vm-button size="large" type="danger" @click.native="show4 = true">右侧弹出</vm-button>
@@ -15,6 +16,10 @@
             <p style="text-align: right;">
                 <vm-button @click.native="show1 = false">Close Center Popup</vm-button>
             </p>
+        </vm-popup>
+
+        <vm-popup v-model="show5" position="top" height="60%">
+            <vm-button type="warning" style="margin: 30px;" @click.native="show5 = false">Close top Popup</vm-button>
         </vm-popup>
 
         <vm-popup v-model="show2" position="bottom" height="60%">
@@ -39,7 +44,8 @@
                 show1: false,
                 show2: false,
                 show3: false,
-                show4: false
+                show4: false,
+                show5: false
             }
         }
     }
