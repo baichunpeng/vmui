@@ -37,7 +37,36 @@
 		</div>
 
 		<!-- UC/QQ -->
-        <div id="nativeShare"></div>
+        <div
+        	id="nativeShare"
+			:class="['vm-content-share-browser', {'vm-content-share-active': show && !isWechat && (isqqBrowser || isucBrowser)}]"
+		>
+            <a href="javascript:void(0);" data-app="weixinFriend" class="nativeShare weixin_timeline">
+				<img src="./icon-quan.png" alt="">
+				<span>微信朋友圈</span>
+            </a>
+            <a href="javascript:void(0);" data-app="weixin" class="nativeShare weixin">
+            	<img src="./icon-wechat.png" alt="">
+				<span>发送给朋友</span>
+            </a>
+            <a href="javascript:void(0);" data-app="QQ" class="nativeShare qq">
+            	<img src="./icon-qq.png" alt="">
+				<span>QQ好友</span>
+			</a>
+            <a href="javascript:void(0);" data-app="QZone" class="nativeShare qzone">
+            	<img src="./icon-qzone.png" alt="">
+				<span>QQ空间</span>
+			</a>
+ 			<a href="javascript:void(0);" data-app="sinaWeibo" class="nativeShare weibo">
+
+				<img src="./icon-sina.png" alt="">
+				<span>新浪微博</span>
+			</a>
+            <a href="javascript:void(0);" data-app="" class="nativeShare more">
+            	<img src="./icon-more.png" alt="">
+				<span>更多</span>
+			</a>
+		</div>
 	</div>
 </template>
 
@@ -190,7 +219,7 @@ export default {
                 'url': decodeURIComponent(this.url),
                 'title': decodeURIComponent(this.title),
                 'desc': decodeURIComponent(this.desc),
-                'img': decodeURIComponent(this.img),
+                'img': decodeURIComponent(this.imgUrl),
                 'img_title': decodeURIComponent(this.title),
                 'from': decodeURIComponent(this.title)
             }
@@ -235,18 +264,22 @@ export default {
     &.vm-content-share-active {
         transform: translate(0, 0);
     }
-	display: flex;
-	display: -webkit-flex;
 	a {
-		width: 20%;
+		width: 25%;
 		height: 0;
 		padding-bottom: 20%;
 		text-align: center;
 		font-size: 12px;
-		color: #6d6d6d;
+		color: #666;
+		float: left;
+		&:after {
+			content: '';
+			display: table;
+			clear: both;
+		}
 		img {
 			width: 40%;
-			margin: 10px auto 0;
+			margin: 10px auto 6px;
 		}
 	}
 }
