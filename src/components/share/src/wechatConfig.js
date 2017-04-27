@@ -19,7 +19,7 @@ export default (wxConfig, readyBack) => {
             'signature': res.data.signature,
             'jsApiList': [
             	'checkJsApi', 'onMenuShareTimeline',
-            	'onMenuShareAppMessage', 'onMenuShareQQ',
+            	'onMenuShareAppMessage', 'onMenuShareQQ','onMenuShareQZone',
             	'onMenuShareWeibo', 'hideMenuItems',
             	'showMenuItems', 'hideAllNonBaseMenuItem',
             	'showAllNonBaseMenuItem', 'translateVoice',
