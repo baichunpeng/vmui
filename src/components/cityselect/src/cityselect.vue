@@ -55,7 +55,7 @@
 
 <script>
 import {addClass, removeClass, getScrollview} from '../../../utils/assist';
-import U from '../../Utils';
+import U from '../../utils';
 import Citys from './vmui.citys';
 
 export default {
