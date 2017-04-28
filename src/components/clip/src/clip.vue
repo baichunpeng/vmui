@@ -39,6 +39,13 @@ export default {
 		height: String,	// 裁切框高度
 	},
 
+	watch: {
+		src: function(val) {
+			this.styleObject.backgroundImage = `url(${this.src})`
+			this.size()
+		}
+	},
+
 	mounted () {
 		this.size()
 	},
