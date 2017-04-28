@@ -1,76 +1,71 @@
 <template>
-	<!-- <span class="vm-clip">
-		<img src="./down2.png" alt="" :style="[{width: imgSize.width}, {height: imgSize.height}, {clip: rect}]">
-	</span>
- --></template>
+	<div
+		class="vm-clip"
+		:style="styleObject"
+	></div>
+</template>
 
 <script>
 export default {
 	name: 'vm-clip',
 
-	data() {
+	data () {
 		return {
-			imgSize: {	// 图片尺寸
-				width: 'auto',
-				height: 'auto'
+			// 设置样式
+			styleObject: {
+				backgroundImage: `url(${this.src})`,
+				backgroundPosition: `${this.positionX} ${this.positionY}`,
+				backgroundSize: `${this.scale}`,
+				width: `${this.width}`,
+				height: `${this.height}`
 			},
-			rect: 'auto'	// 剪切位置
+			// 父元素宽度
+			contentWidth: document.body.clientWidth
 		}
 	},
 
 	props: {
-		position: String,  // 图片裁切位置（top/right/bottom/left/具体尺寸）
-		size: {    // 裁切尺寸
-			width: String,
-			height: String
+		src: {			// 图片 url
+			type: String,
+			default: './up.png'
 		},
-		scale: String	// cover/contain/null
+		positionX: {	// X轴裁切位置（top/right/bottom/left/具体尺寸）
+			type: String,
+			default: 'center'
+		},
+		positionY: {	// Y轴裁切位置（top/right/bottom/left/具体尺寸）
+			type: String,
+			default: 'center'
+		},
+		scale: String,	// cover/contain/null
+		width: String, 	// 裁切框宽度
+		height: String,	// 裁切框高度
 	},
 
 	mounted () {
-		this.countSize()
-		this.countRect()
+		this.size()
 	},
 
 	methods: {
-		// 计算图片尺寸
-		countSize () {
-			// 全覆盖
-			if (this.scale == 'contain') {
-				this.imgSize.with = this.size.width
-				this.imgSize.height = 'auto'
-			}
-			// 短边覆盖
-			if (this.scale == 'cover') {
-				let width = $('.clip img').width()
-				let height = $('.clip img').height()
-				let imgScale = width/height
-				let clipScale = this.size.width/this.size.height
-				this.imgSize.with = imgScale > clipScale ? 'auto' : this.size.width
-				this.imgSize.height = imgScale > clipScale ? this.size.height : 'auto'
-			}
-		},
+		// 设置裁切框尺寸
+		size () {
+			this.contentWidth = this.$el.parentNode.clientWidth
 
-		// 计算rect
-		countRect () {
-			console.log($('.clip img'))
-			// 默认从左上角裁切
-			let top = 0, left = 0,
-				right = this.size.width,
-				bottom = this.size.height
-			// 右上角裁切
-			if (this.position == 'right') {
-				right = $('.clip img').width()
-				left = $('.clip img').width() - this.size.width
-			}
-			// 左下角裁切
-			if (this.position == 'bottom') {
-				bottom = $('.clip img').height()
-				top = $('.clip img').height() - this.size.height
-			}
+			let img = new Image()
+			img.src = this.src
 
-			this.rect = `rect(${top}px ${right}px ${bottom}px ${left}px)`
-			console.log(this.rect)
+			img.onload = () => {
+				if (!this.width)
+					this.styleObject.width = `${img.width > this.contentWidth ? '100%' : img.width + 'px'}`
+				if (!this.height) {
+					this.styleObject.height = `${this.styleObject.width == '100%' ? img.height/img.width*this.contentWidth : img.height}px`
+
+					// 显示原图
+					if (this.styleObject.width == '100%') {
+						this.styleObject.backgroundSize = 'cover'
+					}
+				}
+			}
 		}
 	}
 }
@@ -78,6 +73,8 @@ export default {
 
 <style lang="less">
 .vm-clip {
-
+	display: inline-block;
+	background-repeat: no-repeat;
+	max-width: 100%;
 }
 </style>
