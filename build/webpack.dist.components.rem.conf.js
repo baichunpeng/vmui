@@ -31,6 +31,8 @@ module.exports = merge(distCommonWebpackConfig, {
         "/lib.rem/rate/index": "./src/components/rate/index.js",
         "/lib.rem/countdown/index": "./src/components/countdown/index.js",
         "/lib.rem/textarea/index": "./src/components/textarea/index.js",
-        "/lib.rem/backtop/index": "./src/components/backtop/index.js"
+        "/lib.rem/backtop/index": "./src/components/backtop/index.js",
+        "/lib.rem/share/index": "./src/components/share/index.js",
+        "/lib.rem/clip/index": "./src/components/clip/index.js"
     }
 });

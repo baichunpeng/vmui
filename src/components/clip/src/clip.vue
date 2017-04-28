@@ -25,10 +25,7 @@ export default {
 	},
 
 	props: {
-		src: {			// 图片 url
-			type: String,
-			default: './up.png'
-		},
+		src: String,	// 图片 url
 		positionX: {	// X轴裁切位置（top/right/bottom/left/具体尺寸）
 			type: String,
 			default: 'center'
