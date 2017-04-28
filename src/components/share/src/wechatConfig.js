@@ -2,7 +2,6 @@
 
 import wx from 'weixin-js-sdk'
 import U from '../../utils'
-import {Toast} from '../../dialog'
 
 export default (wxConfig, readyBack) => {
     U.get({
@@ -41,5 +40,6 @@ export default (wxConfig, readyBack) => {
         wx.ready(() => {
             readyBack && readyBack(wx)
         })
-    }).catch(err => Toast({mes: err.errMsg}))
+    })
+    .catch(err => console.log(err))
 }
