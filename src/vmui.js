@@ -31,6 +31,7 @@ import {Popup} from './components/popup';
 import {CountUp} from './components/countup';
 import {BackTop} from './components/backtop';
 import {Share} from './components/share';
+import {Clip} from './components/clip';
 
 window.document.addEventListener('touchstart', function (event) {
     /* Do Nothing */
@@ -77,6 +78,7 @@ const install = function (Vue) {
     Vue.component(CountUp.name, CountUp);
     Vue.component(BackTop.name, BackTop);
     Vue.component(Share.name, Share);
+    Vue.component(Clip.name, Clip);
 
     Vue.prototype.$ = Utils;
     Vue.prototype.$dialog = {

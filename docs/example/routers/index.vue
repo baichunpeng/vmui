@@ -57,6 +57,7 @@
                         {icon: 'demo-icons-actionsheet', name: 'LazyImg', link: '/lazyimg'},
                         {icon: 'demo-icons-actionsheet', name: 'Utils', link: '/utils'},
                         {icon: 'demo-icons-actionsheet', name: 'Share', link: '/share'},
+                        {icon: 'demo-icons-actionsheet', name: 'Clip', link: '/clip'},
                         // {icon: 'demo-icons-countdown', name: 'CountDown', link: '/countdown'},
                         // {icon: 'demo-icons-countup', name: 'CountUp', link: '/countup'},
                         // {icon: 'demo-icons-rate', name: 'Rate', link: '/rate'},

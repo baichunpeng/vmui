@@ -41,6 +41,7 @@ import BackTop from './routers/backtop.vue';
 import Layout from './routers/layout.vue';
 import Utils from './routers/utils.vue';
 import Share from './routers/share.vue';
+import Clip from './routers/clip.vue';
 
 import App from './app.vue';
 
@@ -88,6 +89,7 @@ const router = new VueRouter({
 		{path: '/layout', component: Layout},
 		{path: '/utils', component: Utils},
 		{path: '/share', component: Share},
+		{path: '/clip', component: Clip},
 	]
 });
 
