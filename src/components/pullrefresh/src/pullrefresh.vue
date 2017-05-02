@@ -34,8 +34,8 @@ export default {
 
     data() {
         return {
-            showHelpTag: false,
-            dragTip: {
+            showHelpTag: false, // 显示下拉更新提示
+            dragTip: {  // 正在更新提示
                 iconOpacity: 0.5,
                 iconRotate: 0,
                 loadingIcon: '',
@@ -67,6 +67,7 @@ export default {
 
             this.showHelp();
         },
+
         showHelp() {
             const _key = 'vm-PULLREFRESH-TIP';
             const storage = window.localStorage;
@@ -79,6 +80,7 @@ export default {
             }
             storage.setItem(_key, 1);
         },
+
         bindEvents() {
             const dragBox = this.$refs.dragBox;
 
@@ -88,6 +90,7 @@ export default {
 
             document.body.addEventListener('touchmove', this.stopWeixinDrag);
         },
+
         unbindEvents() {
             const dragBox = this.$refs.dragBox;
 
@@ -97,9 +100,11 @@ export default {
 
             document.body.removeEventListener('touchmove', this.stopWeixinDrag);
         },
+
         stopWeixinDrag(event) {
             this.touches.isDraging && event.preventDefault();
         },
+
         touchStartHandler(event) {
             if (this.touches.loading) {
                 event.preventDefault();
@@ -112,6 +117,7 @@ export default {
 
             this.touches.startClientY = event.touches[0].clientY;
         },
+
         touchMoveHandler(event) {
             const touches = event.touches[0];
 
@@ -138,6 +144,7 @@ export default {
 
             this.touches.moveOffset = this.dragTip.translate = deltaSlide;
         },
+
         touchEndHandler(event) {
             const touches = this.touches;
 
@@ -162,10 +169,12 @@ export default {
             this.dragTip.translate = 0;
             this.resetParams();
         },
+
         triggerLoad() {
             this.touches.loading = true;
             this.onInfinite();
         },
+
         finishLoad() {
             setTimeout(() => {
                 this.dragTip.iconRotate = 0;
@@ -173,6 +182,7 @@ export default {
                 this.resetParams();
             }, 200);
         },
+
         resetParams() {
             setTimeout(() => {
                 const touches = this.touches;
