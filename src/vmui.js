@@ -1,6 +1,7 @@
 import './styles/base.less';
 
 import Utils from './components/utils';
+import Filters from './components/filters';
 import {Confirm, Alert, Toast, Notify, Loading} from './components/dialog';
 import {Layout} from './components/layout';
 import {Button, ButtonGroup} from './components/button';
@@ -81,6 +82,7 @@ const install = function (Vue) {
     Vue.component(Clip.name, Clip);
 
     Vue.prototype.$ = Utils;
+    Vue.prototype.$Filters = Filters;
     Vue.prototype.$dialog = {
         confirm: Confirm,
         alert: Alert,

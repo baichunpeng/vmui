@@ -13,7 +13,7 @@
 <script>
 
 export default {
-    name: 'example-lazyimg',
+    name: 'example-utils',
 
     data () {
         return {

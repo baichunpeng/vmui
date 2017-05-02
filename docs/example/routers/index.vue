@@ -56,6 +56,7 @@
                         {icon: 'demo-icons-actionsheet', name: 'BackTop', link: '/backtop'},
                         {icon: 'demo-icons-actionsheet', name: 'LazyImg', link: '/lazyimg'},
                         {icon: 'demo-icons-actionsheet', name: 'Utils', link: '/utils'},
+                        {icon: 'demo-icons-actionsheet', name: 'Filters', link: '/filters'},
                         {icon: 'demo-icons-actionsheet', name: 'Share', link: '/share'},
                         {icon: 'demo-icons-actionsheet', name: 'Clip', link: '/clip'},
                         {icon: 'demo-icons-actionsheet', name: 'Infinite Scroll', link: '/infinitescroll'},
