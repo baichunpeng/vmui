@@ -20,10 +20,6 @@
         </vm-cell-group>
 
         <vm-cell-group title="异步数据加载">
-            <vm-cell-item arrow type="link" href="/list.infinitescroll">
-                <span slot="left">Infinite Scroll</span>
-                <span slot="right">滚动加载</span>
-            </vm-cell-item>
             <vm-cell-item arrow type="link" href="/list.pullrefresh">
                 <span slot="left">Pull Refresh</span>
                 <span slot="right">下拉刷新</span>
