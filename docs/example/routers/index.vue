@@ -60,6 +60,7 @@
                         {icon: 'demo-icons-actionsheet', name: 'Share', link: '/share'},
                         {icon: 'demo-icons-actionsheet', name: 'Clip', link: '/clip'},
                         {icon: 'demo-icons-actionsheet', name: 'Infinite Scroll', link: '/infinitescroll'},
+                        {icon: 'demo-icons-actionsheet', name: 'Pullrefresh', link: '/pullrefresh'},
 
                         // {icon: 'demo-icons-countdown', name: 'CountDown', link: '/countdown'},
                         // {icon: 'demo-icons-countup', name: 'CountUp', link: '/countup'},

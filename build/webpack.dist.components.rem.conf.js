@@ -34,7 +34,7 @@ module.exports = merge(distCommonWebpackConfig, {
         "/lib.rem/backtop/index": "./src/components/backtop/index.js",
         "/lib.rem/share/index": "./src/components/share/index.js",
         "/lib.rem/clip/index": "./src/components/clip/index.js",
-        "/lib.rem/utils/index": "./src/components/utils/index.js",
+        // "/lib.rem/utils/index": "./src/components/utils/index.js",
         "/lib.rem/filters/index": "./src/components/filters/index.js",
     }
 });

@@ -1,12 +1,12 @@
 <template>
     <vm-layout>
         <vm-navbar slot="navbar" title="PullRefresh">
-            <router-link to="/list" slot="left">
+            <router-link to="/" slot="left">
                 <vm-navbar-back-icon></vm-navbar-back-icon>
             </router-link>
         </vm-navbar>
 
-        <yd-pullrefresh :on-infinite="loadList">
+        <vm-pullrefresh :on-infinite="loadList">
 
             <yd-list theme="4">
                 <yd-list-item v-for="item in list">
@@ -22,7 +22,7 @@
                 </yd-list-item>
             </yd-list>
 
-        </yd-pullrefresh>
+        </vm-pullrefresh>
     </vm-layout>
 </template>
 
@@ -85,7 +85,7 @@
                         mes: _list.length > 0 ? '为您更新了' + _list.length + '条内容' : '已是最新内容'
                     });
 
-                    window.$yduiBus.$emit('ydui.pullrefresh.finishLoad');
+                    window.$vm.$emit('ydui.pullrefresh.finishLoad');
 
                     this.page++;
                 });

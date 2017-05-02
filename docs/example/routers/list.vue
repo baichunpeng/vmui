@@ -19,12 +19,5 @@
             </vm-cell-item>
         </vm-cell-group>
 
-        <vm-cell-group title="异步数据加载">
-            <vm-cell-item arrow type="link" href="/list.pullrefresh">
-                <span slot="left">Pull Refresh</span>
-                <span slot="right">下拉刷新</span>
-            </vm-cell-item>
-        </vm-cell-group>
-
     </vm-layout>
 </template>

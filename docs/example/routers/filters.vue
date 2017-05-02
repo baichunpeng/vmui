@@ -30,6 +30,6 @@ export default {
 
     },
 
-    filters: this.$Filters
+    // filters: this.$Filters
 }
 </script>

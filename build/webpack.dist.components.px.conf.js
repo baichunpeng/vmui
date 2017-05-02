@@ -35,7 +35,7 @@ module.exports = merge(distCommonWebpackConfig, {
         "/lib.px/backtop/index": "./src/components/backtop/index.js",
         "/lib.px/share/index": "./src/components/share/index.js",
         "/lib.px/clip/index": "./src/components/clip/index.js",
-        "/lib.px/utils/index": "./src/components/utils/index.js",
+        // "/lib.px/utils/index": "./src/components/utils/index.js",
         "/lib.px/filters/index": "./src/components/filters/index.js",
     },
     module: {
