@@ -13,7 +13,7 @@
 > Docs：[http://vmui.zhangling.site/docs](http://vmui.zhangling.site/docs)
 
 > Demo：[http://vmui.zhangling.site/example](http://vmui.zhangling.site/example)
-<img width="180" height="180" src="http://vmui.zhangling.site/img/qrcode.jpg" />
+<img width="250" height="325" src="http://vmui.zhangling.site/qrcode.png" />
 
 <!-- #### 参考、使用的项目
 
