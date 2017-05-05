@@ -8,12 +8,11 @@
 </p>
 <br/>
 
-#### Home：[http://vmui.zhangling.site](http://vmui.zhangling.site)
+> Home：[http://vmui.zhangling.site](http://vmui.zhangling.site)
 
-#### Docs：[http://vmui.zhangling.site/docs](http://vmui.zhangling.site/docs)
+> Docs：[http://vmui.zhangling.site/docs](http://vmui.zhangling.site/docs)
 
-#### Demo：[http://vmui.zhangling.site/example](http://vmui.zhangling.site/example)
-扫码查看
+> Demo：[http://vmui.zhangling.site/example](http://vmui.zhangling.site/example)
 <img width="180" height="180" src="http://vmui.zhangling.site/img/qrcode.jpg" />
 
 <!-- #### 参考、使用的项目
