@@ -1,21 +1,19 @@
 <p align="center">
     <br>
     <a href="//vmui.zhangling.site">
-        <img width="200" src="https://vuefe.cn/images/logo.png">
+        <img width="200" src="http://vmui.zhangling.site/example/a95d2f8010e96ad2405784077023103c.png">
     </a>
     <br>
     <h1 align="center">Vmui：基于Vue2.x的移动端组件库</h1>
 </p>
 <br/>
 
-#### Home: <a href="http://vmui.zhangling.site"> http://vmui.zhangling.site</a>
+> Home：[http://vmui.zhangling.site](http://vmui.zhangling.site)
 
-#### Docs: <a href="http://vmui.zhangling.site/docs"> http://vmui.zhangling.site/docs</a>
+> Docs：[http://vmui.zhangling.site/docs](http://vmui.zhangling.site/docs)
 
-#### Blog: <a href="http://blog.zhangling.site"> http://blog.zhangling.site</a>
-
-#### Demo：请用扫码查看
-<img width="180" height="180" src="vmui.zhangling.site/img/qrcode.jpg" />
+> Demo：[http://vmui.zhangling.site/example](http://vmui.zhangling.site/example)
+<img width="180" height="180" src="http://vmui.zhangling.site/img/qrcode.jpg" />
 
 <!-- #### 参考、使用的项目
 
