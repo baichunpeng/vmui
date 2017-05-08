@@ -154,7 +154,7 @@ export default {
 
             // 发送
             try {
-                client.send()
+                client.send(obj.data)
             }
             catch (e) {
                 reject({
