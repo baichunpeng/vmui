@@ -125,7 +125,7 @@ export default {
 
             // 开始 send 触发
             client.onloadstart = () => {
-                typeof onloadstart == 'function' && onloadstart()
+                typeof opt.onloadstart == 'function' && opt.onloadstart()
             }
 
             // 超时
@@ -146,7 +146,7 @@ export default {
 
             // 请求结束（无论成功或者失败）
             client.onloadend = () => {
-                typeof onloadend == 'function' && onloadend(client)
+                typeof opt.onloadend == 'function' && opt.onloadend(client)
             }
 
             // onreadystatechange 回调
