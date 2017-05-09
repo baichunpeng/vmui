@@ -76,16 +76,17 @@ export default {
             data: null,
             type: 'GET',
             dataType: 'json',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json', // 'application/x-www-form-urlencoded'
-                'X-Requested-With': 'XMLHttpRequest'
-            },
             async: true, // 异步/同步
             timeout: 0, // 请求时限
             onloadstart: null,   // 发送前回调
             onloadend: null, // 完成回调
         }, args)
+
+        opt.headers = this.extend({
+            'Accept': 'application/json',
+            'Content-Type': 'application/json', // 'application/x-www-form-urlencoded'
+            'X-Requested-With': 'XMLHttpRequest'
+        }, args.headers || {})
 
         return new Promise (function(resolve, reject) {
             // 若正在加载 撤销请求
