@@ -89,14 +89,20 @@ export default {
         }, args.headers || {})
 
         return new Promise (function(resolve, reject) {
+            // 处理url
+            if (opt.type == 'GET' && opt.data) {
+                for (let i in opt.data) {
+                    opt.url += `&${i}=${opt.data[i]}`
+                }
+            }
+            opt.url = opt.url.replace('&', '?')
+
             // 若正在加载 撤销请求
             if (self[opt.url]) return
             self[opt.url] = true
 
             // 状态分发回调
             function handler() {
-                self[opt.url] = false
-
                 if (this.readyState !== 4) {
                     return
                 }
@@ -113,12 +119,6 @@ export default {
             // 新建 XMLHttpRequest 对象
             let client = new XMLHttpRequest()
             // 调用 open 方法
-            if (opt.type == 'GET' && opt.data) {
-                for (let i in opt.data) {
-                    opt.url += `&${i}=${opt.data[i]}`
-                }
-            }
-            opt.url = opt.url.replace('&', '?')
             client.open(opt.type, opt.url, opt.async)
             // 请求时限，超时调用 reject
             client.timeout = opt.timeout
@@ -153,6 +153,7 @@ export default {
 
             // 请求结束（无论成功或者失败）
             client.onloadend = () => {
+                self[opt.url] = false
                 typeof opt.onloadend == 'function' && opt.onloadend(client)
             }
 
