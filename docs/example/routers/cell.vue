@@ -116,8 +116,8 @@
 
         <vm-cell-group title="复选框">
             <vm-cell-item type="label">
-                <div slot="left">设为默认地址 - {{ydswitch}}</div>
-                <yd-switch slot="right" v-model="ydswitch"></yd-switch>
+                <div slot="left">设为默认地址 - {{vmswitch}}</div>
+                <vm-switch slot="right" v-model="vmswitch"></vm-switch>
             </vm-cell-item>
         </vm-cell-group>
 
@@ -137,7 +137,7 @@
             return {
                 checkedNames: ['Han MeiMei'],
                 picked: 'Lucy',
-                ydswitch: true
+                vmswitch: true
             }
         }
     }
