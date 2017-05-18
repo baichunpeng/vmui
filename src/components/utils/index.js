@@ -119,7 +119,7 @@ export default {
             // 新建 XMLHttpRequest 对象
             let client = new XMLHttpRequest()
             // 调用 open 方法
-            client.open(opt.type, opt.url, opt.async)
+            client.open(opt.type, opt.url, opt.async, true)
             // 请求时限，超时调用 reject
             client.timeout = opt.timeout
             //设置请求头
