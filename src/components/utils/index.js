@@ -83,20 +83,44 @@ export default {
         }, args)
 
         opt.headers = this.extend({
-            'Accept': 'application/json',
-            'Content-Type': 'application/json', // 'application/x-www-form-urlencoded'
-            'X-Requested-With': 'XMLHttpRequest'
+            'Accept': '*/*'
         }, args.headers || {})
 
-        return new Promise (function(resolve, reject) {
-            // 处理url
-            if (opt.type == 'GET' && opt.data) {
-                for (let i in opt.data) {
-                    opt.url += `&${i}=${opt.data[i]}`
-                }
+        // 设置 post 默认 Content-Type
+        if (opt.type == 'POST' && !opt.headers['Content-Type'])
+            opt.headers['Content-Type'] = 'application/x-www-form-urlencoded'
+
+        // post form 方式，不设置 X-Requested-With
+        if (!(opt.type == 'POST' && ['application/x-www-form-urlencoded', 'multipart/form-data'].indexOf(opt.headers['Content-Type']) > -1))
+            opt.headers['X-Requested-With'] = 'XMLHttpRequest'
+
+        // data 处理
+        // 去掉 undefined
+        for (let j in opt.data) {
+            if (!opt.data[j]) opt.data[j] = ''
+        }
+        // get
+        if (opt.type == 'GET' && opt.data) {
+            for (let i in opt.data) {
+                opt.url += `&${i}=${opt.data[i]}`
             }
             opt.url = opt.url.replace('&', '?')
+        }
+        // post form
+        let postFormData = []
+        if (opt.type == 'POST' && ['application/x-www-form-urlencoded', 'multipart/form-data'].indexOf(opt.headers['Content-Type']) > -1) {
+            for (let i in opt.data) {
+                postFormData.push(`${i}=${opt.data[i]}`)
+            }
+            opt.data = postFormData.join('&')
+        }
+        // post json
+        if (opt.type == 'POST' && ['application/json'].indexOf(opt.headers['Content-Type']) > -1) {
+            if (typeof opt.data == 'object')
+                opt.data = JSON.stringify(opt.data)
+        }
 
+        return new Promise (function(resolve, reject) {
             // 若正在加载 撤销请求
             if (self[opt.url]) return
             self[opt.url] = true
