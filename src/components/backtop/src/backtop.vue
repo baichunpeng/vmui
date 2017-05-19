@@ -1,6 +1,6 @@
 <template>
 	<div class="vm-backop" @click.stop="scrollEvent" v-if="isShow">
-	  <img :src="require('./' + (status == 'up' ? 'up' : 'down') + '2.png')" alt="">
+	  <img :src="require('./' + (status == 'up' ? 'up' : 'down') + '.png')" alt="">
 	</div>
 </template>
 
@@ -17,19 +17,6 @@ export default {
 			isShow: true	// 是否显示
 		}
 	},
-
-	props: {
-		content: {    // 滚动区域(class or id, 默认 body)
-            type: String,
-            default: 'body'
-        }
-	},
-
-	computed: {
-        scrollContent() {
-            return document.querySelector(this.content)
-        }
-    },
 
 	mounted() {
 		// 等待 DOM 更新后执行
@@ -119,9 +106,9 @@ export default {
 	position: fixed;
 	right: 0;
 	bottom: 10%;
-	width: 1.8rem;
-	height: 1.8rem;
-	right: 1.4rem;
+	width: 2rem;
+	height: 2rem;
+	right: .75rem;
 	z-index: 10000;
 	img {
 		width: 100%;
