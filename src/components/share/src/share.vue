@@ -233,12 +233,12 @@ export default {
 
             this.$emit('input', false)
             this.show = false
-        },
+        }
+    },
 
-        destroyed() {
-	        this.close()
-	    }
-	}
+    destroyed() {
+        this.close()
+    }
 }
 </script>
 
