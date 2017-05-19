@@ -35,11 +35,11 @@ export default (wxConfig, readyBack) => {
             	'openProductSpecificView', 'addCard',
             	'chooseCard', 'openCard'
             ]
-        })
+        });
 
         wx.ready(() => {
             readyBack && readyBack(wx)
-        })
+        });
     })
     .catch(err => console.log(err))
 }

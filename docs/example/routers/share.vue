@@ -17,7 +17,7 @@
             :desc="detail"
             url="http://wap.meiwan.me"
             imgUrl="http://img.beautysite.cn/goods/201509/560500889d7a8.jpg"
-            :wxConfig="{url: 'http://192.168.4.221:8080/api/weixin/jsapi'}"
+            :wxConfig="{url: 'http://192.168.4.221:6060/mobile/weixin/jsapi'}"
             :ready="ready"
         >
         </vm-share>
