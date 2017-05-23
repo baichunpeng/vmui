@@ -109,7 +109,7 @@ export default {
 	width: 2rem;
 	height: 2rem;
 	right: .75rem;
-	z-index: 10000;
+	z-index: 1500;
 	img {
 		width: 100%;
 		height: 100%;
