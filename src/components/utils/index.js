@@ -95,9 +95,9 @@ export default {
             opt.headers['X-Requested-With'] = 'XMLHttpRequest'
 
         // data 处理
-        // 去掉 undefined
+        // 去掉 undefined null
         for (let j in opt.data) {
-            if (!opt.data[j]) opt.data[j] = ''
+            if (opt.data[j] == undefined || opt.data[j] == null) opt.data[j] = ''
         }
         // get
         if (opt.type == 'GET' && opt.data) {
