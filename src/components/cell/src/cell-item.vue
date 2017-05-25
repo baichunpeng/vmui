@@ -124,7 +124,7 @@ export default {
         line-height: @cell-height;
     }
     input[type="radio"],
-    input[type="checkbox"]:not(.m-switch) {
+    input[type="checkbox"]:not(.vm-switch) {
         position: absolute;
         left: -9999em;
         & + .vm-cell-radio-icon:after,
