@@ -80,6 +80,7 @@ export default {
             timeout: 0, // 请求时限
             onloadstart: null,   // 发送前回调
             onloadend: null, // 完成回调
+            progress: true  // 是否处理data
         }, args)
 
         opt.headers = this.extend({
