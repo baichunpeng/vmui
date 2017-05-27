@@ -87,17 +87,19 @@ export default {
         }, args.headers || {})
 
         // 设置 post 默认 Content-Type
-        if (opt.type == 'POST' && !opt.headers['Content-Type'])
+        if (opt.type == 'POST' && !opt.headers['Content-Type'] && opt.progress != false)
             opt.headers['Content-Type'] = 'application/x-www-form-urlencoded'
 
         // post form 方式，不设置 X-Requested-With
-        if (!(opt.type == 'POST' && ['application/x-www-form-urlencoded', 'multipart/form-data'].indexOf(opt.headers['Content-Type']) > -1))
+        if (!(opt.type == 'POST' && ['application/x-www-form-urlencoded', 'multipart/form-data'].indexOf(opt.headers['Content-Type']) > -1 && opt.progress != false))
             opt.headers['X-Requested-With'] = 'XMLHttpRequest'
 
         // data 处理
         // 去掉 undefined null
-        for (let j in opt.data) {
-            if (opt.data[j] == undefined || opt.data[j] == null) opt.data[j] = ''
+        if (opt.progress != false) {
+            for (let j in opt.data) {
+                if (opt.data[j] == undefined || opt.data[j] == null) opt.data[j] = ''
+            }
         }
         // get
         if (opt.type == 'GET' && opt.data) {
