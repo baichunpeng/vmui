@@ -108,7 +108,7 @@ export default {
         }
         // post form
         let postFormData = []
-        if (opt.type == 'POST' && ['application/x-www-form-urlencoded', 'multipart/form-data'].indexOf(opt.headers['Content-Type']) > -1) {
+        if (opt.type == 'POST' && ['application/x-www-form-urlencoded'].indexOf(opt.headers['Content-Type']) > -1) {
             for (let i in opt.data) {
                 postFormData.push(`${i}=${opt.data[i]}`)
             }
