@@ -91,7 +91,7 @@ export default {
             opt.headers['Content-Type'] = 'application/x-www-form-urlencoded'
 
         // post form 方式，不设置 X-Requested-With
-        if (!(opt.type == 'POST' && ['application/x-www-form-urlencoded', 'multipart/form-data'].indexOf(opt.headers['Content-Type']) > -1 && opt.progress != false))
+        if (!(opt.type == 'POST' && ['application/x-www-form-urlencoded', 'multipart/form-data'].indexOf(opt.headers['Content-Type']) > -1 || opt.progress == false))
             opt.headers['X-Requested-With'] = 'XMLHttpRequest'
 
         // data 处理
