@@ -328,6 +328,7 @@ export default {
 
 .vm-slider-wrapper {
     display: flex;
+    align-items: center;
     width: 100%;
     height: 100%;
     transform: translate3d(0px, 0px, 0px);
