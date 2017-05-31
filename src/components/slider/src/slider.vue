@@ -77,6 +77,12 @@ export default {
                 return ['horizontal', 'vertical'].indexOf(val) > -1
             },
             default: 'horizontal'
+        },
+        initIndex: {  // 初始索引值
+            default: 0,
+            validator(val) {
+                return /^\d*$/.test(val)
+            }
         }
     },
 
@@ -110,16 +116,21 @@ export default {
 
             this.itemNums = this.itemsArr.length;
 
+            // init index
+            if (this.initIndex) {
+                this.index = parseInt(this.initIndex) + 1
+            }
+
             if (this.isVertical) {
                 this.$refs.slider.style.height = '100%';
                 const height = this.$el.clientHeight;
                 this.itemHeight.height = height + 'px';
-                this.setTranslate(0, -height);
+                this.setTranslate(0, -height * this.index);
                 this.itemsArr.forEach((item) => {
                     item.$el.style.height = height + 'px';
                 });
             } else {
-                this.setTranslate(0, -this.$refs.warpper.offsetWidth);
+                this.setTranslate(0, -this.$refs.warpper.offsetWidth * this.index);
             }
 
             this.cloneItem();
