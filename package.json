@@ -1,7 +1,7 @@
 {
   "name": "vmui",
   "description": "A mobile components Library with Vue2.js.",
-  "version": "0.0.44",
+  "version": "0.0.45",
   "author": "zhangling.site",
   "main": "dist/vmui.js",
   "style": "dist/vmui.css",
