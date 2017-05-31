@@ -96,6 +96,11 @@ export default {
             const itemNums = this.itemNums
             const tm = (index - 1) % itemNums
             this.paginationIndex = tm < 0 ? itemNums - 1 : tm
+        },
+
+        initIndex () {
+            this.index = parseInt(this.initIndex) + 1
+            this.init()
         }
     },
 
@@ -115,11 +120,6 @@ export default {
             this.itemsArr = this.$children.filter(item => item.$options.name === 'vm-slider-item');
 
             this.itemNums = this.itemsArr.length;
-
-            // init index
-            if (this.initIndex) {
-                this.index = parseInt(this.initIndex) + 1
-            }
 
             if (this.isVertical) {
                 this.$refs.slider.style.height = '100%';
