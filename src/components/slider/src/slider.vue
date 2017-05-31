@@ -3,7 +3,7 @@
         class="vm-slider"
         ref="slider"
     >
-        <!-- 滚动lists -->
+        <!-- slider lists -->
         <div
             class="vm-slider-wrapper"
             ref="warpper"
@@ -14,7 +14,7 @@
             <slot></slot>
             <div class="vm-slider-item" :style="itemHeight" v-html="firtstItem"></div>
         </div>
-        <!-- 状态圆标 -->
+        <!-- pagination -->
         <div
             :class="['vm-slider-pagination', {'vm-slider-pagination-vertical': direction == 'vertical'}]">
             <span
@@ -63,7 +63,7 @@ export default {
         speed: {        // 切换速度s
             default: 300,
             validator(val) {
-                return /^\d*$/.test(val);
+                return /^\d*$/.test(val)
             }
         },
         autoplay: {     // 自动切换时间间隔s
@@ -74,31 +74,33 @@ export default {
         },
         direction: {    // 滚动方向
             validator(val) {
-                return ['horizontal', 'vertical'].indexOf(val) > -1;
+                return ['horizontal', 'vertical'].indexOf(val) > -1
             },
             default: 'horizontal'
         }
     },
 
     watch: {
-        index() {
-            const index = this.index;
-            const itemNums = this.itemNums;
-            const tm = (index - 1) % itemNums;
-            this.paginationIndex = tm < 0 ? itemNums - 1 : tm;
-        },
         ready(val) {
-            val && setTimeout(this.init, 0);
+            val && setTimeout(this.init, 0)
+        },
+
+        index() {
+            const index = this.index
+            const itemNums = this.itemNums
+            const tm = (index - 1) % itemNums
+            this.paginationIndex = tm < 0 ? itemNums - 1 : tm
         }
     },
 
     mounted() {
-        this.init();
+        this.init()
     },
 
     methods: {
+        // 初始化
         init() {
-            if (!this.ready)return;
+            if (!this.ready) return;
 
             this.destroy();
 
@@ -125,12 +127,14 @@ export default {
             this.autoPlay();
         },
 
+        // 拷贝
         cloneItem() {
             const itemArr = this.itemsArr;
             this.firtstItem = itemArr[0].$el.innerHTML;
             this.lastItem = itemArr[itemArr.length - 1].$el.innerHTML;
         },
 
+        // 事件处理程序：touchstart
         touchStartHandler(event) {
             const touches = this.touches;
             touches.allowClick = true;
@@ -154,6 +158,7 @@ export default {
             }
         },
 
+        // 事件处理程序：touchmove
         touchMoveHandler(event) {
             if(!this.supportTouch || this.isVertical) {
                 event.preventDefault();
@@ -182,6 +187,7 @@ export default {
             }
         },
 
+        // 事件处理程序：touchend
         touchEndHandler() {
             const touches = this.touches;
             const moveOffset = touches.moveOffset;
@@ -209,6 +215,7 @@ export default {
             }
         },
 
+        // 自动切换
         autoPlay() {
             if (this.autoplay <= 0) return;
             this.autoPlayTimer = setInterval(() => {
@@ -225,10 +232,12 @@ export default {
             }, this.autoplay);
         },
 
+        // 停止自动切换：clearInterval
         stopAutoplay() {
             clearInterval(this.autoPlayTimer);
         },
 
+        // 绑定事件
         bindEvents() {
             const _events = this.touchEvents();
             this.$el.addEventListener(_events.start, this.touchStartHandler);
@@ -242,6 +251,7 @@ export default {
             window.addEventListener('resize', this.resizeSlides);
         },
 
+        // 取消事件绑定
         unbindEvents() {
             const _events = this.touchEvents();
             this.$el.removeEventListener(_events.start, this.touchStartHandler);
@@ -250,6 +260,7 @@ export default {
             window.removeEventListener('resize', this.resizeSlides);
         },
 
+        // 触摸事件
         touchEvents() {
             const supportTouch = this.supportTouch = (window.Modernizr && !!window.Modernizr.touch) || (function () {
                         return !!(('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch);
@@ -261,6 +272,7 @@ export default {
             };
         },
 
+        // 动画
         setTranslate(speed, translate) {
             this.dragStyleObject.transitionDuration = speed + 'ms';
             if (this.isVertical) {
@@ -270,6 +282,7 @@ export default {
             }
         },
 
+        // 根据方向计算尺寸和动画
         resizeSlides() {
             if (this.isVertical) {
                 const height = this.$el.clientHeight;
@@ -280,6 +293,7 @@ export default {
             }
         },
 
+        // 销毁
         destroy() {
             this.unbindEvents();
             this.stopAutoplay();
