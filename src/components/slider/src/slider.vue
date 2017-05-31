@@ -31,21 +31,21 @@ export default {
 
     data() {
         return {
-            firtstItem: '',
-            lastItem: '',
-            itemNums: 0,
-            index: 1,
-            itemsArr: [],
-            autoPlayTimer: null,
-            paginationIndex: 0,
-            itemHeight: {
+            firtstItem: '',     // 第一个
+            lastItem: '',       // 最后一个
+            itemNums: 0,        // list length
+            index: 1,           // 当前索引
+            itemsArr: [],       // list 数组
+            autoPlayTimer: null,// 自动切换事件
+            paginationIndex: 0, // 状态圆圈索引
+            itemHeight: {       // 高度
                 height: null
             },
-            dragStyleObject: {
+            dragStyleObject: {  // 动画
                 transform: 0,
                 speed: 0
             },
-            touches: {
+            touches: {          // 触摸
                 moveTag: 0,
                 moveOffset: 0,
                 touchStartTime: 0,
