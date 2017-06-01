@@ -70,7 +70,7 @@ export default {
     z-index: @base-zindex * 100;
     display: flex;
     align-items: center;
-    padding: .104rem*@suiremscale 0 .07rem*@suiremscale;
+    padding: .16rem 0 .275rem;
     background-color: @tabbar-bg;
     &:after {
         .top-line(@tabbar-border-color);
