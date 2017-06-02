@@ -27,6 +27,7 @@
 		<!-- popup: broswer share -->
 		<div
 			:class="['vm-content-share-browser', {'vm-content-share-active': show && !isWechat && !isqqBrowser && !isucBrowser}]"
+            v-show="!isWechat && !isqqBrowser && !isucBrowser"
 		>
 			<a
 				v-for="(item, index) in broswerShareItems"
@@ -40,6 +41,7 @@
         <div
         	id="nativeShare"
 			:class="['vm-content-share-browser', {'vm-content-share-active': show && !isWechat && (isqqBrowser || isucBrowser)}]"
+            v-show="!isWechat && (isqqBrowser || isucBrowser)"
 		>
             <a href="javascript:void(0);" data-app="weixinFriend" class="nativeShare weixin_timeline">
 				<img src="./icon-quan.png" alt="">
@@ -101,6 +103,14 @@ export default {
 		url: {				// 链接地址
             type: String,
             default: location.href
+        },
+        type: {              // 分享类型,music、video或link
+            type: String,
+            default: 'link'
+        },
+        dataUrl: {              // 如果type是music或video，则要提供数据链接
+            type: String,
+            default: ''
         },
 		imgUrl: String,   	// 图片地址
 		success: Function,	// 分享成功的回调
@@ -175,6 +185,7 @@ export default {
 
 			// 配置微信接口回调
 			wechatConfig(this.wxConfig, wx => {
+                // 公用data
 				let wxdataTimeline = {
 					title: this.title,
 					link: this.url,
@@ -197,11 +208,18 @@ export default {
 
 				let wxdata = {desc: this.desc}
 				U.extend(wxdata, wxdataTimeline)
+                // 朋友data
+                let ShareAppData = {
+                    desc: this.desc,
+                    type: this.type,
+                    dataUrl: this.dataUrl
+                }
+                U.extend(ShareAppData, wxdataTimeline)
 
 				// 显示右上角菜单
 				wx.showOptionMenu()
 				// 分享给朋友
-				wx.onMenuShareAppMessage(wxdata)
+				wx.onMenuShareAppMessage(ShareAppData)
 				// 分享到朋友圈
 				wx.onMenuShareTimeline(wxdataTimeline)
 				// 分享到QQ
