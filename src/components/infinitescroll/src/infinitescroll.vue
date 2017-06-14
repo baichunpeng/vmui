@@ -47,9 +47,7 @@ export default {
             this.scrollview = getScrollview(this.$el)
 
             // 事件监听：滚动
-            this.scrollview.addEventListener('scroll', () => {
-                this.throttle(this.scrollHandler)
-            })
+            this.scrollview.addEventListener('scroll', this.scrollListener)
 
             // 事件监听：单次数据加载完毕
             window.$vm.$on('vmui.infinitescroll.loadedOnce', () => {
@@ -85,11 +83,17 @@ export default {
             method.tId = setTimeout(() => {
                 method.call(context)
             }, 100)
+        },
+
+        // 滚动监听函数 延迟后调用 handler
+        scrollListener () {
+            this.throttle(this.scrollHandler)
         }
+
     },
 
     destroyed() {
-        this.scrollview.removeEventListener('scroll', this.scrollHandler)
+        this.scrollview.removeEventListener('scroll', this.scrollListener)
     }
 }
 </script>
