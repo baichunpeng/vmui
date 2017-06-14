@@ -46,6 +46,7 @@ export default {
             this.scrollview = getScrollview(this.$el);
 
             this.scrollHandler();
+            setTimeout(this.scrollHandler, 500);
 
             this.bindEvent();
         },
