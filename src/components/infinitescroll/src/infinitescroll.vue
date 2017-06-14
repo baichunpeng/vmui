@@ -36,7 +36,7 @@ export default {
         }
     },
 
-    mounted() {
+    activated() {
         // 等待 DOM 更新后执行
         this.$nextTick(this.init)
     },
@@ -88,12 +88,20 @@ export default {
         // 滚动监听函数 延迟后调用 handler
         scrollListener () {
             this.throttle(this.scrollHandler)
-        }
+        },
 
+        // 销毁
+        destroy () {
+            this.scrollview.removeEventListener('scroll', this.scrollListener)
+        }
     },
 
     destroyed() {
-        this.scrollview.removeEventListener('scroll', this.scrollListener)
+        this.destroy()
+    },
+
+    deactivated () {
+        this.destroy()
     }
 }
 </script>
