@@ -36,6 +36,11 @@ export default {
         }
     },
 
+    mounted() {
+        // 等待 DOM 更新后执行
+        this.$nextTick(this.init)
+    },
+
     activated() {
         // 等待 DOM 更新后执行
         this.$nextTick(this.init)
@@ -94,10 +99,6 @@ export default {
         destroy () {
             this.scrollview.removeEventListener('scroll', this.scrollListener)
         }
-    },
-
-    destroyed() {
-        this.destroy()
     },
 
     deactivated () {
