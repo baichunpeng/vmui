@@ -75,8 +75,7 @@ export default {
             const contentHeight = scrollview == window ? document.body.offsetHeight : scrollview.offsetHeight
             // 滚动区顶部距离页面顶部距离
             const offsetTop = scrollview == window ? 0 : scrollview.getBoundingClientRect().top
-
-            if (this.$refs.tag.getBoundingClientRect().top <= offsetTop + contentHeight + contentHeight / 10) {
+            if (this.$refs.tag && this.$refs.tag.getBoundingClientRect().top <= offsetTop + contentHeight + contentHeight / 10) {
                 this.isLoading = true
                 this.onInfinite()
             }

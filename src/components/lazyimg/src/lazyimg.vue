@@ -48,7 +48,7 @@ export default {
         init() {
             this.scrollview = getScrollview(this.$el);
 
-            this.scrollHandler();
+            this.scrollHandler()
 
             this.bindEvent();
         },
@@ -60,24 +60,35 @@ export default {
 
         // 滚动事件监听函数
         scrollHandler() {
-            if (checkInview(this.scrollview, this.$el, this.preLoad)) {
-                var img = new Image();
-                img.src = this.$el.firstChild.getAttribute('datasrc');
+            // setInterval 兼容动画
+            let t = new Date().getTime();
 
-                // 图片加载成功
-                img.onload = () => {
-                    if (checkInview(this.scrollview, this.$el, this.preLoad)) {
-                        this.$el.firstChild.setAttribute('src', this.$el.firstChild.getAttribute('datasrc'));
+            var interval = setInterval(() => {
+                // 懒加载 DOM 创建并且在可视区
+                if (checkInview(this.scrollview, this.$el, this.preLoad)) {
+                    clearInterval(interval);
+
+                    var img = new Image();
+                    img.src = this.$el.firstChild.getAttribute('datasrc');
+
+                    // 图片加载成功
+                    img.onload = () => {
+                        if (checkInview(this.scrollview, this.$el, this.preLoad)) {
+                            this.$el.firstChild.setAttribute('src', this.$el.firstChild.getAttribute('datasrc'));
+                            addClass(this.$el.firstChild, 'vm-lazyLoaded');
+                            this.unbindEvent();
+                        }
+                    }
+                    // 图片加载失败
+                    img.onerror = () => {
+                        this.$el.firstChild.setAttribute('src', this.error);
                         addClass(this.$el.firstChild, 'vm-lazyLoaded');
-                        this.unbindEvent();
                     }
                 }
-                // 图片加载失败
-                img.onerror = () => {
-                    this.$el.firstChild.setAttribute('src', this.error);
-                    addClass(this.$el.firstChild, 'vm-lazyLoaded');
-                }
-            }
+                // 若上一步未触发，1s 后 自动销毁监听
+                if (new Date().getTime() - t > 2000)
+                    clearInterval(interval)
+            }, 200)
         },
 
         // 绑定事件
