@@ -36,9 +36,12 @@ export default {
 
     mounted() {
         // dom 更新后回调
-        this.$nextTick(() => {
-            this.init();
-        });
+        this.$nextTick(this.init)
+    },
+
+    activated() {
+        // 等待 DOM 更新后执行
+        this.$nextTick(this.init)
     },
 
     methods: {
@@ -90,7 +93,7 @@ export default {
         }
     },
 
-    destoryed() {
+    deactivated() {
         this.unbindEvent();
     }
 }
