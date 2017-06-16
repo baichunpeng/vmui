@@ -4,5 +4,5 @@
 
 <style lang="less">
     @import "./styles/demo.less";
-    @import "../../src/styles/vm.less";
+    @import "../src/styles/vm.less";
 </style>

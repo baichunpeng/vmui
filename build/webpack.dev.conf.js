@@ -5,11 +5,11 @@ const baseWebpackConfig = require('./base.conf');
 
 module.exports = merge(baseWebpackConfig, {
     entry: {
-        main: './docs/example/main.js',
+        main: './example/main.js',
         vendors: ['vue', 'vue-router']
     },
     output: {
-        path: path.join(__dirname, '../dist/example'),
+        path: path.join(__dirname, '../site/example'),
         publicPath: '/example/',
         filename: '[name].js'
     },
