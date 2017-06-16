@@ -1,3 +1,9 @@
+# docs for vmui
+
+- home
+- example
+- wiki
+
 > utils
 - fetch
 上传文件

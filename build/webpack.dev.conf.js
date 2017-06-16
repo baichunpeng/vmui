@@ -9,7 +9,7 @@ module.exports = merge(baseWebpackConfig, {
         vendors: ['vue', 'vue-router']
     },
     output: {
-        path: path.join(__dirname, '../site/example'),
+        path: path.join(__dirname, '../docs/example'),
         publicPath: '/example/',
         filename: '[name].js'
     },
