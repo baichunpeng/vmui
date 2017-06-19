@@ -14,7 +14,8 @@ export default {
 
     data() {
         return {
-            show: false    // 是否显示
+            show: false,    // 是否显示
+            isIos: /(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)
         }
     },
 
@@ -29,7 +30,15 @@ export default {
         // 滚动到顶部
         scroll2Top() {
             const top = this.scrollView == window ? document.body.scrollTop : this.scrollView.scrollTop;
-            scrollTop(this.scrollView, top, 0);
+
+            // 修复 android 卡顿
+            if (this.isIos) {
+                scrollTop(this.scrollView, top, 0);
+            } else if (this.scrollView === window) {
+                window.scrollTo(0, 0);
+            } else {
+                this.scrollView.scrollTop = 0;
+            }
         },
 
         // 滚动监听回调
