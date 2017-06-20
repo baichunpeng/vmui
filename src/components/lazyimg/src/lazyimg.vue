@@ -34,6 +34,12 @@ export default {
         alt: String    // img alt
     },
 
+    watch: {
+        src: function (val, oldVal) {
+            this.$nextTick(this.init)
+        }
+    },
+
     mounted() {
         // dom 更新后回调
         this.$nextTick(this.init)
