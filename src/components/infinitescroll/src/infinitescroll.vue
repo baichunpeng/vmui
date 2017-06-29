@@ -57,6 +57,7 @@ export default {
             // 事件监听：单次数据加载完毕
             window.$vm.$on('vmui.infinitescroll.loadedOnce', () => {
                 this.isLoading = false
+                this.isDone = false
             })
 
             // 事件监听：全部数据加载完毕
